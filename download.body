@@ -1,0 +1,84 @@
+<h2> Download the mkCDrec Main Recovery Set:</h2>
+            <h3> From <a
+ href="http://sourceforge.net/project/showfiles.php?group_id=25327">http://sourceforge.net/project/showfiles.php?group_id=25327</a></h3>
+            <h2>
+            <hr width="100%"></h2>
+            <h2> Download the mkCDrec Utilities (optional)</h2>
+The version number of the utilities is unrelated to the mkCDrec version
+number (mostly static executables).&nbsp;
+            <p>To install the utilities do the following:&nbsp; <br />
+&nbsp; <br />
+            <table nosave="" bgcolor="#000000" cols="1" width="70%">
+              <caption><br />
+              </caption><tbody>
+              </tbody> <tbody>
+                <tr>
+                  <td><font color="#ffffff"># cd&nbsp;&nbsp;
+mkcdrec;&nbsp; tar&nbsp; zxvf&nbsp; mkCDrec_v0.7.5_utils.tar.gz</font> <br />
+                  <font color="#ffffff"># ls -l&nbsp; utilities</font></td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+&nbsp; <br />
+            <table nosave="" bgcolor="#ffff99" width="100%">
+              <caption><br />
+              </caption><tbody>
+              </tbody> <tbody>
+                <tr>
+                  <td style="vertical-align: top;"><a
+ href="mkCDrec_v0.7.9_utils.tar.gz">mkCDrec_v0.7.9_utils.tar.gz</a></td>
+                  <td style="vertical-align: top;">[2445
+Kb] released on 4 May 2004
+[md5sum=3294f58cbc69532f4377224daa544174]</td>
+                </tr>
+                <tr>
+                  <td
+ style="vertical-align: top; background-color: rgb(255, 204, 255);"><a
+ href="mkCDrec_v0.7.5_utils.tar.gz">mkCDrec_v0.7.5_utils.tar.gz</a></td>
+                  <td
+ style="vertical-align: top; background-color: rgb(255, 204, 255);">[2622
+Kb] released on 26 October 2003
+[md5sum=b0fc757d4f6f3d2c8086d21af4297118]</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;"><a
+ href="mkCDrec_v0.7.1_utils.tar.gz">mkCDrec_v0.7.1_utils.tar.gz</a></td>
+                  <td style="vertical-align: top;">[1642 Kb] released
+on 3 March 2003 [md5sum=6a433f429f42235cbc5f652d9b38af30]<br />
+                  </td>
+                </tr>
+                <tr nosave="" bgcolor="#ffccff">
+                  <td nosave="">mkCDrec_v0.6.7_utils.tar.gz</td>
+                  <td nosave="">[1259 Kb] released on 27 April 2002
+[md5sum=9bbb2b5c5be63ba0cd98342467d924a6]</td>
+                </tr>
+                <tr>
+                  <td>mkCDrec_v0.6.2_utils.tar.gz</td>
+                  <td>[1141 Kb] released on 27 April 2002
+[md5sum=7eec75164e5ad30905b332977ca3efd8]</td>
+                </tr>
+                <tr nosave="" bgcolor="#ffccff">
+                  <td>mkCDrec_v0.6.0_utils.tar.gz</td>
+                  <td nosave="">[1141 Kb] released on 21 February
+2002&nbsp; <br />
+[md5sum=4904a753bb7820d0c4e6ae905e8e9d2f]</td>
+                </tr>
+                <tr nosave="">
+                  <td nosave="">mkCDrec_v0.5.7_utils.tar.gz</td>
+                  <td>[1186 Kb] released on 22 November 2001
+[md5sum=a95b0f2f21ecb779e7c9f0bcd41a467d]</td>
+                </tr>
+                <tr nosave="" bgcolor="#ffccff">
+                  <td nosave="">mkCDrec_v0.5.1_utils.tar.gz</td>
+                  <td>[1255 Kb] released on 29 May 2001&nbsp; <br />
+[md5sum=de397cc2d7087baef39b59ff5aff0623]</td>
+                </tr>
+                <tr nosave="" bgcolor="#ffff99">
+                  <td nosave="">mkCDrec_v0.4.1_utils.tar.gz</td>
+                  <td>[ 709 Kb] released on 31 December 2000</td>
+                </tr>
+              </tbody>
+            </table>
+            </p>
+

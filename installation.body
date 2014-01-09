@@ -1,0 +1,447 @@
+<h2>
+Installation and Getting Started</h2>
+
+<h3>
+<a name="Index"></a>Index</h3>
+
+<ul>
+<li><b><a href="#Installation">Installation</a></b></li>
+
+<li><b><a href="#Main_menu">Main Menu of mkCDrec</a></b></li>
+
+<li><b><a href="#First_trial">First trial</a></b></li>
+
+<li><b><a href="#Backups_on_CD-ROM_option_2">Backups on CD-ROM (option 2)</a></b></li>
+
+<li><b><a href="#Backups_on_another_destination_path">Backups on another destination
+path (option 3)</a></b></li>
+
+<li><b><a href="#Backups_on_remote_tape_device">Backups on (remote) tape device
+(option 4)</a></b></li>
+
+<li><b><a href="#Using_mkCDrec_non-interactively_batch">Using mkCDrec non-interactively
+(batch mode)</a></b></li>
+
+<li><b><a href="#Check">Check the ISO9660 image</a></b></li>
+
+<li><b><a href="#Booted_from_the_mkCDrec_CD-ROM">Booted from the mkCDrec CD-ROM</a></b></li>
+</ul>
+
+<h3><a name="Installation"></a>Installation</h3>
+
+<ul>
+<li><a href="download.html">Download</a> the latest <tt>mkCDrec_v0.6.5.tar.gz</tt> or higher.</li>
+
+<li>Become <b>root</b></li>
+
+<li>Extract the archive as following:
+
+<table border="0" cellspacing="0" width="80%" bgcolor="#000000" >
+<tr>
+<td><font color="#FFFFFF"># tar zxvf&nbsp; mkCDrec_v0.6.5.tar.gz</font></td>
+</tr>
+</table></li>
+
+<li>Go into the directory 'mkcdrec'</li>
+
+<li>Read the README file, which points to the <a href="introduction.html">introduction.html
+</a>document</li>
+
+<li>Check the <a href="introduction.html#prerequisites">prerequisites</a> .
+It is very, very important to check the points mentioned strictly, otherwise
+you will not be able to boot/mount the CD-ROM afterwards, and make the
+whole exercise worthless!
+
+<table width="80%" bgcolor="#000000" >
+
+<tr>
+<td><font color="#FFFFFF"># make test</font></td>
+</tr>
+</table></li>
+</ul>
+
+<ul>
+<li>
+Install the missing executables listed as <font color="#FF0000">not found</font> by
+a 'make test' run. Change also the items listed as bad by the make test
+run.</li>
+
+<li><a href="config.html">Edit the <b>Config.sh</b></a> file and change (if needed) the following entries:</li>
+
+<li><ul>
+<li>ISOFS_DIR=/tmp/backup
+<blockquote>This directory will be used during build time to collect all the necessary
+files which will be collected in the CDrec.iso (ISO9660 with Joliet extention)
+file. If this directory has to contain also the backups of the system make
+sure it is big enough (is checked too during the build process). It is
+best to use a disk with at least <font color="#FF0000">800 MB free</font>
+space.</blockquote></li>
+
+<li>TAPE_DEV=/dev/nst0
+<blockquote>Fill it in if you have a tape device. Use the <font color="#FF0000">"no"-rewinding</font> device name! In any other case, do not bother this entry.
+<br />Word of caution: do not trust the GNU mt utility for tape handling.
+Check with "mt --version"
+<br />Download and install the <a href="http://www.ibiblio.org/pub/linux/system/backup/%21INDEX.html">mt-st utilities</a> from your distribution CD or from <a href="http://rpmfind.net/">rpmfind.net</a>
+</blockquote></li>
+
+<li>SCSI_MODULES="...."
+<blockquote>If the kernel was compiled with SCSI modules you may write them here
+explicitly. Normally during build time they will get noticed, but on laptops
+it can happen that there is no SCSI PCMCIA card inserted during the build,
+and therefore, would not be noticed.</blockquote></li>
+
+<li>OTHER_MODULES="...."
+<blockquote>Add here any other module you think you will need. It does not matter
+if the build sees it twice.</blockquote></li>
+
+<li>If you want the mkCDrec procedure stores the backups on another disk or
+on a NFS or CIFS mounted disk make sure you have mounted it properly, otherwise,
+surprise (disk full). Check with '<b>df</b>' command.</li>
+
+<li>Want to use a (remote) tape device (or another external device) make sure
+it is online and accesible. Do not forget to insert a tape too.</li>
+
+<li>Unmount filesystems you do not want to backup, or add those explicit in
+the Config.sh file as excluded, e.g.
+
+<br />EXCLUDE_LIST="/tmp/*&nbsp;
+<br />/home/betuxed&nbsp;
+<br />/var/spool/squid/*&nbsp;
+<br />/mnt/*&nbsp;
+<br />/proc&nbsp;
+<br />/home/mike/no_backup"</li>
+</ul></li>
+</ul>
+<p>Some rules:</p>
+<table border="0" cellspacing="2" cellpadding="2" width="90%" bgcolor="#FFCCFF">
+<tr>
+<td valign="top">"<b>/test</b>"</td>
+<td> will exclude all items in /test (if /test is a directory) and also /test will NOT exist upon restore if /test is a file, it will only exclude that file<br />
+Mostly used for files or mount-points you don't want backup'ed</td>
+</tr>
+<tr>
+<td valign="top">"<b>/test/*</b>"</td>
+<td> will exclude all items in the directory /test but /test will be created upon restore <br />
+this is what most people want for directories</td>
+</tr>
+<tr>
+<td valign="top">"<b>/var/log/maillog*</b>"</td>
+<td> will exlude all /var/log/maillog* files this demonstrates wildcards so you can exclude frequently updated files (most commonly logfiles)</td>
+</tr>
+</table>
+
+<div><a href="#Index">up</a></div>
+
+
+<h3><a name="Main_menu"></a>Main menu</h3>
+
+<ul>
+<li>READY? Type:
+
+<table border="0" cellspacing="0" width="80%" bgcolor="#000000">
+
+<tr>
+<td><font color="#FFFFFF"># make</font></td>
+</tr>
+</table></li>
+
+<li>You will see a screen which looks alike:
+<br />
+<img src="images/main_menu.jpg" alt="Main Menu" height="197" width="514" /></li>
+<li>As you can see there are 5 topics to select in the main menu of mkCDrec:
+
+<table border="0" cellspacing="2" cellpadding="2" width="90%" >
+<tr>
+<td valign="top">1</td>
+
+<td valign="top" bgcolor="#FFFFCC">mkCDrec will create a bootable El-Torito
+based CD-ROM useable as a disaster recovery CD (even better when the mkCDrec
+utilities were installed too).</td>
+</tr>
+
+<tr>
+<td valign="top">2</td>
+
+<td valign="top" bgcolor="#FFFFCC">mkCDrec creates one or more CD-ROMs (images
+or write to CD-R(W)s) featuring a bootable disaster recovery linux system
+including compressed backups of all filesystems mounted (and not excluded)
+at the time the 'make' was started.</td>
+</tr>
+
+<tr>
+<td valign="top">3</td>
+
+<td valign="top" bgcolor="#FFFFCC">Same as 2, only the backups are not stored
+on CD-ROM, but on another path, e.g. another (remote NFS/SMB) disk.</td>
+</tr>
+
+<tr>
+<td valign="top">4</td>
+
+<td valign="top" bgcolor="#FFFFCC">Same as 2, only the backups are stored
+on some (local or remote) tape device.</td>
+</tr>
+
+<tr>
+<td valign="top">5</td>
+
+<td valign="top" bgcolor="#FFFFCC">Quit (by why start it up in the first
+place then?</td>
+</tr>
+</table></li>
+</ul>
+
+<div><a href="#Index">up</a>&nbsp;</div>
+
+<h3>
+<a name="First_trial"></a>First trial</h3>
+
+<ul>
+<li>
+Make your choice. Number <b>1</b> is very safe for the first time ;-) <br />
+You can watch the progress (if you can follow it t.i.), until it comes
+back to prompt you with (only when in Config.sh PROMPT_BOOT_FLOPPY=1):&nbsp;
+<img src="images/bootfloppy.jpg" alt="bootfloppy" height="46" width="469" /></li>
+<li>If you typed "Y" then it will ask you to insert a 1.44 Mb (3.5") floppy
+into drive A: <br />
+It will format it and copy the boot images to floppy. Keep the floppy
+with the CD-ROM in case your PC's BIOS cannot boot directly from the El
+Torito CD-ROM made by mkCDrec.
+<br /><font color="#FF0000">Important notice</font>: mkCDrec will save a
+boot image of the floppy on the CD-ROM too if the size permits it (1.44
+or 1.72 Mb) in the directory floppy/ even when the option PROMPT_BOOT_FLOPPY
+was 0! Noticed this is sometimes very handy!
+</li>
+<li>
+A few moments later the 'make' finishes and you will find in the /tmp directory
+a file called <b>CDrec.iso </b>which can be transferred with cdrecord to
+a CDR. Please note that in the Config.sh file you can change the default
+location (directory) for writing the CDrec.iso file.</li>
+
+<li>
+The ISO image can be written to a CDR(W) automatically if enabled in Config.sh.
+For those who have an ISO image and want to transfer to a CDR you can still
+use the following command anytime (after mkCDrec finishes of course):
+
+<br />
+<table width="80%" bgcolor="#000000">
+
+<tr>
+<td><font color="#FFFFFF"># cdrecord -v -speed=2 dev=1,0,0&nbsp;
+CDrec.iso</font></td>
+</tr>
+</table>
+The dev=1,0,0 is the result of doing a "cdrecord -scanbus" command&nbsp;
+<br />Or, enable in Config.sh BURNCDR=y (and, use 'make test' first to get
+more information about your Cd-writer).</li>
+<li>
+Important to know that above mentioned step of writing to a CDR or CD-RW
+can be automated by mkCDrec (see Config.sh: BURNCDR=y)</li>
+
+<li>
+Try to boot with the resulting CDR. When you encounter problems with the
+boot process try to figure out what went wrong by carefully checking where
+it goes wrong (make notes of it). Afterwards, when rebooted to original
+linux system inspect the mkcdrec.log file for mistakes if any.</li>
+
+<li>
+In case of errors: check the FAQs, or Sourgeforge forums, or Sourgeforge
+users mailing list. Probably, your case has already be encountered by others
+and a solution is maybe provided. Otherwise, you could check mkCDrec' support
+pages and submit a bug report to Sourceforge.</li>
+</ul>
+
+<ul>
+<li>
+When you are convinced that mkCDrec CD-ROM boots properly it is time to
+try step 2, 3 or 4 of the make procedure.</li>
+
+<li>
+The ultimate test is the restore from a mkCDrec CD-ROM! Please try it out
+on a test system before doing this on a production system!!!!
+
+<br /><b><font color="#FF0000">WARNING: do NOT choose option 2 on a production
+system if you have never tried it out on a scratch system.&nbsp; If you
+do and loose data: do not blame me please, thank you!!!</font></b></li>
+</ul>
+
+<div><font color="#000000"><a href="#Index">up</a></font></div>
+
+<h3>
+<a name="Backups_on_CD-ROM_option_2"></a>Backups on CD-ROM (option 2)</h3>
+
+<blockquote>Backups are done via GNU tar and compressed afterwards. Before
+really starting with mkCDrec the user gets a confirmation of what will
+be backuped. In this stadium it is very easy to inrrupt mkCDrec and mount
+or umount a local filesystem.&nbsp;</blockquote>
+
+<blockquote>Please note that mkCDrec will not attempt to backup a NFS/SMB
+based filsystem.</blockquote>
+
+<blockquote><img src="images/option2_confirmation.jpg" alt="Main menu option has been selected" height="160" width="489" /></blockquote>
+
+<blockquote>After pressing Enter mkCDrec starts making the necessary boot
+images needed for the CD-ROM and afterwards the backups in compressed format
+(gzip, bzip2, compress, lzop depending on what the user defined in Config.sh).</blockquote>
+
+<blockquote>If needed, mkCDrec will temporarely interrupt the backup process
+to create an ISO9660 image after 650 Mb worth of backup. When the image
+has been created or written to CD-R(W) mkCDrec continues with the backups
+and create more images if needed.&nbsp;
+<div><a href="#Index">up</a></div>
+</blockquote>
+
+<h3>
+<a name="Backups_on_another_destination_path"></a>Backups on another destination
+path (option 3)</h3>
+
+<blockquote>After selecting option 3 from main menu one sees first the
+selected filesystems for backup. The user has to accept that by pressing
+Enter or cancel it by Control-C (see above figure from option 2 to have
+an idea what kind of screen we're talking about).</blockquote>
+
+<blockquote>After pressing Enter one sees:</blockquote>
+
+<blockquote><img src="images/destination_path.jpg" alt="Enter other destination path" height="127" width="413" />
+<p>Please enter a valid destination path - it will not continue otherwise.&nbsp;
+<br />After doing that it will create first a disaster recovery CD-ROM needed
+to restore the data afterwards as it contains all the information about
+your system and where the backups are kept. The backups of course are written
+to the given destination path. Do not delete them, otherwise, you cannot
+restore them when needed (make sense, but...)&nbsp;
+<div><a href="#Index">up</a></div>
+</blockquote>
+
+<h3>
+<a name="Backups_on_remote_tape_device"></a>Backups on (remote) tape device
+(option 4)</h3>
+
+<blockquote>After selecting option 4 from main menu one sees first the
+selected filesystems for backup. The user has to accept that by pressing
+Enter or cancel it by Control-C (see above figure from option 2 to have
+an idea what kind of screen we're talking about).</blockquote>
+
+<blockquote>After pressing Enter one sees:</blockquote>
+
+<blockquote><img src="images/enter_tape_device.jpg" alt="Enter tape device" height="144" width="451" />
+<p>The given tape device will be checked on correctness, otherwise one
+will loop forever in this menu untill a working tape device is given. Please
+do enter the "norewinding" device name as mkCDrec will not attempt to verify
+this (until someone delivers a patch of course ;-)&nbsp;
+<br />Once the tape device has been accepted mkCDrec will make a disaster
+recovery CD-ROM and puts the backups on the tape.&nbsp;
+<br />Unfortunately, multiple volume tape support will probably not work yet.</p>
+<div><a href="#Index">up</a></div>
+</blockquote>
+
+
+<h3>
+<a name="Using_mkCDrec_non-interactively_batch"></a>Using mkCDrec non-interactively
+(batch mode)</h3>
+
+<blockquote>
+<ul>
+<li>
+<b>make CD-ROM</b></li>
+
+<br />Is the same as option 2 (backups included on CD)&nbsp;
+<li>
+<b>make rescue</b></li>
+
+<br />Is the same as option 1 (disaster recovery CD only)&nbsp;
+<li>
+<b>make path DESTINATION_PATH=/foo</b></li>
+
+<br />Is the same as option 3 (backups on another destination path)&nbsp;
+<li>
+<b>make device</b></li>
+
+<br />Is the same as option 4 (backup on tape)
+<li>
+<b>make help</b></li>
+
+<br />gives overview of make options.</ul>
+Word of caution: before using mkCDrec in batch mode please try it out interactively
+first with the "make" command (without options).&nbsp;
+<div><a href="#Index">up</a></div>
+</blockquote>
+
+<h3>
+<a name="Check"></a></h3>
+
+<h3>
+Check the ISO9660 image or CD-ROM</h3>
+
+<blockquote>When mkCDrec has finished making the disaster recovey CD-ROM
+it implants a checksum into the ISO9660 image. To check the integrity of
+the ISO9660 image or CD-ROM use the following command (build in mediacheck/
+directory):&nbsp;
+<p># checkisomd5&nbsp;&nbsp;&nbsp; CDrec.iso&nbsp;
+<br />or&nbsp;
+<br /># checkisomd5&nbsp;&nbsp; /dev/cdrom
+<br /><tt>Read&nbsp;&nbsp;&nbsp;&nbsp; 0 MB</tt>
+<br /><tt>8852a5d88200444987f429bc527a8010</tt>
+<br /><tt>8852a5d88200444987f429bc527a8010</tt>
+<br /><tt>Md5sums match.</tt>
+<p><font color="#000000">The advantage is there is no need to write down
+the md5 checksum anymore. It is always burned onto the image itself. This
+technique was first used on RedHat's installation CD-ROMs</font><font color="#FF6666">.</font>
+<br /><font color="#FF6666">Note: available since mkCDrec v0.6.5</font>
+<div><a href="#Index">up</a></div>
+</blockquote>
+
+
+<h3>
+<a name="Booted_from_the_mkCDrec_CD-ROM"></a>Booted from the mkCDrec CD-ROM</h3>
+
+<ul>After booting from CD-ROM (or floppy and CD-ROM) you will be presented
+with a prompt, type the following two lines to start the recovery procedure:
+<br />
+<table border="0" cellspacing="0" width="80%" bgcolor="#000000">
+<tr>
+<td><font color="#FFFFFF"># cd&nbsp; /etc/recovery</font></td>
+</tr>
+
+<tr>
+<td><font color="#FFFFFF"># ./start-restore.sh</font></td>
+</tr>
+</table>
+</ul>
+
+<blockquote>From this point in time the script will ask for confirmation
+before really starting to reformat your hard disk(s) and if it cannot find
+the backups it will refuse to continue until you corrected the situation
+at shell level.</blockquote>
+
+<ul>
+<li>The CD-ROM should contain enough tools (a normal fdisk is also included)
+to get it going
+<br />Check the network connections when you try to restore from NFS mounted
+disks. And, it is better to mount those disks in advance before starting
+the start-restore.sh script.
+<br />You will find plenty of information in /etc/recovery directory.
+<br /><i>Note</i>: start-restore.sh script can only restore backups to disks
+of the same (or bigger) size as the original disk. Do not despare: clone-dsk.sh
+script can restore to smaller disks (but only one disk at a time).
+<br /><i>Note2</i>: start-restore.sh is also capable to restore from scratch
+a Software RAID and LVM based filesystem, albeit from scratch, meaning
+from scratch!
+</li>
+<li>To <b>clone</b> a disk to another system use the command:
+
+<br />&nbsp;
+<table width="80%" bgcolor="#000000">
+<tr>
+<td><font color="#FFFFFF"># cd&nbsp; /etc/recovery</font>
+<br /><font color="#FFFFFF"># ./clone-dsk.sh</font></td>
+</tr>
+</table>
+The cloning script will prompt for the source disk and after scanning the
+current system for all the possible disk devices it will prompt for the
+target disk. From that point on the restore is fully automatic and equal
+to start-restore.sh.</li>
+<li>Restore a single file system to a new disk is also possible with <b>restore-fs.sh</b>
+script. As an add-on a different target file system type can be specified.</li>
+</ul>
+
+<div><a href="#Index">up</a></div>

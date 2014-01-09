@@ -1,0 +1,36 @@
+@media screen
+{
+  pre.shellcommand
+  {
+    font-weight: bold;
+    background: black;
+    color: white;
+    padding: 5px;
+    -moz-border-radius: 5px;
+  }
+}
+
+@media print
+{
+  pre.shellcommand
+  {
+    padding: 5px;
+    background: #eee;
+  }
+}
+
+pre.mailmessage
+{
+  margin: 2em;
+  padding: 1em;
+  border: 2px dotted #aaa;
+  background: #eee;
+}
+
+pre.plaintext
+{
+  padding: 0.5em;
+  border: 1px dotted #aaa;
+  background: #eee;
+}
+

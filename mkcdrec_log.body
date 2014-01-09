@@ -1,0 +1,1382 @@
+<h2>
+The mkcdrec.log File</h2>
+<tt>mkCDrec started on Wed Apr 18 14:11:15 CEST 2001</tt>
+<br /><tt>-------------&lt; Entering rd-base.sh >------------</tt>
+<br /><tt>Gathering your current network configuration into rc.network</tt>
+<br /><tt>/sbin/ifconfig eth0 15.125.235.236 broadcast 15.255.255.255 netmask
+255.255.248.0 up</tt>
+<br /><tt>/sbin/route add default gw 15.125.235.233 metric 1</tt>
+<br /><tt>Creating an empty file 'rd-base.img' to hold the filesystem</tt>
+<br /><tt>Mounting the rootfs on /home/gratiend/src/recovery/mkcdrec/stage</tt>
+<br /><tt>Initial population of the rootfs</tt>
+<br /><tt>Copy /home/gratiend/src/recovery/mkcdrec/usr to /home/gratiend/src/recovery/mkcdrec/stage
+...</tt>
+<br /><tt>/home/gratiend/src/recovery/mkcdrec/usr contains man, share and
+bin dirs.</tt>
+<br /><tt>*** Busybox compilation/installation started ***</tt>
+<br /><tt>make[1]: Entering directory `/home/gratiend/src/recovery/mkcdrec/busybox-0.51'</tt>
+<br /><tt>(echo -n "APPLET_SOURCES := "; /bin/sh busybox.sh Config.h ) >
+applet_source_list</tt>
+<br /><tt>make[1]: Leaving directory `/home/gratiend/src/recovery/mkcdrec/busybox-0.51'</tt>
+<br /><tt>make[1]: Entering directory `/home/gratiend/src/recovery/mkcdrec/busybox-0.51'</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/ask_confirmation.c -o libbb/ask_confirmation.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/check_wildcard_match.c -o libbb/check_wildcard_match.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/chomp.c -o libbb/chomp.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/concat_path_file.c -o libbb/concat_path_file.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/copy_file.c -o libbb/copy_file.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/copy_file_chunk.c -o libbb/copy_file_chunk.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/create_path.c -o libbb/create_path.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/daemon.c -o libbb/daemon.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/deb_extract.c -o libbb/deb_extract.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/device_open.c -o libbb/device_open.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/error_msg.c -o libbb/error_msg.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/error_msg_and_die.c -o libbb/error_msg_and_die.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/find_mount_point.c -o libbb/find_mount_point.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/find_pid_by_name.c -o libbb/find_pid_by_name.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/find_root_device.c -o libbb/find_root_device.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/full_read.c -o libbb/full_read.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/full_write.c -o libbb/full_write.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/get_ar_headers.c -o libbb/get_ar_headers.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/get_console.c -o libbb/get_console.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/get_last_path_component.c -o libbb/get_last_path_component.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/get_line_from_file.c -o libbb/get_line_from_file.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/gz_open.c -o libbb/gz_open.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/human_readable.c -o libbb/human_readable.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/inode_hash.c -o libbb/inode_hash.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/isdirectory.c -o libbb/isdirectory.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/kernel_version.c -o libbb/kernel_version.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/loop.c -o libbb/loop.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/mode_string.c -o libbb/mode_string.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/module_syscalls.c -o libbb/module_syscalls.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/mtab.c -o libbb/mtab.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/mtab_file.c -o libbb/mtab_file.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/my_getgrnam.c -o libbb/my_getgrnam.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/my_getgrgid.c -o libbb/my_getgrgid.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/my_getpwnam.c -o libbb/my_getpwnam.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/my_getpwnamegid.c -o libbb/my_getpwnamegid.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/my_getpwuid.c -o libbb/my_getpwuid.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/parse_mode.c -o libbb/parse_mode.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/parse_number.c -o libbb/parse_number.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/perror_msg.c -o libbb/perror_msg.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/perror_msg_and_die.c -o libbb/perror_msg_and_die.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/print_file.c -o libbb/print_file.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/process_escape_sequence.c -o libbb/process_escape_sequence.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/recursive_action.c -o libbb/recursive_action.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/safe_read.c -o libbb/safe_read.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/safe_strncpy.c -o libbb/safe_strncpy.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/syscalls.c -o libbb/syscalls.o</tt>
+<br /><tt>libbb/syscalls.c:46: warning: #warning This kernel does not support
+the pivot_root syscall</tt>
+<br /><tt>libbb/syscalls.c:47: warning: #warning -> The pivot_root system
+call is being stubbed out...</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/syslog_msg_with_name.c -o libbb/syslog_msg_with_name.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/time_string.c -o libbb/time_string.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/trim.c -o libbb/trim.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/unzip.c -o libbb/unzip.o</tt>
+<br /><tt>libbb/unzip.c: In function `huft_build':</tt>
+<br /><tt>libbb/unzip.c:236: warning: implicit declaration of function `memset'</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/vdprintf.c -o libbb/vdprintf.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/verror_msg.c -o libbb/verror_msg.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/vperror_msg.c -o libbb/vperror_msg.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/wfopen.c -o libbb/wfopen.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/xfuncs.c -o libbb/xfuncs.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/xgetcwd.c -o libbb/xgetcwd.o</tt>
+<br /><tt>mkdir -p libbb</tt>
+<br /><tt>gcc -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-Ilibbb -c libbb/xregcomp.c -o libbb/xregcomp.o</tt>
+<br /><tt>ar -r libbb.a libbb/ask_confirmation.o libbb/check_wildcard_match.o
+libbb/chomp.o libbb/concat_path_file.o libbb/copy_file.o libbb/copy_file_chunk.o
+libbb/create_path.o libbb/daemon.o libbb/deb_extract.o libbb/device_open.o
+libbb/error_msg.o libbb/error_msg_and_die.o libbb/find_mount_point.o libbb/find_pid_by_name.o
+libbb/find_root_device.o libbb/full_read.o libbb/full_write.o libbb/get_ar_headers.o
+libbb/get_console.o libbb/get_last_path_component.o libbb/get_line_from_file.o
+libbb/gz_open.o libbb/human_readable.o libbb/inode_hash.o libbb/isdirectory.o
+libbb/kernel_version.o libbb/loop.o libbb/mode_string.o libbb/module_syscalls.o
+libbb/mtab.o libbb/mtab_file.o libbb/my_getgrnam.o libbb/my_getgrgid.o
+libbb/my_getpwnam.o libbb/my_getpwnamegid.o libbb/my_getpwuid.o libbb/parse_mode.o
+libbb/parse_number.o libbb/perror_msg.o libbb/perror_msg_and_die.o libbb/print_file.o
+libbb/process_escape_sequence.o libbb/recursive_action.o libbb/safe_read.o
+libbb/safe_strncpy.o libbb/syscalls.o libbb/syslog_msg_with_name.o libbb/time_string.o
+libbb/trim.o libbb/unzip.o libbb/vdprintf.o libbb/verror_msg.o libbb/vperror_msg.o
+libbb/wfopen.o libbb/xfuncs.o libbb/xgetcwd.o libbb/xregcomp.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c adjtimex.c -o adjtimex.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c basename.c -o basename.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c cat.c -o cat.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c chmod_chown_chgrp.c -o chmod_chown_chgrp.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c chroot.c -o chroot.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c chvt.c -o chvt.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c clear.c -o clear.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c cmdedit.c -o cmdedit.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c cmp.c -o cmp.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c cp_mv.c -o cp_mv.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c cut.c -o cut.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c date.c -o date.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c dc.c -o dc.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c dd.c -o dd.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c deallocvt.c -o deallocvt.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c df.c -o df.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c dirname.c -o dirname.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c dmesg.c -o dmesg.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c du.c -o du.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c dumpkmap.c -o dumpkmap.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c dutmp.c -o dutmp.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c echo.c -o echo.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c env.c -o env.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c expr.c -o expr.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c fbset.c -o fbset.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c fdflush.c -o fdflush.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c find.c -o find.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c free.c -o free.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c freeramdisk.c -o freeramdisk.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c fsck_minix.c -o fsck_minix.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c getopt.c -o getopt.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c grep.c -o grep.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c gunzip.c -o gunzip.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c gzip.c -o gzip.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c halt.c -o halt.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c head.c -o head.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c hostid.c -o hostid.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c hostname.c -o hostname.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c id.c -o id.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c ifconfig.c -o ifconfig.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c init.c -o init.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c insmod.c -o insmod.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c interface.c -o interface.o</tt>
+<br /><tt>interface.c:356: warning: declaration of `sin' shadows global declaration</tt>
+<br /><tt>interface.c: In function `INET_rresolve':</tt>
+<br /><tt>interface.c:358: warning: declaration of `sin' shadows global declaration</tt>
+<br /><tt>interface.c: In function `if_readconf':</tt>
+<br /><tt>interface.c:1032: warning: declaration of `skfd' shadows global
+declaration</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c kill.c -o kill.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c klogd.c -o klogd.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c length.c -o length.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c ln.c -o ln.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c loadacm.c -o loadacm.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c loadfont.c -o loadfont.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c loadkmap.c -o loadkmap.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c logger.c -o logger.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c logname.c -o logname.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c ls.c -o ls.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c lsmod.c -o lsmod.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c makedevs.c -o makedevs.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c md5sum.c -o md5sum.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c mkdir.c -o mkdir.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c mkfifo.c -o mkfifo.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c mkfs_minix.c -o mkfs_minix.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c mknod.c -o mknod.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c mkswap.c -o mkswap.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c mktemp.c -o mktemp.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c more.c -o more.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c mount.c -o mount.o</tt>
+<br /><tt>mount.c: In function `mount_main':</tt>
+<br /><tt>mount.c:391: warning: `f' might be used uninitialized in this function</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c mt.c -o mt.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c nc.c -o nc.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c nfsmount.c -o nfsmount.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c nslookup.c -o nslookup.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c ping.c -o ping.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c pivot_root.c -o pivot_root.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c poweroff.c -o poweroff.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c printf.c -o printf.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c ps.c -o ps.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c pwd.c -o pwd.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c rdate.c -o rdate.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c readlink.c -o readlink.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c reboot.c -o reboot.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c renice.c -o renice.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c reset.c -o reset.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c rm.c -o rm.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c rmdir.c -o rmdir.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c rmmod.c -o rmmod.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c route.c -o route.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c rpmunpack.c -o rpmunpack.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c sed.c -o sed.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c setkeycodes.c -o setkeycodes.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c sh.c -o sh.o</tt>
+<br /><tt>sh.c:247: warning: inline declaration ignored for function with
+`...'</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c sleep.c -o sleep.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c sort.c -o sort.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c stty.c -o stty.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c swaponoff.c -o swaponoff.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c sync.c -o sync.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c syslogd.c -o syslogd.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c tail.c -o tail.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c tee.c -o tee.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c telnet.c -o telnet.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c test.c -o test.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c tftp.c -o tftp.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c touch.c -o touch.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c tr.c -o tr.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c true_false.c -o true_false.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c tty.c -o tty.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c umount.c -o umount.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c uname.c -o uname.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c uniq.c -o uniq.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c update.c -o update.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c uptime.c -o uptime.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c usleep.c -o usleep.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c uudecode.c -o uudecode.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c uuencode.c -o uuencode.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c vi.c -o vi.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c watchdog.c -o watchdog.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c wc.c -o wc.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c which.c -o which.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c whoami.c -o whoami.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c xargs.c -o xargs.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c yes.c -o yes.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c busybox.c -o busybox.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c messages.c -o messages.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c usage.c -o usage.o</tt>
+<br /><tt>gcc -I- -Wall -Wshadow -O2 -fomit-frame-pointer -D_GNU_SOURCE&nbsp;
+-DBB_VER='"0.51"' -DBB_BT='"2001.04.18-12:11+0000"' -DUSE_SYSTEM_PWD_GRP&nbsp;
+-I.&nbsp; -c applets.c -o applets.o</tt>
+<br /><tt>gcc -s -Wl,-warn-common -o busybox adjtimex.o basename.o cat.o
+chmod_chown_chgrp.o chroot.o chvt.o clear.o cmdedit.o cmp.o cp_mv.o cut.o
+date.o dc.o dd.o deallocvt.o df.o dirname.o dmesg.o du.o dumpkmap.o dutmp.o
+echo.o env.o expr.o fbset.o fdflush.o find.o free.o freeramdisk.o fsck_minix.o
+getopt.o grep.o gunzip.o gzip.o halt.o head.o hostid.o hostname.o id.o
+ifconfig.o init.o insmod.o interface.o kill.o klogd.o length.o ln.o loadacm.o
+loadfont.o loadkmap.o logger.o logname.o ls.o lsmod.o makedevs.o md5sum.o
+mkdir.o mkfifo.o mkfs_minix.o mknod.o mkswap.o mktemp.o more.o mount.o
+mt.o nc.o nfsmount.o nslookup.o ping.o pivot_root.o poweroff.o printf.o
+ps.o pwd.o rdate.o readlink.o reboot.o renice.o reset.o rm.o rmdir.o rmmod.o
+route.o rpmunpack.o sed.o setkeycodes.o sh.o sleep.o sort.o stty.o swaponoff.o
+sync.o syslogd.o tail.o tee.o telnet.o test.o tftp.o touch.o tr.o true_false.o
+tty.o umount.o uname.o uniq.o update.o uptime.o usleep.o uudecode.o uuencode.o
+vi.o watchdog.o wc.o which.o whoami.o xargs.o yes.o&nbsp; busybox.o messages.o
+usage.o applets.o&nbsp; libbb.a&nbsp;</tt>
+<br /><tt>strip --remove-section=.note --remove-section=.comment busybox</tt>
+<br /><tt>/bin/sh busybox.mkll Config.h applets.h >busybox.links</tt>
+<br /><tt>/bin/sh install.sh /home/gratiend/src/recovery/mkcdrec/stage</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/cat -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/chgrp -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/chmod -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/chown -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/cp -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/date -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/dd -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/df -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/dmesg -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/dumpkmap ->
+busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/echo -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/false -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/fdflush ->
+busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/getopt ->
+busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/grep -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/gunzip ->
+busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/gzip -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/hostname ->
+busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/kill -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/ln -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/ls -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/mkdir -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/mknod -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/mktemp ->
+busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/more -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/mount -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/mt -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/mv -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/ping -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/ps -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/pwd -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/rm -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/rmdir -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/sed -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/sh -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/sleep -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/stty -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/sync -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/touch -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/true -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/umount ->
+busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/uname -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/usleep ->
+busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/vi -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/zcat -> busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/linuxrc -> bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/adjtimex
+-> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/freeramdisk
+-> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/fsck.minix
+-> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/halt -> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/ifconfig
+-> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/init -> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/insmod ->
+../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/klogd ->
+../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/loadkmap
+-> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/lsmod ->
+../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/makedevs
+-> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/mkfs.minix
+-> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/mkswap ->
+../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/pivot_root
+-> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/poweroff
+-> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/reboot ->
+../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/rmmod ->
+../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/swapoff ->
+../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/swapon ->
+../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/syslogd ->
+../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/update ->
+../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/watchdog
+-> ../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/[ -> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/basename
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/chvt ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/clear
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/cmp ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/cut ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/dc ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/deallocvt
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/dirname
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/du ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/env ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/expr ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/find ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/free ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/head ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/hostid
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/id ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/killall
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/length
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/loadacm
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/loadfont
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/logger
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/logname
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/md5sum
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/mkfifo
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/nc ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/nslookup
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/printf
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/rdate
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/readlink
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/renice
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/reset
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/route
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/rpmunpack
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/setkeycodes
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/sort ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/tail ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/tee ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/telnet
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/test ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/tftp ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/tr ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/tty ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/uniq ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/uptime
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/uudecode
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/uuencode
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/wc ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/which
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/whoami
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/xargs
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/yes ->
+../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/sbin/chroot
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/sbin/dutmp
+-> ../../bin/busybox</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/sbin/fbset
+-> ../../bin/busybox</tt>
+<br /><tt>make[1]: Leaving directory `/home/gratiend/src/recovery/mkcdrec/busybox-0.51'</tt>
+<br /><tt>*** Tinylogin compilation/installation started ***</tt>
+<br /><tt>make[1]: Entering directory `/home/gratiend/src/recovery/mkcdrec/tinylogin-0.80'</tt>
+<br /><tt>make -eC pwd_grp</tt>
+<br /><tt>make[2]: Entering directory `/home/gratiend/src/recovery/mkcdrec/tinylogin-0.80/pwd_grp'</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c __tlg_getpwent.c
+-o __tlg_getpwent.o</tt>
+<br /><tt>strip -x -R .note -R .comment __tlg_getpwent.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c pwent.c
+-o pwent.o</tt>
+<br /><tt>strip -x -R .note -R .comment pwent.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c getpwnam.c
+-o getpwnam.o</tt>
+<br /><tt>strip -x -R .note -R .comment getpwnam.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c getpwuid.c
+-o getpwuid.o</tt>
+<br /><tt>strip -x -R .note -R .comment getpwuid.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c putpwent.c
+-o putpwent.o</tt>
+<br /><tt>strip -x -R .note -R .comment putpwent.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c getpw.c
+-o getpw.o</tt>
+<br /><tt>strip -x -R .note -R .comment getpw.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c fgetpwent.c
+-o fgetpwent.o</tt>
+<br /><tt>strip -x -R .note -R .comment fgetpwent.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c __tlg_getgrent.c
+-o __tlg_getgrent.o</tt>
+<br /><tt>strip -x -R .note -R .comment __tlg_getgrent.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c grent.c
+-o grent.o</tt>
+<br /><tt>strip -x -R .note -R .comment grent.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c getgrnam.c
+-o getgrnam.o</tt>
+<br /><tt>strip -x -R .note -R .comment getgrnam.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c getgrgid.c
+-o getgrgid.o</tt>
+<br /><tt>strip -x -R .note -R .comment getgrgid.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c fgetgrent.c
+-o fgetgrent.o</tt>
+<br /><tt>strip -x -R .note -R .comment fgetgrent.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c initgroups.c
+-o initgroups.o</tt>
+<br /><tt>strip -x -R .note -R .comment initgroups.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D__LIBC__&nbsp; -c setgroups.c
+-o setgroups.o</tt>
+<br /><tt>strip -x -R .note -R .comment setgroups.o</tt>
+<br /><tt>ar rv libpwd.a __tlg_getpwent.o pwent.o getpwnam.o getpwuid.o putpwent.o
+getpw.o fgetpwent.o __tlg_getgrent.o grent.o getgrnam.o getgrgid.o fgetgrent.o
+initgroups.o setgroups.o</tt>
+<br /><tt>a - __tlg_getpwent.o</tt>
+<br /><tt>a - pwent.o</tt>
+<br /><tt>a - getpwnam.o</tt>
+<br /><tt>a - getpwuid.o</tt>
+<br /><tt>a - putpwent.o</tt>
+<br /><tt>a - getpw.o</tt>
+<br /><tt>a - fgetpwent.o</tt>
+<br /><tt>a - __tlg_getgrent.o</tt>
+<br /><tt>a - grent.o</tt>
+<br /><tt>a - getgrnam.o</tt>
+<br /><tt>a - getgrgid.o</tt>
+<br /><tt>a - fgetgrent.o</tt>
+<br /><tt>a - initgroups.o</tt>
+<br /><tt>a - setgroups.o</tt>
+<br /><tt>make[2]: Leaving directory `/home/gratiend/src/recovery/mkcdrec/tinylogin-0.80/pwd_grp'</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c tinylogin.c -o tinylogin.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c env.c -o env.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c obscure.c -o obscure.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c pwd2spwd.c -o pwd2spwd.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c setupenv.c -o setupenv.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c shell.c -o shell.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c utmp.c -o utmp.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c utility.c -o utility.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c usage.c -o usage.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c addgroup.c -o addgroup.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c adduser.c -o adduser.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c deluser.c -o deluser.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c getty.c -o getty.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c login.c -o login.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c passwd.c -o passwd.o</tt>
+<br /><tt>gcc -Wall -O2 -fomit-frame-pointer -D_GNU_SOURCE -DTLG_VER='"0.80"'
+-DTLG_BT='"2001.04.18-12:12+0000"'&nbsp;&nbsp; -c shadow.c -o shadow.o</tt>
+<br /><tt>gcc -s -Wl,-warn-common&nbsp; -o tinylogin tinylogin.o env.o obscure.o
+pwd2spwd.o setupenv.o shell.o utmp.o utility.o usage.o addgroup.o adduser.o
+deluser.o getty.o login.o passwd.o shadow.o -lcrypt pwd_grp/libpwd.a</tt>
+<br /><tt>strip --remove-section=.note --remove-section=.comment tinylogin</tt>
+<br /><tt>./tinylogin.mkll | sort >tinylogin.links</tt>
+<br /><tt>rm -f docs/TinyLogin.html</tt>
+<br /><tt>ln -s tinylogin.lineo.com/TinyLogin.html docs/TinyLogin.html</tt>
+<br /><tt>make[1]: Leaving directory `/home/gratiend/src/recovery/mkcdrec/tinylogin-0.80'</tt>
+<br /><tt>make[1]: Entering directory `/home/gratiend/src/recovery/mkcdrec/tinylogin-0.80'</tt>
+<br /><tt>./install.sh /home/gratiend/src/recovery/mkcdrec/stage</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/addgroup ->
+tinylogin</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/adduser ->
+tinylogin</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/delgroup ->
+tinylogin</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/deluser ->
+tinylogin</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/login -> tinylogin</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/bin/su -> tinylogin</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/sbin/getty ->
+../bin/tinylogin</tt>
+<br /><tt>&nbsp; /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/passwd
+-> ../../bin/tinylogin</tt>
+<br /><tt>make[1]: Leaving directory `/home/gratiend/src/recovery/mkcdrec/tinylogin-0.80'</tt>
+<br /><tt>Copy loadable modules to rootfs...</tt>
+<br /><tt>mkdir -p /home/gratiend/src/recovery/mkcdrec/stage/lib/modules/2.2.18pre16/</tt>
+<br /><tt>mkdir -p /home/gratiend/src/recovery/mkcdrec/stage/lib/modules/2.2.18pre16/block</tt>
+<br /><tt>mkdir -p /home/gratiend/src/recovery/mkcdrec/stage/lib/modules/2.2.18pre16/net</tt>
+<br /><tt>mkdir -p /home/gratiend/src/recovery/mkcdrec/stage/lib/modules/2.2.18pre16/ipv4</tt>
+<br /><tt>mkdir -p /home/gratiend/src/recovery/mkcdrec/stage/lib/modules/2.2.18pre16/scsi</tt>
+<br /><tt>mkdir -p /home/gratiend/src/recovery/mkcdrec/stage/lib/modules/2.2.18pre16/fs</tt>
+<br /><tt>mkdir -p /home/gratiend/src/recovery/mkcdrec/stage/lib/modules/2.2.18pre16/misc</tt>
+<br /><tt>mkdir -p /home/gratiend/src/recovery/mkcdrec/stage/lib/modules/2.2.18pre16/pcmcia</tt>
+<br /><tt>Copying loop to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/block/loop.o</tt>
+<br /><tt>Copying maestro to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/misc/maestro.o</tt>
+<br /><tt>Copying soundcore to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/misc/soundcore.o</tt>
+<br /><tt>Copying xirc2ps_cs to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/pcmcia/xirc2ps_cs.o</tt>
+<br /><tt>Copying serial_cs to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/pcmcia/serial_cs.o</tt>
+<br /><tt>Copying pcnet_cs to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/pcmcia/pcnet_cs.o</tt>
+<br /><tt>Copying 8390 to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/net/8390.o</tt>
+<br /><tt>Copying ds to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/pcmcia/ds.o</tt>
+<br /><tt>Copying i82365 to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/pcmcia/i82365.o</tt>
+<br /><tt>Copying pcmcia_core to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/pcmcia/pcmcia_core.o</tt>
+<br /><tt>Copy module loop to&nbsp; /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/block/loop.o</tt>
+<br /><tt>Copying aha152x_cs to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/pcmcia/aha152x_cs.o</tt>
+<br /><tt>Copying apa1480_cb to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/pcmcia/apa1480_cb.o</tt>
+<br /><tt>Copying ide-scsi to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/scsi/ide-scsi.o</tt>
+<br /><tt>Copying scsi_mod to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/scsi/scsi_mod.o</tt>
+<br /><tt>Copying sd_mod to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/scsi/sd_mod.o</tt>
+<br /><tt>Copying sr_mod to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/scsi/sr_mod.o</tt>
+<br /><tt>Copying st to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/scsi/st.o</tt>
+<br /><tt>Copying nls_cp437 to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/fs/nls_cp437.o</tt>
+<br /><tt>Copying 3c59x to /home/gratiend/src/recovery/mkcdrec/stage//lib/modules/2.2.18pre16/net/3c59x.o</tt>
+<br /><tt>cp /lib/modules/2.2.18pre16/modules.dep /home/gratiend/src/recovery/mkcdrec/stage/lib/modules/2.2.18pre16/</tt>
+<br /><tt>Copy /dev/* to rootfs</tt>
+<br /><tt>Start filling up rootfs/etc directory...</tt>
+<br /><tt>cp HOSTNAME /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp conf.modules /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp group /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp host.conf /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp hosts /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp issue /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp localtime /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp login.defs /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp networks /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp protocols /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp psdevtab /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp resolv.conf /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp rpc /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp services /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>cp securetty /home/gratiend/src/recovery/mkcdrec/stage/etc</tt>
+<br /><tt>etc/recovery directory needed for disaster recovery</tt>
+<br /><tt>*** Copy /etc/pcmcia/* files to ROOTFS/etc ***</tt>
+<br /><tt>cp /etc/pcmcia /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia</tt>
+<br /><tt>cp /etc/pcmcia/cdrom /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cdrom</tt>
+<br /><tt>cp /etc/pcmcia/cdrom.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cdrom.opts</tt>
+<br /><tt>cp /etc/pcmcia/cis /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis</tt>
+<br /><tt>cp /etc/pcmcia/cis/3CCFEM556.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/3CCFEM556.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/3CXEM556.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/3CXEM556.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/COMpad.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/COMpad.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/DP83903.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/DP83903.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/E-CARD.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/E-CARD.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/PCMLM28.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/PCMLM28.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/PE-200.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/PE-200.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/PE520.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/PE520.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/RS-COM-2P.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/RS-COM-2P.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/LA-PCM.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/LA-PCM.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/NE2K.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/NE2K.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/MT5634ZLX.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/MT5634ZLX.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/COMpad2.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/COMpad2.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/COMpad4.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/COMpad4.dat</tt>
+<br /><tt>cp /etc/pcmcia/cis/tamarack.dat /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/cis/tamarack.dat</tt>
+<br /><tt>cp /etc/pcmcia/config /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/config</tt>
+<br /><tt>cp /etc/pcmcia/config.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/config.opts</tt>
+<br /><tt>cp /etc/pcmcia/ftl /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/ftl</tt>
+<br /><tt>cp /etc/pcmcia/ftl.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/ftl.opts</tt>
+<br /><tt>cp /etc/pcmcia/ide /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/ide</tt>
+<br /><tt>cp /etc/pcmcia/ide.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/ide.opts</tt>
+<br /><tt>cp /etc/pcmcia/iscc /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/iscc</tt>
+<br /><tt>cp /etc/pcmcia/iscc.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/iscc.opts</tt>
+<br /><tt>cp /etc/pcmcia/isdn /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/isdn</tt>
+<br /><tt>cp /etc/pcmcia/isdn.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/isdn.opts</tt>
+<br /><tt>cp /etc/pcmcia/memory /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/memory</tt>
+<br /><tt>cp /etc/pcmcia/memory.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/memory.opts</tt>
+<br /><tt>cp /etc/pcmcia/network /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/network</tt>
+<br /><tt>cp /etc/pcmcia/network.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/network.opts</tt>
+<br /><tt>cp /etc/pcmcia/parport /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/parport</tt>
+<br /><tt>cp /etc/pcmcia/parport.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/parport.opts</tt>
+<br /><tt>cp /etc/pcmcia/scsi /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/scsi</tt>
+<br /><tt>cp /etc/pcmcia/scsi.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/scsi.opts</tt>
+<br /><tt>cp /etc/pcmcia/serial /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/serial</tt>
+<br /><tt>cp /etc/pcmcia/serial.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/serial.opts</tt>
+<br /><tt>cp /etc/pcmcia/shared /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/shared</tt>
+<br /><tt>cp /etc/pcmcia/teles /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/teles</tt>
+<br /><tt>cp /etc/pcmcia/teles.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/teles.opts</tt>
+<br /><tt>cp /etc/pcmcia/config.save /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/config.save</tt>
+<br /><tt>cp /etc/pcmcia/config.opts.save /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/config.opts.save</tt>
+<br /><tt>cp /etc/pcmcia/wireless /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/wireless</tt>
+<br /><tt>cp /etc/pcmcia/wireless.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/wireless.opts</tt>
+<br /><tt>cp /etc/pcmcia/ieee1394.opts /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/ieee1394.opts</tt>
+<br /><tt>cp /etc/pcmcia/ieee1394 /home/gratiend/src/recovery/mkcdrec/stage/etc/pcmcia/ieee1394</tt>
+<br /><tt>Compile/install sfdisk</tt>
+<br /><tt>make[1]: Entering directory `/home/gratiend/src/recovery/mkcdrec/sfdisk-3.07'</tt>
+<br /><tt>cc -c -Wall -Wparentheses -Wstrict-prototypes&nbsp; sfdisk.c</tt>
+<br /><tt>cc&nbsp;&nbsp; sfdisk.o&nbsp;&nbsp; -o sfdisk</tt>
+<br /><tt>make[1]: Leaving directory `/home/gratiend/src/recovery/mkcdrec/sfdisk-3.07'</tt>
+<br /><tt>Installing sfdisk into /home/gratiend/src/recovery/mkcdrec/bin
+too!!!</tt>
+<br /><tt>objcopy -S sfdisk /home/gratiend/src/recovery/mkcdrec/stage/sbin/sfdisk</tt>
+<br /><tt>Compile/install cutstream</tt>
+<br /><tt>make[1]: Entering directory `/home/gratiend/src/recovery/mkcdrec/cutstream-0.3'</tt>
+<br /><tt>gcc -o cutstream cutstream.c</tt>
+<br /><tt>make[1]: Leaving directory `/home/gratiend/src/recovery/mkcdrec/cutstream-0.3'</tt>
+<br /><tt>Compile/install pastestream</tt>
+<br /><tt>make[1]: Entering directory `/home/gratiend/src/recovery/mkcdrec/pastestream-0.3'</tt>
+<br /><tt>gcc -o pastestream pastestream.c</tt>
+<br /><tt>make[1]: Leaving directory `/home/gratiend/src/recovery/mkcdrec/pastestream-0.3'</tt>
+<br /><tt>objcopy -S pastestream /home/gratiend/src/recovery/mkcdrec/stage/sbin/pastestream</tt>
+<br /><tt>Compile/install cksfv</tt>
+<br /><tt>make[1]: Entering directory `/home/gratiend/src/recovery/mkcdrec/cksfv-1.2'</tt>
+<br /><tt>cd src &amp;&amp; make VERSION="1.2"</tt>
+<br /><tt>make[2]: Entering directory `/home/gratiend/src/recovery/mkcdrec/cksfv-1.2/src'</tt>
+<br /><tt>gcc -DVERSION=\"1.2\" -Wall -O2 -g -o cksfv cksfv.c print.c crc32.c
+readsfv.c newsfv.c</tt>
+<br /><tt>make[2]: Leaving directory `/home/gratiend/src/recovery/mkcdrec/cksfv-1.2/src'</tt>
+<br /><tt>make[1]: Leaving directory `/home/gratiend/src/recovery/mkcdrec/cksfv-1.2'</tt>
+<br /><tt>objcopy -S /home/gratiend/src/recovery/mkcdrec/cksfv-1.2/src/cksfv
+/home/gratiend/src/recovery/mkcdrec/stage/usr/bin/cksfv</tt>
+<br /><tt>Copy binaries to rootfs</tt>
+<br /><tt>WARNING: MAKEDEV was not found.&nbsp; Skipped.</tt>
+<br /><tt>objcopy -S /sbin/badblocks ./sbin/badblocks</tt>
+<br /><tt>objcopy -S /usr/bin/bc ./usr/bin/bc</tt>
+<br /><tt>objcopy -S /sbin/cardctl ./sbin/cardctl</tt>
+<br /><tt>objcopy -S /sbin/cardmgr ./sbin/cardmgr</tt>
+<br /><tt>objcopy -S /usr/bin/chattr ./usr/bin/chattr</tt>
+<br /><tt>objcopy -S /sbin/debugfs ./sbin/debugfs</tt>
+<br /><tt>objcopy -S /sbin/depmod ./sbin/depmod</tt>
+<br /><tt>WARNING: devfsd was not found.&nbsp; Skipped.</tt>
+<br /><tt>objcopy -S /sbin/dosfsck ./sbin/dosfsck</tt>
+<br /><tt>objcopy -S /sbin/dumpe2fs ./sbin/dumpe2fs</tt>
+<br /><tt>objcopy -S /sbin/e2fsck ./sbin/e2fsck</tt>
+<br /><tt>objcopy -S /sbin/e2label ./sbin/e2label</tt>
+<br /><tt>objcopy -S /sbin/fdisk ./sbin/fdisk</tt>
+<br /><tt>objcopy -S /sbin/fsck ./sbin/fsck</tt>
+<br /><tt>WARNING: skip /sbin/ifconfig - is a busybox link</tt>
+<br /><tt>WARNING: skip /sbin/insmod - is a busybox link</tt>
+<br /><tt>objcopy -S /sbin/hwclock ./sbin/hwclock</tt>
+<br /><tt>objcopy -S /sbin/kerneld ./sbin/kerneld</tt>
+<br /><tt>WARNING: skip /usr/bin/killall - is a busybox link</tt>
+<br /><tt>objcopy -S /sbin/killall5 ./sbin/killall5</tt>
+<br /><tt>objcopy -S /sbin/killproc ./sbin/killproc</tt>
+<br /><tt>objcopy -S /sbin/lilo ./sbin/lilo</tt>
+<br /><tt>objcopy -S /sbin/losetup ./sbin/losetup</tt>
+<br /><tt>objcopy -S /usr/bin/lsattr ./usr/bin/lsattr</tt>
+<br /><tt>objcopy -S /sbin/mdadd ./sbin/mdadd</tt>
+<br /><tt>objcopy -S /sbin/mdcreate ./sbin/mdcreate</tt>
+<br /><tt>objcopy -S /sbin/mdrun ./sbin/mdrun</tt>
+<br /><tt>objcopy -S /sbin/mdstop ./sbin/mdstop</tt>
+<br /><tt>objcopy -S /sbin/mkdosfs ./sbin/mkdosfs</tt>
+<br /><tt>objcopy -S /sbin/mke2fs ./sbin/mke2fs</tt>
+<br /><tt>objcopy -S /sbin/mkfs ./sbin/mkfs</tt>
+<br /><tt>objcopy -S /usr/sbin/mklost+found ./usr/sbin/mklost+found</tt>
+<br /><tt>objcopy -S /sbin/mkraid ./sbin/mkraid</tt>
+<br /><tt>objcopy -S /sbin/mkreiserfs ./sbin/mkreiserfs</tt>
+<br /><tt>objcopy -S /sbin/modprobe ./sbin/modprobe</tt>
+<br /><tt>objcopy -S /sbin/portmap ./sbin/portmap</tt>
+<br /><tt>objcopy -S /sbin/reiserfsck ./sbin/reiserfsck</tt>
+<br /><tt>objcopy -S /sbin/resize2fs ./sbin/resize2fs</tt>
+<br /><tt>objcopy -S /sbin/resize_reiserfs ./sbin/resize_reiserfs</tt>
+<br /><tt>objcopy -S /sbin/route ./sbin/route</tt>
+<br /><tt>objcopy -S /usr/bin/rpcinfo ./usr/bin/rpcinfo</tt>
+<br /><tt>objcopy -S /usr/sbin/rpc.ugidd ./usr/sbin/rpc.ugidd</tt>
+<br /><tt>objcopy -S /usr/sbin/showmount ./usr/sbin/showmount</tt>
+<br /><tt>objcopy -S /sbin/setserial ./sbin/setserial</tt>
+<br /><tt>WARNING: test_extent was not found.&nbsp; Skipped.</tt>
+<br /><tt>objcopy -S /sbin/tune2fs ./sbin/tune2fs</tt>
+<br /><tt>WARNING: uuidgen was not found.&nbsp; Skipped.</tt>
+<br /><tt>objcopy -S /bin/ash ./bin/ash</tt>
+<br /><tt>objcopy -S /bin/awk ./bin/awk</tt>
+<br /><tt>objcopy -S /bin/basename ./bin/basename</tt>
+<br /><tt>objcopy -S /bin/compress ./bin/compress</tt>
+<br /><tt>WARNING: skip /bin/dmesg - is a busybox link</tt>
+<br /><tt>objcopy -S /bin/fuser ./bin/fuser</tt>
+<br /><tt>objcopy -S /bin/tar ./bin/tar</tt>
+<br /><tt>objcopy -S /bin/netstat ./bin/netstat</tt>
+<br /><tt>WARNING: skip /bin/ping - is a busybox link</tt>
+<br /><tt>WARNING: skip /bin/stty - is a busybox link</tt>
+<br /><tt>WARNING: skip /bin/sync - is a busybox link</tt>
+<br /><tt>objcopy -S /usr/bin/rsh ./usr/bin/rsh</tt>
+<br /><tt>objcopy -S /usr/bin/rlogin ./usr/bin/rlogin</tt>
+<br /><tt>objcopy -S /usr/bin/ssh ./usr/bin/ssh</tt>
+<br /><tt>objcopy -S /usr/sbin/sshd ./usr/sbin/sshd</tt>
+<br /><tt>objcopy -S /usr/bin/scp ./usr/bin/scp</tt>
+<br /><tt>objcopy -S /usr/bin/ssh-add ./usr/bin/ssh-add</tt>
+<br /><tt>objcopy -S /usr/bin/ssh-keygen ./usr/bin/ssh-keygen</tt>
+<br /><tt>objcopy -S /usr/bin/ssh-agent ./usr/bin/ssh-agent</tt>
+<br /><tt>WARNING: skip /bin/uname - is a busybox link</tt>
+<br /><tt>objcopy -S /usr/bin/vi ./usr/bin/vi</tt>
+<br /><tt>objcopy -S /usr/bin/bzip2 ./usr/bin/bzip2</tt>
+<br /><tt>objcopy -S /usr/bin/diff ./usr/bin/diff</tt>
+<br /><tt>objcopy -S /usr/bin/elvis ./usr/bin/elvis</tt>
+<br /><tt>WARNING: elvis-tiny was not found.&nbsp; Skipped.</tt>
+<br /><tt>objcopy -S /usr/bin/file ./usr/bin/file</tt>
+<br /><tt>objcopy -S /usr/bin/ftp ./usr/bin/ftp</tt>
+<br /><tt>objcopy -S /usr/bin/loadkeys ./usr/bin/loadkeys</tt>
+<br /><tt>WARNING: skip /usr/bin/nslookup - is a busybox link</tt>
+<br /><tt>WARNING: skip /usr/bin/telnet - is a busybox link</tt>
+<br /><tt>objcopy -S /bin/bash ./bin/bash</tt>
+<br /><tt>Copy some basic terminfo's to rootfs</tt>
+<br /><tt>Copying the libraries we need...</tt>
+<br /><tt>objcopy --strip-debug /lib/ld-linux.so.2 /home/gratiend/src/recovery/mkcdrec/stage/lib/ld-linux.so.2</tt>
+<br /><tt>objcopy --strip-debug /lib/libc.so.6 /home/gratiend/src/recovery/mkcdrec/stage/lib/libc.so.6</tt>
+<br /><tt>objcopy --strip-debug /lib/libcrypt.so.1 /home/gratiend/src/recovery/mkcdrec/stage/lib/libcrypt.so.1</tt>
+<br /><tt>objcopy --strip-debug /lib/libdl.so.2 /home/gratiend/src/recovery/mkcdrec/stage/lib/libdl.so.2</tt>
+<br /><tt>objcopy --strip-debug /lib/libm.so.6 /home/gratiend/src/recovery/mkcdrec/stage/lib/libm.so.6</tt>
+<br /><tt>objcopy --strip-debug /lib/libncurses.so.4 /home/gratiend/src/recovery/mkcdrec/stage/lib/libncurses.so.4</tt>
+<br /><tt>objcopy --strip-debug /lib/libnsl.so.1 /home/gratiend/src/recovery/mkcdrec/stage/lib/libnsl.so.1</tt>
+<br /><tt>objcopy --strip-debug /lib/libpam.so.0 /home/gratiend/src/recovery/mkcdrec/stage/lib/libpam.so.0</tt>
+<br /><tt>objcopy --strip-debug /usr/lib/libtermcap.so.2 /home/gratiend/src/recovery/mkcdrec/stage/lib/libtermcap.so.2</tt>
+<br /><tt>objcopy --strip-debug /lib/libutil.so.1 /home/gratiend/src/recovery/mkcdrec/stage/lib/libutil.so.1</tt>
+<br /><tt>objcopy --strip-debug /lib/security/pam_cracklib.so /home/gratiend/src/recovery/mkcdrec/stage/lib/security/pam_cracklib.so</tt>
+<br /><tt>objcopy --strip-debug /lib/security/pam_permit.so /home/gratiend/src/recovery/mkcdrec/stage/lib/security/pam_permit.so</tt>
+<br /><tt>objcopy --strip-debug /lib/security/pam_pwdb.so /home/gratiend/src/recovery/mkcdrec/stage/lib/security/pam_pwdb.so</tt>
+<br /><tt>objcopy --strip-debug /lib/security/pam_deny.so /home/gratiend/src/recovery/mkcdrec/stage/lib/security/pam_deny.so</tt>
+<br /><tt>objcopy --strip-debug /lib/security/pam_warn.so /home/gratiend/src/recovery/mkcdrec/stage/lib/security/pam_warn.so</tt>
+<br /><tt>objcopy --strip-debug /usr/lib/libcrack.so.2 /home/gratiend/src/recovery/mkcdrec/stage/usr/lib/libcrack.so.2</tt>
+<tt>++++++++++++++ ldconfig +++++++++++++</tt>
+<br /><tt>/sbin/ldconfig: version 1.9.9</tt>
+<br /><tt>/usr/X11R6/lib:</tt>
+<br /><tt>/usr/lib:</tt>
+<br /><tt>&nbsp;libcrack.so.2 => libcrack.so.2</tt>
+<br /><tt>/lib:</tt>
+<br /><tt>&nbsp;libutil.so.1 => libutil.so.1</tt>
+<br /><tt>&nbsp;libtermcap.so.2 => libtermcap.so.2</tt>
+<br /><tt>&nbsp;libpam.so.0 => libpam.so.0</tt>
+<br /><tt>&nbsp;libnsl.so.1 => libnsl.so.1</tt>
+<br /><tt>&nbsp;libncurses.so.4 => libncurses.so.4</tt>
+<br /><tt>&nbsp;libm.so.6 => libm.so.6</tt>
+<br /><tt>&nbsp;libdl.so.2 => libdl.so.2</tt>
+<br /><tt>&nbsp;libcrypt.so.1 => libcrypt.so.1</tt>
+<br /><tt>&nbsp;libc.so.6 => libc.so.6</tt>
+<br /><tt>&nbsp;ld-linux.so.2 => ld-linux.so.2</tt>
+<br /><tt>/usr/lib:</tt>
+<br /><tt>&nbsp;libcrack.so.2 => libcrack.so.2</tt>
+<br /><tt>/lib:</tt>
+<br /><tt>&nbsp;libutil.so.1 => libutil.so.1</tt>
+<br /><tt>&nbsp;libtermcap.so.2 => libtermcap.so.2</tt>
+<br /><tt>&nbsp;libpam.so.0 => libpam.so.0</tt>
+<br /><tt>&nbsp;libnsl.so.1 => libnsl.so.1</tt>
+<br /><tt>&nbsp;libncurses.so.4 => libncurses.so.4</tt>
+<br /><tt>&nbsp;libm.so.6 => libm.so.6</tt>
+<br /><tt>&nbsp;libdl.so.2 => libdl.so.2</tt>
+<br /><tt>&nbsp;libcrypt.so.1 => libcrypt.so.1</tt>
+<br /><tt>&nbsp;libc.so.6 => libc.so.6</tt>
+<br /><tt>&nbsp;ld-linux.so.2 => ld-linux.so.2</tt>
+<br /><tt>ln -sf bash sh</tt>
+<br /><tt>ln -sf e2fsck fsck.ext2</tt>
+<br /><tt>ln -sf mke2fs mkfs.ext2</tt>
+<br /><tt>ln -sf mke2fs mkfs.ext3</tt>
+<br /><tt>ln -sf mkdosfs mkfs.msdos</tt>
+<br /><tt>ln -sf mkreiserfs mkfs.reiserfs</tt>
+<br /><tt>ln -sf compress uncompress</tt>
+<br /><tt>ln -sf bzip2 bunzip2</tt>
+<br /><tt>ln -sf elvis vi</tt>
+<br /><tt>ln -sf ssh ssh1</tt>
+<br /><tt>ln -sf ssh ssh2</tt>
+<br /><tt>ln -sf /cdrom/utilities/gpart gpart</tt>
+<br /><tt>ln -sf /cdrom/utilities/memtest memtest</tt>
+<br /><tt>ln -sf /cdrom/utilities/parted parted</tt>
+<br /><tt>ln -sf /cdrom/utilities/partimage partimage</tt>
+<br /><tt>ln -sf /cdrom/utilities/recover recover</tt>
+<br /><tt>ln -sf libncurses.so.4 libncurses.so.4.2</tt>
+<br /><tt>ln -sf /initrd/lib/libc.so.6 libc.so.6</tt>
+<br /><tt>ln -sf /initrd/lib/ld-linux.so.2 ld-linux.so.2</tt>
+<br /><tt>ln -sf /initrd/lib/libnss_files.so.1 libnss_files.so.1</tt>
+<br /><tt>ln -sf /initrd/lib/libnss_dns.so.1 libnss_dns.so.1</tt>
+<br /><tt>ln -sf libnss_files.so.1 libnss_files.so.2</tt>
+<br /><tt>ln -sf libnss_dns.so.1 libnss_dns.so.2</tt>
+<br /><tt>ln -sf /initrd/lib/libbz2.so libbz2.so.0</tt>
+<br /><tt>ln -sf /initrd/lib/libbz2.so libbz2.so.1</tt>
+<br /><tt>ln -sf /initrd/etc/services services</tt>
+<br /><tt>** Saving swap info to rootfs/etc/recovery **</tt>
+<br /><tt>No swap space in use.</tt>
+<br /><tt>** Saving our partition layout to roots/etc/recovery **</tt>
+<br /><tt>cp /etc/sshd_config /home/gratiend/src/recovery/mkcdrec/stage/etc/sshd_config</tt>
+<br /><tt>The CD-ROM made will primarely be a RESCUE CD!</tt>
+<br /><tt>cp /home/gratiend/src/recovery/mkcdrec/scripts/start-restore.sh
+/home/gratiend/src/recovery/mkcdrec/stage/etc/recovery</tt>
+<br /><tt>cp /home/gratiend/src/recovery/mkcdrec/scripts/clone-dsk.sh /home/gratiend/src/recovery/mkcdrec/stage/etc/recovery</tt>
+<br /><tt>cp /home/gratiend/src/recovery/mkcdrec/scripts/restore_common.sh
+/home/gratiend/src/recovery/mkcdrec/stage/etc/recovery</tt>
+<br /><tt>cp /home/gratiend/src/recovery/mkcdrec/scripts/ask.for.cd.sh /home/gratiend/src/recovery/mkcdrec/stage/etc/recovery</tt>
+<br /><tt>cp /home/gratiend/src/recovery/mkcdrec/usr/bin/man /home/gratiend/src/recovery/mkcdrec/stage/usr/bin/man</tt>
+<br /><tt>The base ramdisk has the following size (uncompressed):</tt>
+<br /><tt>Filesystem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024-blocks&nbsp;
+Used Available Capacity Mounted on</tt>
+<br /><tt>/home/gratiend/src/recovery/mkcdrec/rd-base.img&nbsp;&nbsp; 14327&nbsp;&nbsp;&nbsp;
+6323&nbsp;&nbsp;&nbsp;&nbsp; 8004&nbsp;&nbsp;&nbsp;&nbsp; 44%&nbsp;&nbsp;
+/home/gratiend/src/recovery/mkcdrec/stage</tt>
+<br /><tt>Compressing the complete filesystem 'rd-base.img'</tt>
+<br /><tt>-------------&lt; Leaving rd-base.sh >------------</tt>
+<br /><tt>------------&lt; Entering initrd.sh >-----------</tt>
+<br /><tt>Creating an empty ext2 filesystem for the init ramdisk</tt>
+<br /><tt>Populating the 'initrd' filesystem</tt>
+<br /><tt>objcopy -S killall /home/gratiend/src/recovery/mkcdrec/stage/bin/killall</tt>
+<br /><tt>objcopy -S syslogd /home/gratiend/src/recovery/mkcdrec/stage/bin/syslogd</tt>
+<br /><tt>objcopy -S klogd /home/gratiend/src/recovery/mkcdrec/stage/bin/klogd</tt>
+<br /><tt>objcopy -S ls /home/gratiend/src/recovery/mkcdrec/stage/bin/ls</tt>
+<br /><tt>objcopy -S mount /home/gratiend/src/recovery/mkcdrec/stage/bin/mount</tt>
+<br /><tt>objcopy -S grep /home/gratiend/src/recovery/mkcdrec/stage/bin/grep</tt>
+<br /><tt>objcopy -S ash /home/gratiend/src/recovery/mkcdrec/stage/bin/ash</tt>
+<br /><tt>objcopy -S bzip2 /home/gratiend/src/recovery/mkcdrec/stage/bin/bzip2</tt>
+<br /><tt>objcopy -S umount /home/gratiend/src/recovery/mkcdrec/stage/bin/umount</tt>
+<br /><tt>objcopy -S insmod /home/gratiend/src/recovery/mkcdrec/stage/bin/insmod</tt>
+<br /><tt>Copying the libraries we need...</tt>
+<br /><tt>objcopy --strip-debug /lib/ld-linux.so.2 /home/gratiend/src/recovery/mkcdrec/stage/lib/ld-linux.so.2</tt>
+<br /><tt>objcopy --strip-debug /lib/libc.so.6 /home/gratiend/src/recovery/mkcdrec/stage/lib/libc.so.6</tt>
+<tt>++++++++++++++ ldconfig +++++++++++++</tt>
+<br /><tt>/sbin/ldconfig: version 1.9.9</tt>
+<br /><tt>/lib:</tt>
+<br /><tt>&nbsp;libc.so.6 => libc.so.6</tt>
+<br /><tt>&nbsp;ld-linux.so.2 => ld-linux.so.2</tt>
+<br /><tt>&nbsp;libresolv.so.2 => libresolv.so.2</tt>
+<br /><tt>&nbsp;libnss_dns.so.1 => libnss_dns.so.1</tt>
+<br /><tt>&nbsp;libnss_files.so.1 => libnss_files.so.1</tt>
+<br /><tt>/usr/lib:</tt>
+<br /><tt>/lib:</tt>
+<br /><tt>&nbsp;libc.so.6 => libc.so.6</tt>
+<br /><tt>&nbsp;ld-linux.so.2 => ld-linux.so.2</tt>
+<br /><tt>&nbsp;libresolv.so.2 => libresolv.so.2</tt>
+<br /><tt>&nbsp;libnss_dns.so.1 => libnss_dns.so.1</tt>
+<br /><tt>&nbsp;libnss_files.so.1 => libnss_files.so.1</tt>
+<br /><tt>Copied the following libraries to /home/gratiend/src/recovery/mkcdrec/stage/lib:</tt>
+<br /><tt>total 1374</tt>
+<br /><tt>-r-xr-xr-x&nbsp;&nbsp; 1 root&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+91198 Apr 18 14:13 ld-linux.so.2</tt>
+<br /><tt>-rw-r--r--&nbsp;&nbsp; 1 root&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1196309 Apr 18 14:13 libc.so.6</tt>
+<br /><tt>-rw-r--r--&nbsp;&nbsp; 1 root&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+13633 Apr 18 14:13 libnss_dns.so.1</tt>
+<br /><tt>lrwxrwxrwx&nbsp;&nbsp; 1 root&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+15 Apr 18 14:13 libnss_dns.so.2 -> libnss_dns.so.1</tt>
+<br /><tt>-rw-r--r--&nbsp;&nbsp; 1 root&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+38520 Apr 18 14:13 libnss_files.so.1</tt>
+<br /><tt>lrwxrwxrwx&nbsp;&nbsp; 1 root&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+17 Apr 18 14:13 libnss_files.so.2 -> libnss_files.so.1</tt>
+<br /><tt>-rw-r--r--&nbsp;&nbsp; 1 root&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+53655 Apr 18 14:13 libresolv.so.2</tt>
+<br /><tt>Check if we need to load modules for IDE/SCSI cd-rom at boot time</tt>
+<br /><tt>Check if we have loadable scsi modules, and scsi cd-rom...</tt>
+<br /><tt>No unix.o found to load.</tt>
+<br /><tt>No ext2.o found to load.</tt>
+<br /><tt>No ide-cd.o found to load.</tt>
+<br /><tt>No cdrom.o found to load.</tt>
+<br /><tt>Copied sr_mod.o module to /home/gratiend/src/recovery/mkcdrec/stage/lib/modules</tt>
+<br /><tt>No isofs.o found to load.</tt>
+<br /><tt>bzip2 /home/gratiend/src/recovery/mkcdrec/stage/lib/modules/sr_mod.o</tt>
+<tt>Initrd root contains the following directory tree:</tt>
+<br /><tt>bin/&nbsp;&nbsp; dev/&nbsp;&nbsp;&nbsp;&nbsp; etc/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+lib/ linuxrc*&nbsp; mnt/&nbsp;&nbsp;&nbsp;&nbsp; proc/&nbsp;&nbsp;&nbsp;&nbsp;
+sbin/</tt>
+<br /><tt>usr/&nbsp;&nbsp; var/</tt>
+<br /><tt>Size of initial ramdisk is</tt>
+<br /><tt>/dev/ram0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2475&nbsp;&nbsp;&nbsp; 1869&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 606&nbsp;&nbsp;&nbsp;&nbsp;
+76%&nbsp;&nbsp; /home/gratiend/src/recovery/mkcdrec/stage</tt>
+<br /><tt>Compressing the completed init ramdisk</tt>
+<br /><tt>&nbsp;70.3%</tt>
+<br /><tt>------------&lt; Leaving initrd.sh >-----------</tt>
+<br /><tt>-------------&lt; Entering bootflop.sh >-------------</tt>
+<br /><tt>Busy mformat the boot floppy image...</tt>
+<br /><tt>Copy your linux kernel to the boot floppy image.</tt>
+<tt>LINUX_KERNEL=/vmlinuz</tt>
+<br /><tt>Will copy the following kernel to the boot floppy.</tt>
+<br /><tt>/vmlinuz -> /home/gratiend/src/recovery/mkcdrec/stage/linux</tt>
+<tt>Copy the initial ram disk image to the boot floppy image.</tt>
+<br /><tt>initrd.img.gz -> /home/gratiend/src/recovery/mkcdrec/stage/initrd.gz</tt>
+<tt>*** Size of boot floppy:</tt>
+<br /><tt>Filesystem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024-blocks&nbsp;
+Used Available Capacity Mounted on</tt>
+<br /><tt>/tmp/backup/bootflop.img&nbsp;&nbsp;&nbsp; 2863&nbsp;&nbsp;&nbsp;
+1304&nbsp;&nbsp;&nbsp;&nbsp; 1559&nbsp;&nbsp;&nbsp;&nbsp; 46% /home/gratiend/src/recovery/mkcdrec/stage</tt>
+<br />&nbsp;
+<tt>Setting up bootable characteristics of the floppy (syslinux)</tt>
+<br /><tt>/home/gratiend/src/recovery/mkcdrec/bin/syslinux /tmp/backup/bootflop.img</tt>
+<br /><tt>Boot floppy is ready.</tt>
+<br /><tt>-------------&lt; Leaving bootflop.sh >-------------</tt>
+<tt>-------------&lt; Entering tar-it.sh >-------------</tt>
+<br /><tt>-------------&lt; Entering makeISO9660.sh >---------------</tt>
+<br /><tt>mkisofs -J -r -P CDrec_v0.5.0pre -V CDrec-18.04.2001 -o /tmp/CDrec.iso
+-b bootflop.img isofs/</tt>
+<tt>The CDrec image(s) are stored in directory /tmp</tt>
+<br /><tt>-rw-r--r--&nbsp;&nbsp; 1 root&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+6064128 Apr 18 14:14 /tmp/CDrec.iso</tt>
+<br /><tt>-------------&lt; Leaving makeISO9660.sh >--------------</tt>
+<br /><tt>-------------&lt; Leaving tar-it.sh >-------------</tt>
+<br /><tt>mkCdrec finished on Wed Apr 18 14:14:07 CEST 2001</tt>
+<br />

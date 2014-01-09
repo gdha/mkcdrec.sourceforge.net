@@ -1,0 +1,43 @@
+div.sidebarmenu
+{
+  position: absolute; /* fallback voor MSIE, fixed is niet ondersteund */
+  position: fixed;
+  left: 1%;
+  top: 10%;
+  right: 82%;
+  bottom: auto;
+  text-align: center;
+  font-size: large;
+  border: 0px outset #0080ff;
+  background: white;
+}
+
+div.sidebarmenu a
+{
+  display: block;
+  font-weight: bold;
+  margin: 5px 0px 5px 0px;
+  padding: 4px;
+  border: 0px solid white;
+  color: white;
+  text-decoration: none !important;
+}
+
+div.sidebarmenu a:link,
+div.sidebarmenu a:visited
+{
+  color: black;
+}
+
+div.sidebarmenu a:hover
+{
+  border: 1px solid #0080ff;
+  background: #0080ff;
+}
+
+div.sidebarmenu hr
+{
+  height: 1px;
+  width: 84%;
+  border: 0px inset #0080ff;
+}

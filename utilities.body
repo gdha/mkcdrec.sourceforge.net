@@ -1,0 +1,135 @@
+<div align="center"><img alt="Make CD-ROM Recovery Utilities" src="images/mkcdrec_utilities.png" /></div>
+
+<h1>mkCDrec Utilities</h1>
+
+<h2>How to install the mkCDrec Utilities</h2>
+
+<pre class="shellcommand"># cd   mkcdrec;  tar  zxvf  mkCDrec_v0.7.5_utils.tar.gz
+# ls -l  utilities</pre>
+
+<h2>In which way are those utilities useful</h2>
+<p class="i">
+ To improve the added value of your recovery/rescue CD-ROM. You will notice that links from mkCDrec CD-ROM are foreseen to the /cdrom/utilities  part of the CD-ROM and that man pages of these tools are already available within mkCDrec main toolset. Without installing the utilities you cannot use them (obvious), but it will not break any other functionality of the mkCDrec tools. Therefore, a full restore remains possible (and disk cloning too), but you will not be able to resize a partition afterwards to name something.
+Most of these utilities were compiled as static binaries, therefore, you can use those tools seperately too.
+If you know any tool which could useful to be included, please let me know...
+Since mkCDrec_utils_v0.5.7 you will notice that mkCDrec will use isolinux to boot from the CD-ROM instead of using syslinux floppy boot emulation. But, this will only work if you use mkCDrec_v0.5.7 (or higher) as isolinux was first introduced in v0.5.7.
+</p>
+
+<h2>Which utility to use?</h2>
+<a name="Utils"></a>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a 
+href="http://www.gnu.org/software/parted/">
+Parted</a></p>
+<p> The famous Partition Editor of GNU software. The User Manual of parted is already part of mkCDrec.</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://www.qcc.sk.ca/%7Echarlesc/software/memtester/">
+Memtest</a></p>
+<p>An excellent memory testing tool.</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://sourceforge.net/projects/partimage/">
+Partition Image</a></p>
+<p>A tool to make/restore partition of msdos/vfat/ext2/reiserfs file systems. The primary purpose to include this tool is to allow a restore of old partition images made by this tool.</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://www.stud.uni-hannover.de/user/76201/gpart/">
+Gpart</a></p>
+<p>Guess partition does what it implies. It can even recover destroyed partition tables, and therefore, maybe preventing a full restore. Useful in case if you do not make a mkcdrec on a regular basis.</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://www.linuxave.net/%7Erecover/">
+Recover</a></p>
+<p>An excellent tool to edit an EXT2 file system to recover lost files.</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://project.terminus.sk/e2salvage/">
+e2salvage</a></p>
+<p>e2salvage is a utility which tries to recover a data from damaged ext2 partition. It may be used when e2fsck does not recover the broken ext2 filesystem. Before trying this tool read the man page (man e2salvage).</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://sourceforge.net/projects/ext2resize/">
+ext2resize</a></p>
+<p>ext2resize, ext2prepare and ext2online are useful tools. ext2resize can increase (or decrease) the size of an unmounted ext2 filesystem. Be aware for ext2online one need a kernel patch (not likely installed).
+By the way, ext2resize does work too on an Ext3 filesystem! Be aware, one needs to apply S. Tweedie's kernel patch (<a
+href="http://www.kernel.org/pub/linux/kernel/people/sct/ext3/">ext3</a>) and an updated ext2 filesystem <a
+href="http://sourceforge.net/projects/e2fsprogs/">e2fprogs-1.20</a> or higher (which are ext3 aware). Last 2 requirements are of course only needed in case if you want to work with ext3 filesystems.</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://www.memtest86.com/">
+memtest86</a></p>
+<p>Memtest86 is thorough, stand alone memory test for x86 architecture computers. BIOS based memory tests are only a quick check and often miss many of the failures that are detected by Memtest86.</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://home.eunet.no/%7Epnordahl/ntpasswd">
+chntpw</a></p>
+<p>The offline NT password editor (chntpw) is a little program wich enables you to view and change passwords in a Windows NT SAM user database. For example,</p>
+<pre class="shellcommand">
+# mount -t ntfs -o rw /dev/hda2   /mnt/local
+# cd /mnt/local/winnt/system32/config
+# /cdrom/utilities/chntpw -i  sam  system</pre>
+<p>You can also download the <a
+href="http://sourceforge.net/project/showfiles.php?group_id=25327&amp;release_id=115023">mkCDrec_ntfs.zip</a> file containing the mkCDrec_ntfs.iso ISO-9660 image, which still has to be burned on a CD-R. Handy little tool, came to rescue on several occasions!</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://ezix.sourceforge.net/software/lshw.html">
+lshw</a></p>
+<p>List hardware of your system (in the style of Solaris)</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://come.to/cfg2html">
+cfg2html</a></p>
+<p>Cfg2html is a UNIX shell script that collects UNIX host information, similar to Hewlett Packard's check_config or get_config, except that it creates a HTML (and plain ASCII) system documentation for HP-UX 10.xx/11.xx, SunOS/Solaris, AIX, SCO Open Server, Linux (SUSE, Debian and Red Hat) and NT4.0/Win2000 (currently beta) systems.</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://www.garloff.de/kurt/linux/ddrescue/">
+dd_rescue</a></p>
+<p>dd_rescue does not abort on errors on the input file, unless you specify a maximum error number. Then dd_rescue will abort when this number is reached.</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://www.garloff.de/kurt/linux/">
+Rescan SCSI bus</a></p>
+<p>Linux allows you to add and remove SCSI devices without rebooting by using the</p> <pre class="shellcommand">
+echo "scsi add-single-device H C I L" > /proc/scsi/scsii</pre>
+<p>command (H = host, C = channel, I = SCSI ID, L = SCSI LUN). The remove-single-device command works similarily.
+</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://www.cse.unsw.edu.au/~neilb/source/mdadm/">
+mdadm</a></p>
+<p>manage MD devices aka Linux Software Raid.
+</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://www.procyon.com/~pda/lphdisk/">
+lphdisk</a></p>
+<p>utility for preparing a hibernation partition for APM Suspend-To-Disk
+</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://smartmontools.sourceforge.net/">
+smartctl</a></p>
+<p>The smartmontools package contains two utility programs (smartctl and smartd) to control and monitor storage systems using the Self-Monitoring, Analysis and Reporting Technology System (SMART) built into most modern ATA and SCSI hard disks.  Smartclt will provide advanced warning of disk degradation and failure.
+</p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" /><a
+href="http://clamav.elektrapro.com/">
+Clam AntiVirus</a></p>
+<p>Clam AntiVirus is an anti-virus toolkit for UNIX. Only clamscan, sigtool and freshclam were added. The virus database is based on the virus database from <a
+href="http://www.openantivirus.org/">
+OpenAntiVirus</a>. On request here is a little <a
+href="clamav.html">cookbook</a> on how Clam AntiVirus was added to the mkCDrec Utilities.</p>
+<h2>Download</h2>
+<a name="download"></a>
+<table width="87%" summary="Download mkcdrec_utilities">
+<tr>
+<td><a
+href="mkCDrec_v0.7.9_utils.tar.gz">mkCDrec_v0.7.9_utils.tar.gz</a></td><td>[2445 Kb] released on 4 May 2004 [md5sum=3294f58cbc69532f4377224daa544174]</td>
+</tr><tr>
+<td><a
+href="mkCDrec_v0.7.5_utils.tar.gz">mkCDrec_v0.7.5_utils.tar.gz</a></td><td>[1642 Kb] released on 26 October 2003 [md5sum=b0fc757d4f6f3d2c8086d21af4297118]</td>
+</tr>
+<tr>
+<td><a
+href="mkCDrec_v0.7.1_utils.tar.gz">mkCDrec_v0.7.1_utils.tar.gz</a></td><td>[1642 Kb] released on 2 March 2003 [md5sum=6a433f429f42235cbc5f652d9b38af30]</td>
+</tr>
+<tr>
+<td><a
+href="mkCDrec_v0.6.7_utils.tar.gz">mkCDrec_v0.6.7_utils.tar.gz</a></td><td>[1259 Kb] released on 27 April 2002 [md5sum=9bbb2b5c5be63ba0cd98342467d924a6]</td>
+</tr>
+</table>
+
+<h2>Support</h2>
+<a name="support"></a>
+<p>If you have problems with a particul tool please check first of all the owners web-page for updates.<br />
+If a tool is broken because of mkCDrec then do not hesitate to inform me.
+</p>
+
+<h2>Banners</h2>
+<a name="banners"></a>
+<p>Do not hesitate to visit the web sites listed below:</p>
+

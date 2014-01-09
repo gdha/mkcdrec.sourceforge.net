@@ -1,0 +1,100 @@
+div.bbleft,
+div.bbright
+{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+div.bbleft
+{
+  padding-right: 30%;
+  text-align: left;
+}
+div.bbright
+{
+  padding-left: 30%;
+  text-align: right;
+}
+
+div.bbleft strong,
+div.bbright strong
+{
+  font-size: x-large;
+}
+
+div.bbleft a,
+div.bbright a
+{
+  display: block;
+  border: 1px outset #4af;
+  background: #4af;
+  color: white;
+}
+
+div.bbleft a
+{
+  padding: 15px 45px 15px 15px;
+}
+div.bbright a
+{
+  padding: 15px 15px 15px 45px;
+}
+
+div.bbleft a:hover,
+div.bbright a:hover
+{
+  border: 1px outset #53f;
+  background: #53f;
+  color: white;
+  text-decoration: none;
+}
+
+div.bbleft a:active,
+div.bbright a:active
+{
+  border: 1px inset #20a;
+  background: #20a;
+  color: white;
+  text-decoration: none;
+}
+
+  /** Navbar **/
+  #navbar {
+    width: 100%;
+    padding: 0 0 0 0; 
+    font-size:16px;
+    background: #75e184;
+    color: black;
+  }
+  #navbar ul {
+    width:100%;
+    list-style:none;
+    text-align: center;
+    margin:0 0 0 0;
+    padding:8px 0 8px 0 ; /* 1st param = font v align / Need to be high enough so all bg image is displayed */ 
+    position:relative;
+    right: -11px;
+    background: #75e184;
+  }
+  #navbar li {
+    display:inline;
+    margin:0;
+    padding:0;
+  }
+  #navbar a {
+    background:url("images/navbar-dot.png") no-repeat left ;
+    padding: 0 0 0 0.7em;
+    margin: 0 0 0 1em;
+    color: #21449c;
+    font-weight: bold;
+  }
+  #navbar a:hover {
+    background:url("images/navbar-dot-hover.png") no-repeat left ;
+  }
+  #current a {
+    text-decoration: underline;
+    background:url("images/navbar-dot-hover.png") no-repeat left;
+  }
+  #current a:hover {
+    text-decoration: underline overline;
+  }

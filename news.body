@@ -1,0 +1,98 @@
+<h2> News</h2>
+
+<h3>Changelog of v0.9.9</h3>
+<p class="i">The latest release of mkCDrec contains the following updates:</p>
+<pre>
+v0.9.9
+ - initrd.sh: install linuxrc as init and renamed all linuxrc entries into
+   init (gdha, 03/Spe/2008)
+ - Config.sh: added else statement for Data Protector (gdha, 02/Sep/2008)
+ - initrd.sh: mv linuxrc init instead of hard link - seems to be needed
+   for ubuntu 8.04 (gdha, 02/Sep/2008)
+ - bootx86_64.sh: applied patch SF#2038825 (gdha, 01/Sep/2008)
+ - Config.sh; rd-base.sh; inetd.conf; dp-restore.sh: applied patch from
+   [ 2038532 ] Support for DataProtector 6.x (gdha, 01/Sep/2008)
+ - initrd.sh: bug SF#2080526 fixed: missing libc6 in debian (gdha,
+ 29/Aug/2008)
+ - dispatch.sh: added #!/bin/bash for Ubuntu 8.04 (gdha, 29/Aug/2008)
+ - linuxrc, linuxrc_find_and_prep: updated for rootfs=rmafs (gdha,
+ 25/Aug/2008)
+ - rd-base.sh, initrd.sh, bootflop.sh: added support for ROOT_FS being
+   made in initramfs format. Works better on newer distros (gdha, 25/Aug/2008)
+ - .config.bb: unset CONFIG_IFUPDOWN for OpenSuse 10.3 (gdha, 25/Aug/2008)
+ - etc/rc.d/rc.sysinit: changed fi;if clausaule into elif for starting
+   syslog (gdha, 25/Aug/2008)
+ - usr/man/busbix.gz: updated bb man page (gdha, 25/Aug/2005)
+ - test.sh: Test 4: added err=0 at the beginning of the test so test can
+   pass when bothe ROOT_FS and INITRD_FS are ramfs (gdha, 25/Aug/2008)
+ - initrd.sh: removed '-s' from linking linuxrc to init which was 
+   needed to work with switch_root command (gdha, 22/Aug/2008)
+ - Config.sh: added fstab-decode to BINARIES for FC9 (gdha, 22/Aug/2008)
+ - busybox: upgraded to busybox-1.12.0 (gdha, 22/Aug/2008)
+ - bootflop.sh: when using ramfs make ram1 512 bytes bigger then defined
+   to avoid out of space (gdha, 21/Aug/2008)
+ - Config.sh: added udevadm to BINARIES; added 'ramfs' as a method
+   to work with ROOT_FS (2th ramdisk) (gdha, 20/Aug/2008)
+ - rd-base.sh: added test_write to DESTINATION_PATH as advised via
+   SF discussion forum by Olivier Kaloudoff (gdha, 18/Jul/2008)
+ - rd-base.sh" lvm2 routine - fixed SF#1867501 report (gdha, 11/Jul/2008)
+ - makeISO9660.in: added suggestion SF#1996635 to prompt function to avoid
+   accidents when writing CDs (gdha, 11/Jul/2008)
+ - Config.sh: addeed init.d/functions to ETC_FILES (gdha, 09/Jul/2008)
+ - messages/*: update copyright line 2007 to 2008 (gdha, 08/Jul/2008)
+ - Config.sh: if isolinux is not found make ISOLINUX="" (gdha, 01/Jul/2008)
+ - test.sh: put " around ISOLINUX test (gdha, 01/Jul/2008)
+ - linuxrc: add sleep 15 for slow tape drives in case of OBDR (gdha,
+   11/Jun/2008)
+ - initrd.sh: avoid copying (0x00007fff869fe000) alike libs to the
+   ramdisk (Ubuntu Hardy has problems with it) (gdha, 29/May/2008)
+ - rd-base.sh: avoid copying (0x00007fff869fe000) alike libs to the
+   ramdisk (Ubuntu Hardy has problems with it) (gdha, 29/May/2008)
+ - rd-base.sh: Fix problem with SWAPLABEL bug #1938904 (gdha, 29/May/2008)
+ - rd-base.sh: Create parted script procedure - added Model to the exclude
+   list (gdha, 20/May/2008)
+ - Config.sh: added lib32 and usr/lib32 to MKDIR_LIST for Ubuntu Hardy 8.0
+   (gdha, 19/May/2008)
+ - makeISO9660.in: fix typo (gdha, 07/Mar/2008)
+ - Config.sh: CDRECORD entries (cdrecord/wodim) (gdha, 06/Mar/2008)
+ - makeISO9660.in: USBKEY_DEV adaption needed after applying the patch of
+   Christian Werner (gdha, 06/Mar/2008)
+ - rd-base.sh: avoid writing empty USBKEY_DEV file (gdha, 29/Feb/2008)
+ - restore_common.sh: grep dev in To_Restore was not full-proof to find tabs
+   - corrected this (gdha, 27/Feb/2008)
+ - ansictrl.sh: change MY_TYY=`tty` into  MY_TTY=`tty | awk '{print $1}'`
+   to work properly on SLES10 (gdha, 27/Feb/2008)
+ - Config.sh: add var/lib/empty and /var/lib/dhcp for SLES10 to MKDIR_LIST
+   (gdha, 27/Feb/2008)
+ - major patch integration offered by Christian Werner to add USB disk
+   booting support to mkCDrec (27/Feb/2008)
+ - Makefile.x86: if contruct for clean part. It now checks if the file
+   /etc/mkcdrec.conf exists (gdha, 13/Feb/2008)
+ - rd-base.sh: touch var/log/lastlog for SLES10 (gdha, 06/Dec/2007)
+ - Config.sh: adding piix to INITRD_MODULES list for SuSe (gdha, 06/Dec/2007)
+</pre>
+<p>The complete <a
+ href="http://mkcdrec.sourceforge.net/Changelog">Changelog</a> is also available.</p>
+
+<h3>Related Projects</h3>
+<div class="notice">If you are a mkCDrec lover then the following project is a must to investigate, try-out and help with the development - <a
+ href="http://rear.sourceforge.net/">Relax and Recover (rear)</a>
+</div>
+<h3>Articles Published</h3>
+<p class="i">An article has been published on mkCDrec at <a
+ href="http://www.linuxzone.cz/index.phtml?idc=463&amp;ids=29">http://www.linuxzone.cz/index.phtml?idc=463&amp;ids=29</a>
+(in Czechian/Slovian): interview by pandor of compclub.sk (<a
+ href="interview_pandor.html">English version</a>) in Nov. 2002.</p>
+<p>In the <a
+ href="http://www.samag.com/documents/s=7553/sam0209f/0209f.htm">SysAdmin magazine</a>
+of September 2002 a publication of&nbsp; article "Recovering Linux
+Systems with mkcdrec" by Kerry Thompson.</p>
+<p>mkcdrec was mentioned in the Linux Magazine article "<a
+href="http://www.linux-magazine.com/issue/11/Recovery_CDs.pdf">Speedy Recovery</a>" in Nov. 2001.
+<p>In SysAdmin Magazine of March 2007 mkCDrec was referenced - see article on <a
+href="http://www.samag.com/documents/s=10118/sam0703b/0703b.htm">backup encryption</a>.
+<h3>Other References to mkCDrec</h3>
+<p class="i">If you have found some useful link towards mkCDrec let us know so we can add it here.</p>
+<p>mkCDrec and ReaR are listed on the <a
+ href="http://www.debianhelp.co.uk/tools.htm">Debianhelp</a> tools section web page.</p>
+<p>Ohloh has a page on mkcdrec - <SCRIPT type='text/javascript' language='JavaScript' src='http://www.ohloh.net/projects/400;badge_js'></SCRIPT></p>

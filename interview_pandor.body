@@ -1,0 +1,266 @@
+<h2>
+Interview of Gratien D'haese by PANDOR for linuxzone.cz</h2>
+<p><b>Do you remember what your first touch with Linux was? When did you find
+out that Linux exists, how did you start to use it? What was your breakpoint
+for deciding to be a regular linux user?</b>
+</p>
+<blockquote>I started to follow Linux news since the end of 1992 on some
+Usenet newsgroups (I forgot which ones). If I remember well my first touch
+was the Linux Nighthawk 0.99 release from March 1993, which was a tiny
+linux on a single floppy (just booted it up to verify). In those times
+one had to download linux as series of floppies (10 or more) to get a complete
+distribution. My main interest to start with Linux was to study the internals
+of the kernel. The kernel source was only 500 Kb big then! Secondly, I
+was excited by the network capabilities and promoted Linux a lot within
+the company I worked for. I even started to mirror Linux and GNU sources
+from the Internet for internal use only.
+<br />
+I fell for Linux from the very beginning and decided to use it internally
+the company as a dial-in server for remote system management. In those
+days it was not allowed to use Linux in a professional environment, but
+I hided the box under my desk and it worked for years without having any
+problems!
+<br />Furthermore, I used Linux as a testbed for my papers I had to write
+during my evening education (Informatics).
+<br />Used Emacs and Scheme day and night for weeks...
+</blockquote>
+<p><b>As for the linux starters and newbies. Do you think there is a sufficient
+amount resouces and helpful advanced users to support them in the first
+stages of linux exploration and usage?</b></p>
+<blockquote>Today Linux has become an excellent Operating System with splendid
+graphical interfaces (KDE, Gnome). I cannot think of one tool that is not
+available on Linux that is available on Windows. I agree sometimes it takes
+some time to find something that suites your needs, but that makes Linux
+so exciting. Furthermore, I always supported the Free Software movement
+(and Open Source organisations).
+<br />To give an example, in 1994 the Belgian Unix systems Users Group (BUUG)
+started with a Linux Special Interest Group (Linux-SIG) where I was one
+of the key founders. The main purpose was to present Linux to the Belgian
+professional users and the presentations were a big success. Remember,
+in 1994 the Internet was only for the happy few under us and downloading
+a Linux distribution took hours over 19200 baud modem!
+<br />Therefore, we made Linux and GNU sources available on CD-ROM for our
+members. Today, people don't have to go to conferences or workshops anymore
+to get excellent information on Linux (starter or expert information),
+it is all on the Internet. A search engine brings it all to you (maybe
+a bit too much).
+<br />Resources enough! The only problem I have with the Internet is that
+I miss human contact as we had in the mid 90s during the very busy workshops.
+We have noticed that Linux workshops are not fashionable anymore,&nbsp;
+more and more Linux Internet portals have been setup,&nbsp; in my opinion
+however this is not the same. People should meet to discuss and chat on
+Linux and other matters.
+</blockquote>
+<p><b>During your tries with linux, you have surely tested a lot of distributions.<br />
+What are your feelings about them, for which one have you decided and why?</b>
+</p>
+<blockquote>I have used so many distributions since 1994 (Slackware, Debian,
+Redhat, Suse, Mandrake, and others) that it is difficult to say which are
+the best. They all had pro and contras, but today I use mostly Redhat and
+Mandrake on my production systems. On my test systems I have tested many,
+many more (even UnitedLinux) as a testbed for mkCDrec.
+<br />I find the idea behind UnitedLinux very attractable where the best
+of different Linux flavours are unified in one distribution, but internal
+it still feels like SuSe. Companies like Redhat, Mandrake and SuSe can
+only survive in the long term by making alliances with big cooperations,
+like e.g. HP, IBM, Oracle, SAP to name a few, by adding more high-end server
+features in their distributions. That is why I think (and this is my opinion
+only) that closed vendor operating systems will disappear in the long term
+as it is becoming too expensive to keep up with the development to add
+new features. The Open Source model is much more suitable for these purposes.
+Just have a look at IBM for example as they have plenty of software engineers
+working on open source projects. They only do this as they belief that
+it will pay back over the years.</blockquote>
+<p><b>You have worked on several Linux projects. Can you describe them? When</b>
+<br /><b>did you start the development and why?</b>
+</p>
+<blockquote>My first Linux project started in 1994 and had as purpose to
+build an complete site mirror on CD-ROM which was browsable via the Mosaic
+browser (predecessor of Netscape). The Louvre museum was on it and I had
+to build my own HTML syntax and dead link checkers. Thereafter, came the
+Linux95 project, which was a BUUG tailored Linux distribution (I remember
+it was released before Windows95!).
+<br />In 1997 I demonstrated a Linux server to act as boot server for Network
+Computers including running Java applications such as Corel Office for
+Java on one of our Linux-SIG events.
+<br />Did plenty of work around ISDN4Linux, firewalls, etc... See our web
+pages at <a href="http://www.ota.be/linux/workshops/">http://www.ota.be/linux/workshops/</a></blockquote>
+<p><b>The most popular of your projects seems to be mkcdrec with a very good
+approach to storage backup and cloning. What were your objects for an internal
+architecture and integrated features?</b></p>
+<blockquote>Mid 2000 I was building a Linux based firewall for a customer
+and I needed a quick and dirty way to restore to system after a disaster
+such as a break-in, broken disk, etc. I found no software on the Internet
+that fulfilled my wishes, therefore, I started coding from scratch a disaster
+recovery solution loosely based on the ideas behind Ignite/UX from HP-UX.
+It was clear right from the beginning that I needed a bootable CD-ROM including
+the backups. In principle the idea behind mkCDrec is simple: when booted
+from the rescue CD one should get an environment which is capable to repair
+a broken filesystem to name something, or to restore the complete system
+from scratch in the worst case. Therefore, I needed some good tools, such
+as BusyBox (swiss knife of integrated Unix tools) and home-brew scripts
+to restore the system if needed. These scripts are partial build during
+the making process of mkCDrec and collect lots of information of the system,
+which is needed afterwards when one is booted from the mkCDrec CD. Typically,
+everything one finds under /etc/recovery is made quite dynamically by mkCDrec.
+It depends from system to system what you see beneath the /etc/recovery
+directory tree.</blockquote>
+<p><b>What do you think about the available methods of backing up data in
+a secure and reliable way?</b></p>
+<blockquote>mkCDrec uses GNU tar to backup your partitions, but has the
+possibilities to encrypt the archives with openssl. One can also use ssh
+to backup your data to a remote tape drive or site.</blockquote>
+
+<p><b>Surely, some problems occured during development. Can you describe
+some of the them with your clues?</b></p>
+<blockquote>As the project evolved over time I got more and more user requests
+for new features. Typically, new code tends to break something else. During
+the last months lots of problems occurred with BusyBox, e.g. it did not
+reboot anymore, and the shutdown command was broken too. Therefore, I had
+to write a small script to do that (alt-ctrl-del). Meanwhile, these problems
+have been resolved by the BusyBox team, but now the Control-C is not functional
+on the first console (on the other virtual TTY's Ctrl-C does work). In
+the latest BusyBox-0.60.5 version I have trouble with the 2th, 3th virtual
+consoles. Therefore, I need to dig into the code of BusyBox too to try
+to find where if goes wrong and why. I also submit bug reports to the BusyBox
+team to improve their excellent piece of software.
+<br />And the other hand, there are still plenty of bugs in the mkCDrec scripts
+too, just look at the SourceForge site for yourself to have an overview
+of the bugs which are still open.
+<br />From time to time I do get patches from people to solve a problem which
+is always nice (see the Changelog of mkCDrec).</blockquote>
+<p>><b>Did you have any cooperators on mkcdrec project? What was their
+work focused in? Do you still look for some others?</b>
+</p>
+<blockquote>mkCDrec is a tiny project, where I am the main project leader,
+code writer, designer, but I do have 2 excellent co-developers on board
+which have written and debugged plenty of code. Currently, Mike Flyn (one
+of the co-developers) has started a port of mkCDrec to the new Mac architecture
+(PPC) using Debian/Linux.
+<br />The second co-developer, Franky van Liedekerke, is an excellent debugger
+and is still very active on the mailing lists of mkCDrec.
+<br />Our plans are to broaden the architectures where mkCDrec can be used
+on. I'm thinking of Sparc and Itanium-32/64 platforms. I have an old Sparc20
+at home which will be migrated to a Linux/Sparc soon.
+<br />The main problem we face is sfdisk which is basically an Intel locked
+program. We need to rewrite parts of it to get it working under PPC, Sparc
+and IA-32/64. On all those platforms fdisk is available, but that doesn't
+give us the flexibility that sfdisk has.
+<br />I need to start a sub project to port sfdisk to PPC, Sparc, IA-32/64.
+I'm still looking for programmers to help us with this. I do think this
+is a perfect subject for a thesis or master-work.</blockquote>
+<p><b>What new features can we expect in the new releases? What are you</b>
+<br /><b>planning to implement and in what timeline?</b>
+</p>
+<blockquote>In the upcoming mkCDrec v0.6.8 you can expect a choice to force
+DHCP support as requested by users to do mass cloning. More hardware RAID
+controllers will be supported as these are quite easy to add due to our
+modular design. We are also planning to add support for DVD.
+<br />We do hope to have a breakthrough for a PPC mkCDrec version soon.
+<br />Furthermore, some small redesign of mkCDrec will be done to build a
+real RPM version so the main Linux players can add it to their mainstream
+distributions.
+<br />My main target is to get a stable mkCDrec version 1.0 out within the
+next 6 months. Of course, that does not mean that the current v0.6.* versions
+are not stable. I know people who still use mkCDrec v0.5 without problems.
+As always, it all depends on the hard- and software one uses.
+<br />&nbsp;
+<br />&nbsp;</blockquote>
+<p><b>Surely you have a lot of responses from a happy users. It is quite a
+good success, what do you think about it?</b></p>
+<blockquote>In my mkCDrec mailbox I have around 2000 mails. Only 1 mail
+reported the loss of a complete system by using mkCDrec without giving
+additional comments. So, was it true or not? I will never know! Anyhow,
+I always advise to backup your system via other ways before playing around
+with mkCDrec, and to use a test system where possible to learn the drill.
+Remember I said, mkCDrec is a disaster recovery tool and is not really
+a backup/restore tool as such.
+<br />Personal I use mkCDrec, on my production systems, once a week completely
+aside from my normal backup procedures. When a system crashes I boot from
+the latest mkCDrec CD-ROM and restore the system (after repairing broken
+parts). Aterwards I restore from backup up to the point of yesterday or
+so.
+<br />To answer on your question: is it a success? For a tiny project not
+bad. I do get plenty of success stories from huge companies using mkCDrec.
+That makes me feel good, because those big companies are using Linux in
+the first place and mkCDrec just fills up a tiny hole.</blockquote>
+
+<p><b>Can you describe us your current work, maybe in research and
+academic</b>
+<br /><b>field. What are you planning to work on in the near future?</b></p>
+<blockquote>I have my own small IT company busy in the field of UNIX (HP-UX,
+Solaris, Linux) doing design, system administration, clustering, firewalling,
+VPNs, etc... I'm constantly surfing the Web for new ideas for doing things.
+And, I like to read and study on computational topics.
+<br />In the near future I will start the port of mkCDrec to Sparc. And I
+do hope to find the funds for an IA-32/64 machine to port mkCDrec to there
+too.
+<br />For months I wanted to write a mkCDrec clone based on afio and tapes
+to build an one button disaster recovery tape (already done the proof of
+concept), but due to lack of time never got around it. The last days the
+idea came back and finally&nbsp; started to read how to use afio in-depth.
+Maybe, over a few weeks a new project is born much smaller than mkCDrec.</blockquote>
+<p><b>Do you use linux at home? If yes, for what? Please describe a little
+bit</b>
+</p>
+<blockquote>I use Linux for years already at home. I use it right now to
+answer all my mails, to do research, to do coding, testing, etc. I must
+admit I have a Windows 2000 system, but that is because my customers have
+it too. The good news is that more and more I can convince my customers
+to go for Linux, for e.g. samba, mail servers and firewalls, instead of
+sticking with Windows servers. The benefits are a lower TCO with Linux,
+because of the free software, and a better remote (secure) maintenance
+is possible. Less visits means less costs too for the customer!
+<br />My laptops only have Linux, because I mostly work with Unix systems
+anyway and then Linux is the perfect glue for X Windows, samba, network
+debugging, etc...
+<br />&nbsp;</blockquote>
+<p><b>What do you think about current position of Linux on desktop and server</b>
+<br /><b>market? What are your views about its future?</b>
+</p>
+<blockquote>Linux will become the number one on the server side I'm sure
+of that. However, on the desktop side it will be hard to beat Microsoft,
+but it is not impossible. Ten years ago Linux was NOT an option in any
+company, but now it is very quickly accepted once explaining the pros of
+it against an expensive Microsoft server.
+</blockquote>
+<p><b>What is your opinion about the OpenSource and through-internet</b>
+<br /><b>cooperation of developers? How is it possible that unpayed development
+works so well?</b></p>
+<blockquote><font color="#000000">I must say that sometimes I don't understand
+it myself why there are some many developers doing so much for free. Is
+it for the fame, or for doing the right thing? I am sure that it pays back
+in the long term as companies do take in account you are working in your
+spare time for a good cause! I can ask the question to myself.</font>
+<br /><font color="#000000">In the first place because I needed the project.
+And, I believe that with making the sources open the development goes much
+faster as user feedback and bug reports is almost instantaneously after
+a&nbsp; announcement on Freshmeat.net. Almost two years later it turned
+out I was right about it. In a closed source environment mkCDrec would
+not be able to do all the things it is capable today. I'm proud of it I
+made the right decision to GPL the code.</font>
+<br /><font color="#000000">On the other hand one does not need too much
+developers as most people have trouble with doing project management in
+a correct way if there are too many persons involved.</font>
+<br /><font color="#000000">I may not forget to mention that SourceForge.net
+has played an incredible role into the world-wide Internet cooperation
+of developers with their servers and sourceforge software. Of course, without
+the CVS software it would also be impossible to work with different co-developers.
+As you see, Open Source projects do help each other.</font>
+<br />It is funny, I never met my co-developers in
+real life! I do think we should meet once on a conference maybe?
+</blockquote>
+<p><b>Some words to our readers for the finish</b></p>
+<blockquote>I can only wish that many, many people
+contribute in their own way to the Open Source movement. That doesn't mean
+to write only software, but with translating text for projects, answer
+user requests, helping building web site (mine is ugly I know), preach
+Open Source projects within your organisation where you work, live, etc.
+<br />The main advantage of Linux and other Open Source
+projects is that the source is available to look at and to change wherever
+needed. Of course, sometimes it gets dirty, but what the heck that makes
+life exciting!
+</blockquote>
+<p><br /><b>I<font size="-1">nterview taken on November 16, 2002 (via e-mail)</font></b></p>
+<p><i><font size="-1">Published by PANDOR/linuxzone.cz: <a href="http://www.linuxzone.cz/index.phtml?ids=10&amp;idc=474">http://www.linuxzone.cz/index.phtml?ids=10&amp;idc=474</a>(December 11, 2002)</font></i>
+</p>

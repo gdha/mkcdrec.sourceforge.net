@@ -1,0 +1,260 @@
+<h2> Introduction and Prerequisites</h2>
+<h2> Introduction</h2>
+<p class="i">The make CD-ROM recovery (mkCDrec) tool was designed to recover from
+CD-ROM a complete GNU/Linux system (Intel only) after a disaster
+happened, such as a disk crash or system intrusion. <br />
+It is the purpose that you run the mkCDrec tool from time to time to
+have an up-to-date snapshot of your system. <br />
+The tool was made to be as simple as possible, therefore, do not expect
+a fantastic GUI of some kind. All it need is a console, and in case of
+disaster you will be glad to see a console prompt !!! <br />
+Currently, mkCDrec can backup and restore <b>ext2</b>, <b>ext3</b>, <b>msdos</b>
+, <b>xfs</b>, <b>jfs</b>, <b>fat</b>, <b>vfat</b> and <b>ReiserFS</b>
+filesystems. Logical Volume Manager (LVM), hard- and software RAID
+devices are also supported. Hardware RAID devices are supported too as
+no special handling is required by mkCDrec. Although I do not advise to
+reformat hardware RAID systems, e.g. Clariion, EMC, Hitachi, HP XP, HP
+EVA, etc..., as the data protection is already in the storage box
+anyway and it would take ages to complete.<br />
+Since mkCDrec v0.8.1 it is also possible to create a bootable tape, a
+so called One-Button Disaster Recovery (OBDR) tape with OBDR compatible
+hardware (see <a
+ href="http://www.hp.com/products1/storage/products/tapebackup/obdr.html">HP
+documentation</a>). Use the "make OBDR" command to create such an ODBR
+tape, including your archives.</p>
+<p>In which circumstances could this tool be useful? </p>
+<ul>
+              <li> The main script <b><font color="#ff0000">start-restore.sh</font></b>
+lives in /etc/recovery and once booted from the mkCDrec CD-ROM this
+script can do the following for you:</li>
+              <li><ul>
+                <li> after a disaster of some kind, e.g. disk crash, or
+even after a successful system break-in, restore the complete system.</li>
+                <li> the backups are off-line, t.i. on CD-ROM, or on an
+off-line disk (preferably read-only mode), NFS mounted disk, or tape.
+Therefore, those backups are protected for non-authorized users.</li>
+                <li> to restore one disk (if there are more disks in
+the system available) from backup.</li>
+                <li> restore backup of a disk onto a new (bigger) disk
+in the system. The clone-dsk.sh script is capable to automatically
+resize the partition layout.</li>
+              </ul></li>
+              <li> multiple copies can be made to increase reliability
+of the backups.</li>
+              <li> as a rescue tool, e.g. to do fsck of some kind or to
+diagnose what's wrong with the system. See the mkCDrec Utilities to add
+more tools to your rescue CD-ROM.</li>
+              <li> <b><font color="#ff0000">"cloning"</font></b> a
+disk to another disk even when the target disk is smaller in size than the
+original disk, as long as there is room for the data. The <font
+ color="#ff0000">clone-dsk.sh</font> script will calculate the
+partition layout for you.</li>
+              <li> multi-volume CD-ROMs so backups can be splitted up.</li>
+              <li> <b><font color="#ff0000">"restore-fs.sh"</font></b>
+purpose is to restore a single filesystem of choice to a partition (has
+to exist!), and the user can select the target file system type (to be
+formatted). The command has no arguments.</li>
+              <li>If your kernel permits set-up (or migrate) to LVM,
+Software RAID, or another type of filesystem.</li>
+              <li>Increase (or decrease) the partition size with the
+help of mkCDrec Utilities.</li>
+              <li> if you used this tool for something not in this
+list, please let me know.</li>
+</ul>
+<p>Some words of wisedom:</p>
+<ul>
+              <li> booting the CD-ROM image made by this tool give you
+"root" privileges&nbsp; (no password asked [accept on tty5 ALT-5 t.i.])
+on that system! Therefore, physical secure your servers, e.g. put them
+in a locked computer room where only authorized users can access those
+systems.</li>
+              <li> this tool does not replace the process of making
+back-ups. It only makes a snapshot of the time it was run, althought
+not bad to have ;-) Some have nothing or even less ;-/</li>
+              <li> do not expect miracles from this tool either. It is
+a best effort tool, with other words, it can (maybe will) fail. Murphy is
+always around. Not all possible cases are foreseen. On the other hand
+if the "start-restore.sh" kicks you out, you still have the prompt and
+you can correct the problem and try again. Not all tools give you a
+second chance.<br />
+Note: if you correct some scripts in the /etc/recovery directory do not
+forget to ftp them to another system before rebooting the recovered
+system (otherwise, the improvements are lost and you cannot send them
+to us).</li>
+ <li> If all recovery attempts by start-restore.sh fail, you still
+have enough information about the system in <a href="etc_recovery.html">/etc/recovery</a>
+directory .</li>
+</ul>
+
+<h2> Design Goals</h2>
+            <ul>
+              <li> a bootable El-Torito CD-ROM will contain the
+"current" running GNU/Linux kernel and the most important executables.
+In case one has a disaster the recovery environment resembles as close
+as possible the current system containing all bits and pieces of that
+system, including PCMCIA modules.</li>
+              <li> works on any GNU/Linux <i>Intel</i> or <span
+ style="font-style: italic;">AMD</span> based PC (laptop, workstation
+or
+server), PCMCIA support is included. Most other distribution do not
+give you the choice...</li>
+              <li> the CD-ROM can be used as a <font color="#ff0000">rescue
+CD</font> , for <font color="#ff0000">disaster recovery</font> if the
+user whishes, or to <font color="#ff0000">clone a disk</font> to
+another
+system.</li>
+              <li> unattended backups and CD creation with cron are
+possible (see 'make help'), and check also the contributions directory</li>
+              <li> restoring a single file system to another disk and
+use another file system type (with the restore-fs.sh script).</li>
+              <li> a complete disaster recovery set on one (or more)
+CD-ROM(s) especially for critical systems such as firewalls. If a
+disaster happens (e.g. a disk crash) one should be able to restore,
+from a bootable GNU/Linux CD-ROM, the complete system back. The
+limitation however is the physical storage size of a CD-R (approx. 650
+MB), but with multi-volume CD sets that is no real issue anymore.</li>
+              <li> allow to store the backups across networks with the
+aid of NFS or CIFS.</li>
+              <li> allow to store the backups on other (external)
+media,
+such as (remote) tape, ZIP drives, etc.</li>
+              <li> allow to boot from a floppy instead of CD-ROM, in
+case the PC's BIOS cannot handle bootable El Torito CD-ROMs.</li>
+              <li> modular design for adding new modules (see the
+modules/ directory for examples).</li>
+              <li> keep the procedure as simple as possible for
+creating
+the CD-ROM and backups - a simple "make" command does everything. There
+is only one config file (<a href="config.html">Config.sh</a> ) to
+change
+the make behaviour.</li>
+              <li> the recovery procedure must be started manual and is
+fully automatic after positive acknowledgements from the user, or it
+can
+be done step-by-step (manual). A clone-dsk.sh script is provided to
+make disk cloning easier.</li>
+            </ul>
+            <h2> <a name="prerequisites"></a> Prerequisites</h2>
+            <ul>
+              <li> Have a (SCSI or IDE) CD-ROM in your system to boot
+from. If not, have a look at rescue floppy distributions via
+sourceforge.net or freshmeat.net</li>
+              <li> To help you there is test module to check some
+prerequisites for you:</li>
+</ul>
+              <table bgcolor="#000000" width="50%">
+                <tbody>
+                  <tr>
+                    <td><font color="#ffffff"># make test</font></td>
+                  </tr>
+                </tbody>
+              </table>
+<p>If you see something like the following than all is well:<br />
+              <img src="images/test.jpg" height="350" width="541" alt="make test output" />
+</p>
+<ul>
+<li> Download (if not yet done so) a recent GNU/Linux
+kernel (preferably 2.2.*,&nbsp; 2.4.* or 2.6.*) from <a
+ href="http://www.kernel.org/pub/">http://www.kernel.org/pub/ </a>
+or any mirror site. GNU/Linux kernels version 2.4.x or 2.6.x tend to be
+bigger in size than 2.2.x kernels. This could lead to a boot floppy
+image of 2.88 Mb instead of 1.44 Mb, which is fine for El Torito
+CD-ROM, but which could lead not being able to create a physical boot
+floppy of 1.44 Mb (if desired).<br />
+Forget the creation of physical floppies for kernels of version 2.6.x.
+Install the <a href="utilities.html"><span
+ style="color: rgb(255, 0, 0);">mkCDrec Utilities</span></a> to avoid
+problems in the future as
+mkCDrec will use isolinux to boot from CD-ROM instead of syslinux.
+</li>
+<li> Check current kernel if the following items were
+compiled into the kernel. Check file <a href="example_config">/<b>usr/src/linux/.config</b></a>:</li>
+              <li><ul>
+                <li> CONFIG_BLK_DEV_IDECD=y (or m)</li>
+                <li> CONFIG_BLK_DEV_LOOP=y (or m)</li>
+                <li> CONFIG_ISO9660_FS=y (or m)</li>
+                <li>CONFIG_JOLIET=y </li>
+                <li> CONFIG_BLK_DEV_RAM=y</li>
+                <li>CONFIG_BLK_DEV_RAM_SIZE=4096 (or 8192) </li>
+                <li>CONFIG_BLK_DEV_INITRD=y </li>
+                <li> CONFIG_MSDOS_FS=y (or m)</li>
+              </ul></li>
+<li>Unfortunately, if one of the above are not set it is necessary to
+recompile your kernel.</li>
+<li> If you have a SCSI CD-ROM check also the
+following items in /usr/src/linux/.config:</li>
+              <li><ul>
+                <li> CONFIG_SCSI=y (or m)</li>
+                <li> CONFIG_BLK_DEV_SR=y (or m)</li>
+              </ul></li>
+              <li> Check your PC's BIOS (during boot-up press F1, F2 or
+DEL key). The SETUP menu of the BIOS will show what is possible (after
+a little searching ;-)
+              <br />
+Check if the CD-ROM is in the boot device list (hard disk and floppy
+are always there). If CD-ROM is in the list then you have to move it up
+as first&nbsp; or second entry (before the hard disk). Otherwise, do
+not worry, we can make a boot floppy too ;-) </li>
+<li> Check if you have the 'mkisofs' command on your system. If yes, check the version as
+following:
+&nbsp;
+              <table bgcolor="#000000"  width="80%">
+                <tbody>
+                  <tr>
+                    <td><font color="#ffffff"># mkisofs&nbsp;
+--version</font> <br />
+                    <font color="#ffffff">mkisofs 1.14
+(i686-pc-linux-gnu)</font></td>
+                  </tr>
+                </tbody>
+              </table></li>
+</ul>
+              <p>Version 1.14 or higher is preferred. Please check on
+your distribution CD-ROMs first, or via rpmfind.net.<br />
+Anyway, you can download the sources from <a
+ href="ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/mkisofs/">
+ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/mkisofs/</a> <br />
+              </p>
+              <ul><li> Check if the 'mtools' are on your system, and if so
+which version:
+&nbsp;
+              <table bgcolor="#000000"  width="80%">
+                <tbody>
+                  <tr>
+                    <td><font color="#ffffff"># mformat -V</font>
+                    <br />
+                    <font color="#ffffff">Mformat version 3.9.7, dated
+1 jun 2000</font> <br />
+                    <font color="#ffffff">configured with the following
+options: enable-xdf disable-vold disable-new-vold disable-debug
+enable-raw-term</font></td>
+                  </tr>
+                </tbody>
+              </table>
+As shown version 3.9.7 or higher is preferred as it has to be able to
+create 2.88 Mb boot floppy images if needed (download from <a
+ href="http://mtools.linux.lu/"> http://mtools.linux.lu/</a> or from
+your distribution).</li>
+              <li> Have access to CD- or DVD-writer to burn the built
+ISO filesystem onto a blank CD-R(W) or DVD&plusmn;R(W).</li>
+              <li>Check if you have the <span
+ style="text-decoration: underline;">which</span> command on your
+GNU/Linux distribution as "make test" depends on it.<br />
+              </li>
+            </ul>
+            <div style="margin-left: 40px;">
+            <table  bgcolor="#000000"  width="80%">
+              <tbody>
+                <tr>
+                  <td><font color="#ffffff"># whereis which<br />
+which: /usr/bin/which /usr/share/man/man1/which.1.gz<br />
+                  </font><font color="#ffffff"></font></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            <ul>
+              <li>And last, but not least. You have to be able to
+become "<span style="font-weight: bold;">root</span>". That is uid=0
+(verify with 'id' command).</li>
+            </ul>

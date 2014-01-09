@@ -1,0 +1,300 @@
+<h2> Support</h2>
+<blockquote>
+<ul>
+                <li> <font size="+1"><a
+ href="#Supported-Distribution-Matrix">Supported Distribution Matrix</a></font></li>
+                <li> <font size="+1"><a href="#Make-test">Make test</a></font></li>
+                <li> <font size="+1"><a
+ href="http://sourceforge.net/tracker/?group_id=25327&amp;atid=383782">Submitting
+a bug report</a> (via Sourceforge)</font></li>
+                <li> <big><a href="#E-mail-Support">E-mail Support</a>
+(premium support)</big></li>
+                <li><big> <a href="todo.html">ToDo List</a></big></li>
+                <li><big>Donate to the project (click on button): </big><a
+ href="http://sourceforge.net/donate/index.php?group_id=25327"><img
+ src="images/project-support.jpg" title="" alt="Support mkCDrec"
+ style="border: 0px solid ; width: 88px; height: 32px;" align="middle" />
+                  </a></li>
+                <li>
+                  <form action="https://www.paypal.com/cgi-bin/webscr"
+ method="post"><a href="#ProfSupport"><big>Professional Support</big></a><input
+ name="cmd" value="_xclick" type="hidden" /> <input name="business"
+ value="info@it3.be" type="hidden" /> <input name="image_url"
+ value="http://mkcdrec.sourceforge.net/images/mkcdrec_banner.jpg" type="hidden" />
+                    <input name="no_shipping" value="1" type="hidden" /> <input
+ name="return" value="http://mkcdrec.sourceforge.net/index.html" type="hidden" /> <input
+ name="cancel_return" value="http://mkcdrec.sourceforge.net/index.html"
+ type="hidden" />(by an official mkCDrec support channel)<br />
+                  </form>
+                  <br />
+                </li>
+              </ul>
+            </blockquote>
+            <hr />
+<h3> <a name="Supported-Distribution-Matrix"></a>Supported Distribution Matrix</h3>
+mkCDrec been tested with success on the following major Linux
+distributions. If there is something missing here, please <a
+ href="#E-mail-Support">drop me a mail</a> <br />
+&nbsp; <br />
+            <table bgcolor="#cccccc" border="1"  width="90%">
+              <caption><br />
+              </caption><tbody>
+                <tr>
+                  <td><b>Distribution</b></td>
+                  <td><b>Version&nbsp;</b></td>
+                  <td><b>Version</b></td>
+                  <td><b>Version</b></td>
+                  <td><b>Version</b></td>
+                  <td style="vertical-align: top;"><span
+ style="font-weight: bold;">Version</span><br />
+                  </td>
+                </tr>
+                <tr>
+                  <td>RedHat</td>
+                  <td>9.*</td>
+                  <td>RHEL 2.*</td>
+                  <td>RHEL 3.*</td>
+                  <td>RHEL 4.*</td>
+                  <td>RHEL 5.*</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Fedora</td>
+                  <td>6.0</td>
+                  <td>7.0</td>
+                  <td>8.0</td>
+                  <td>9.0</td>
+                  <td>10.0</td>
+                </tr>
+                <tr>
+                  <td>SuSe</td>
+                  <td>6.2</td>
+                  <td>7.1</td>
+                  <td>8.x</td>
+                  <td>9.*</td>
+                  <td>10.x</td>
+                </tr>
+                <tr>
+                  <td>Debian</td>
+                  <td>2.2r2</td>
+                  <td>3.0</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Mandrake</td>
+                  <td>7.<i><font size="-1">x</font></i></td>
+                  <td>8.<i><font size="-1">x</font></i></td>
+                  <td>9.x</td>
+                  <td>10.x<br />
+                  </td>
+                  <td style="vertical-align: top;"><br />
+                  </td>
+                </tr>
+		<tr>
+		 <td>Mandriva</td>
+		 <td>2006</td>
+		 <td>2007</td>
+		 <td></td>
+		 <td></td>
+		 <td></td>
+		</tr>
+                <tr>
+                  <td>Caldera eDesktop</td>
+                  <td>2.4</td>
+                  <td>3.<i><font size="-1">x</font></i></td>
+                  <td><br />
+                  </td>
+                  <td><br />
+                  </td>
+                  <td style="vertical-align: top;"><br />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Slackware</td>
+                  <td>8.x</td>
+                  <td><br />
+                  </td>
+                  <td><br />
+                  </td>
+                  <td><br />
+                  </td>
+                  <td style="vertical-align: top;"><br />
+                  </td>
+                </tr>
+                <tr>
+                  <td>UnitedLinux</td>
+                  <td>1.0</td>
+                  <td><br />
+                  </td>
+                  <td><br />
+                  </td>
+                  <td><br />
+                  </td>
+                  <td style="vertical-align: top;"><br />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <hr />
+            <h3> <a name="Make-test"></a>Make test</h3>
+Since mkCDrec v0.4.7 there is a new test program called <i>test.sh </i>which
+can check the prerequisites for you. It is a modest beginning and is
+not yet completed, but contains the most critical tests so far. To
+execute it do:&nbsp; <br />
+&nbsp; <br />
+            <table bgcolor="#000000"  width="50%">
+              <caption><br />
+              </caption><tbody>
+                <tr>
+                  <td><font color="#ffffff"># make&nbsp; test</font></td>
+                </tr>
+              </tbody>
+            </table>
+The tests are displayed with a <font color="#33cc00">Passed </font>or
+            <font color="#ff0000">Failed</font> banner.&nbsp; <br />
+E.g.:&nbsp; <br />
+            <img src="images/test.jpg" height="306" width="648" /> <br />
+            <hr />
+            <h3> <a name="E-mail-Support"></a>E-mail Support (premium
+support)</h3>
+Due to overload of e-mails (and SPAM) the preferred way to ask for help
+is via <a href="http://sourceforge.net/tracker/?group_id=25327">SourceForge</a>!<br />
+Also have a look at the <a
+ href="http://sourceforge.net/mailarchive/forum.php?forum_id=7749">mkcdrec-users
+mailing list</a> for tips and advise.<br />
+            <br />
+If for some reason you need to contact us urgently we want you to
+identify yourself with Paypal and do a small donation to the project.
+We call this <a
+ href="http://sourceforge.net/donate/index.php?group_id=25327&amp;amt=10">premium
+support</a> and it will treated as such!<br />
+            <br />
+Please follow these steps before you ask for help to the maintainer(s)
+of mkCDrec:&nbsp;
+            <ul>
+              <li> Did you run "make test" already? Were all tests
+passed?</li>
+              <ul>
+                <li> test 1: root or not root =&gt; must be root.</li>
+                <li> test 2: are all the necessary executables
+available?</li>
+                <ul>
+                  <li> dd, [u]mount, bc: most likely available on all
+distributions</li>
+                  <li> gcc, ldd: mkCDrec needs the GNU C compiler and
+its tools (make sure its there!)</li>
+                  <li> mformat, mkisofs, cdrecord: do not worry if not
+found pops up as those as mformat and mkisofs are standard delivered
+with mkCDrec in its bin directory. The cdrecord executable is less
+critical as you can burn the ISO filesystems on any system with a CD
+recorder (is a must anyway)</li>
+                  <li> nasm: the assembler is needed only if you want
+to
+recompile syslinux. The mkCdrec distribution has its own syslinux in
+its
+bin directory in case you cannot compile it. Therefore, you may ignore
+the not found message.</li>
+                  <li> mt: if you plan to use a tape drive to store
+back-ups on then the mt utility is a must, otherwise, ignore it.</li>
+                  <br />
+Please do not trust the GNU mt utility. Download and use <a
+ href="http://www.ibiblio.org/pub/linux/system/backup/%21INDEX.html">mt-st
+package </a>delivered with your distribution or from e.g. <a
+ href="http://rpmfind.net/">rpmfind.net</a> as a rpm.&nbsp; <li>
+gzip/bzip2 compression programs are a must</li>
+                  <li> ash for the initial ram disk</li>
+                </ul>
+                <li> test 3: filesystem for initial ramdisk allowed.</li>
+                <li> test 4: loopback device available? No, please
+check
+out the prerequisites in the <a href="introduction.html#prerequisites">introduction</a>.</li>
+                <li> test 5: ram device available? No, please check out
+the prerequisites in the <a href="introduction.html#prerequisites">introduction</a>.</li>
+                <li> test 6: romfs support (must be compiled into
+kernel
+if used).</li>
+                <li> test 7: cramfs supported&nbsp; by the kernel?</li>
+                <li> test 8: strip (from binutils) available?</li>
+                <li> test 9: big kernel? ED/HD setting in Config.sh.
+Makes a quick size calculation.</li>
+                <li> test 10: cdrecord -scanbus if applicable</li>
+                <li> test 11: Linux header files present (need those to
+compile busybox)</li>
+                <li> test 12: check DEVFS capabilities if required</li>
+                <li> test 13: check the tools for creating the
+filesystems - ext2, reiserfs, vfat</li>
+                <li> test 14: initrd must be compiled in kernel!</li>
+                <li> test 15: amount of memory available. Need 128 Mb
+to
+be able to use "9" (the highest compression ratio) option with bzip.
+mkCDrec will autodetect the amount of memory and adjust the option if
+needed (to 6).</li>
+                <li> test 16: scripts/Config.sh a link to Config.sh? If
+not, auto-correct it.</li>
+                <li> test 17: serial console present?</li>
+                <li>test 18: supported architecture?&nbsp; <br />
+                </li>
+                <li>test 19: is RAMDISK_SIZE=64 big enough? <br />
+                </li>
+                <li>test 20: is BLK_DEV_RAM_SIZE big enough for initrd?
+                  <br />
+                </li>
+                <li>test 21: SELinux running in non-enforcing mode?<br />
+                  <br />
+                </li>
+              </ul>
+              <li> Did you check the "<span style="font-weight: bold;">mkcdrec.log</span>"
+file for trivial errors? E.g. compilation errors?</li>
+              <li> If the error you saw on the screen is not found in the mkcdrec.log file do the following steps:</li>
+&nbsp; <br />
+              <table bgcolor="#000000"  width="50%">
+                <caption><br />
+                </caption><tbody>
+                  <tr>
+                    <td><font color="#ffffff"># make clean</font> <br />
+                    <font color="#ffffff"># script&nbsp;
+/tmp/mkcdrec.err</font> <br />
+                    <font color="#ffffff"># make</font> <br />
+                    <font color="#ffffff">&nbsp;...make your selection</font>
+                    <br />
+                    <font color="#ffffff"># Ctrl-D</font></td>
+                  </tr>
+                </tbody>
+              </table>
+            </ul>
+            <br />
+            <ul>
+              <li><a
+ href="http://sourceforge.net/tracker/?group_id=25327&amp;atid=383782">Submit
+a bug report</a> at Sourceforge (free of charge, but no fast response guaranteed) , or<br />
+                <br />
+              </li>
+              <li><a
+ href="http://sourceforge.net/donate/index.php?group_id=25327&amp;amt=10">Premiun
+support</a> (donate to the project and faster response) <a href="mailto:gdha@users.sf.net">mail
+to the mkCDrec maintainer(s)</a>: <br />
+              </li>
+              <ul>
+                <li> In the body of the message mention the following:</li>
+                <li><ul>
+                  <li> mkCDrec version</li>
+                  <li> Linux distribution and version</li>
+                  <li> Short description of the problem</li>
+                  <li> Maybe: any solution or work-around you have implemented (it's Open Source ;-)</li>
+                </ul></li>
+                <li> Add the necessary attachments if it clears up weird errors:</li>
+                <li><ul>
+                  <li> output of "scripts/test.sh -v" (run it manually)</li>
+                  <li> mkcdrec.log (made during the make)</li>
+                  <li> mkcdrec.err (made with the script command)</li>
+                </ul></li>
+                <li>Unsolicited mail will be ignored<br />
+                </li>
+              </ul>
+            </ul>
+            <h3><big><a name="ProfSupport"></a>Professional Support</big> (by an official mkCDrec support channel)</h3>
+If you are looking for professional support in your region (and native language) or want to become a mkCDrec support channel partner contact <a
+ href="http://www.it3.be/Joomla/index.php/services/60-make-cd-rom-recovery-mkcdrec-support.html">IT3 Consultants</a> (the sponsor of the project mkCDrec).
+

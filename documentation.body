@@ -1,0 +1,37 @@
+            <h2> Documentation</h2>
+<p>Please start with the <a href="introduction.html">introduction</a> on
+how to work with mkCDrec followed by <a href="installation.html">installation
+and getting started.</a> </p>
+<p>A must read is the <a href="config.html">Config.sh</a> file to
+customize mkCDrec to your needs. </p>
+<p>The <a href="etc_recovery.html">/etc/recovery</a> page and <a
+ href="internals.html">internals</a> explain how mkCDrec works behind
+the scenes.</p>
+<p>An howto PDF document (<a
+ href="http://prdownloads.sourceforge.net/mkcdrec/mkCDrec_howto_v13.pdf?download">mkCDrec
+Howto</a>) has been written on how the restore works, and in more
+particular interactive&nbsp; (non-automatic) restores and how to work
+with the optional tools (<a href="utilities.html">mkCDrec Utilities</a>).</p>
+<p>The same <a href="mkcdrec-howto/index.html">mkCDrec Howto in HTML</a> is also available online.</p>
+<h2> Presentations</h2>
+            <ul>
+              <li> November 29th. 2003, OTA GNU/Linux-SIG, Brussels
+(Belgium)</li>
+            </ul>
+            <div style="margin-left: 40px;">Title: <span
+ style="font-weight: bold; color: rgb(204, 0, 0);">Making mkCDrec PXE
+aware</span><br />
+For: GNU/<a href="http://www.ota.be/linux/workshops/20031129/">Linux-SIG
+28 Workshop</a> of the <a href="http://www.ota.be/">Open Technology
+Assembly</a> in Brussels.<br />
+            </div>
+            <blockquote> </blockquote>
+            <ul>
+              <li> November 25th. 2000, OTA GNU/Linux-SIG, Brussels
+(Belgium)</li>
+            </ul>
+            <blockquote> Title: <b><font color="#cc0000">Disaster
+Recovery: Be Prepared</font></b> <br />
+For: GNU/<a href="http://www.ota.be/linux/workshops/20001125/">Linux-SIG
+24 Workshop</a> of the <a href="http://www.ota.be/">Open Technology
+Assembly</a> in Brussels.</blockquote>

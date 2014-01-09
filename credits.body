@@ -1,0 +1,45 @@
+<h2>Credits</h2>
+Much of the components of this mkCDrec application were made by other people.
+I've just put together some GNU/Linux tools to have a disaster recovery
+solution, that fits my purposes (as described in the&nbsp; <a
+ href="introduction.html">introduction</a>). A special thanks goes to the following people:
+<p><b>J&ouml;rg Schilling : cdrecord</b> used to burn the
+backup CD-Rs <br />
+            <b>Eric Youngdale : </b>the Linux <b>isofs9660</b>
+filesystem and the mkisofs utility <br />
+            <b>H. Peter Anvin : syslinux/isolinux</b> the initial boot routines to start from CD <br />
+            <b>Erik Andersen : busybox </b>(all-in-one command) for the ram root (keep everything below 4 Mb). <br />
+            <b>Cory Dodt</b> : author of <a
+ href="http://repairlix.sourceforge.net/">repairlix</a> which was used as basis for making a bootable CD-ROM <br />
+... and many, many people of the GNU/Linux community! </p>
+<h3>Special thanks is well on its place for the following mkCDrec contributors: </h3>
+<p class="i">Companies contributing to the project:
+<ul>
+<li><a
+ href="http://www.it3.be/">IT3 Consultants</a> (golden sponsor of hardware and man-power) <a
+ href="http://www.it3.be/projects/mkcdrec.html"><img
+ src="images/IT3-Logo-2.gif" alt="IT3 Consultants" align="middle" width="50" height="52" border="0" /></a>
+</li>
+<li>
+ <a
+ href="http://www.ota.be">Open Technology Assembly (OTA)</a> for providing the web server and the bandwidth to the Internet.<img
+src="images/ota_logo_110.gif" alt="OTA" align="middle" border="0" /> 
+</li>
+<li>
+<a
+ href="http://www.suretecsystems.com/opensource/">Suretec Systems Ltd.</a> for donating the mkcdrec.org domain name.
+</li>
+</ul>
+</p>
+<p class="i">The following people wrote pieces of new code, or helped debgugging it, or gave advise:
+W. Michael Petullo (MAC ppc support), Franky van Liedekerke, Jason Bertschi, Ron Yorston,
+Guillaume Radde (IA64 support), Anne-Marie Wunderlin (IA64 support), docsonic (debian packager), Stephan Hendl,
+ Schlomo Schapiro, Mubashir Cheema, Rainer Anschober, Chris Strasburg, Matthew Fidler, Tobias Jahn,
+Thomas Aeby, Luc Saillard
+</p>
+<p>For all those we forgot to mention - a great <i>thank you</i>!</p>
+<p>My name is&nbsp; <b><a
+href="http://www.it3.be">Gratien D'haese</a></b> and I made this Make CD-ROM Recovery
+(mkCDrec) tool in the first place to suite my purposes to restore GNU/Linux
+based firewall systems in a fly. It should work for any linux based system
+as long as a El Torito bootable CD-ROMs can be burned and used to boot from.</p>

@@ -1,0 +1,9 @@
+div.sidebarmenu
+{
+  text-align: center;
+}
+
+div.sidebarmenu hr
+{
+  display: none;
+}

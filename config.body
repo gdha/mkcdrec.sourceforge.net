@@ -1,0 +1,356 @@
+<h2>Config.sh</h2>
+<p>The Config.sh file contains modifiable parameters (and non modifiable too). In normal circumstances it should be the only file which may be
+edited by the end-user. Following table gives an overview of modifiable parameters and their meaning or impact. Always run "make test" for
+advise about values.</p>
+<p>There is a second configuration file which mkcdrec reads (if it exists): <tt><b>/etc/mkcdrec.conf</b></tt>. This configuration contains usually a sub-set of Config.sh of what the end-user whiches to keep across upgrades, e.g. the BOOTARCH, ISOFS_DIR, CDREC_ISO_DIR, SCSIDEV and other parameters. The /etc/mkcdrec.conf file is not created automatically, but is created manually by the end-user.
+</p>
+<!-- Table -->
+            <table style="width: 100%;" border="1">
+              <caption>&nbsp; <br />
+              </caption>
+                <tr bgcolor="#000080">
+                  <td><b><font color="#ffffff"><font size="+1">Keyword</font></font></b></td>
+                  <td><b><font color="#ffffff"><font size="+1">Explanation</font></font></b></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">BOOTARCH<br />
+                  </td>
+                  <td style="vertical-align: top;">Intel x86,
+IA64, x86_64, new powermac and sparc (default x86)<br />
+                  </td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td> RAMDISK_SIZE</td>
+                  <td>Size of the base ramdisk (default is 64 Mb,
+minimum is 16 Mb).</td>
+                </tr>
+                <tr>
+                  <td>DEBUG</td>
+                  <td>If DEBUG=echo than no damage can be done at the
+system disks. Default is empty string (or no debugging).</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>PATH</td>
+                  <td>The PATH will be used to search for executables
+to be included in the RAM disks</td>
+                </tr>
+                <tr>
+                  <td>ISOFS_DIR</td>
+                  <td>The temporary directory where all the necessary
+files will put aside to burn on CDR. Default is /tmp/backup <font
+ color="#ff0000"><br />
+Warning: content will be wiped out with a "make clean"</font></td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>LINUX_KERNEL</td>
+                  <td>Location of the linux kernel (absolute path)
+which is usefull in case you want to experiment with an alternative
+kernel instead of the running kernel. By default the string is empty,
+which means mkCDrec will locate and use the running kernel.<br />
+The <span style="color: rgb(0, 0, 153);">mkcdrec.log</span> file
+contains the value of the copied kernel. If this does not match with
+the reality then fill in the correct kernel value in LINUX_KERNEL.<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td>MKCDREC_DIR</td>
+                  <td>is the same as $basedir (do not change it)</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>CDREC_ISO_DIR</td>
+                  <td>The location where 'CDrec.iso' ISO9660 images
+will be made. Default is "/tmp"</td>
+                </tr>
+                <tr>
+                  <td>PROMPT_BOOT_FLOPPY</td>
+                  <td>To prompt to create also a boot 1.44 Mb floppy
+say "1" (no is "0"). Default is 0.</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>BOOT_FLOPPY_DENSITY</td>
+                  <td>High density (1.44 Mb) = HD. Extended density
+(2.88 Mb) = ED. For bigger kernels such as Linux 2.4 it may be
+necessary
+to define ED. By defining ED it will not be possible anymore to create
+a physical boot floppy (only El Torito 2.88 Mb emulation on CD-ROM).
+Default is ED.</td>
+                </tr>
+                <tr>
+                  <td>TAPE_DEV</td>
+                  <td>Fill in a <font color="#ff0000">no-rewinding</font>
+tape device if any (optional). Tape device can be one of the following
+formats:&nbsp; <ul><li> /dev/nst0&nbsp;&nbsp; (a local attachted SCSI tape
+drive)</li>
+                  <li> remote_host:/dev/rmt/0mn&nbsp; (a remote tape
+drive)</li>
+                  <li> remote_hosts:FILE&nbsp; (only useful if there is
+only 1 partition to backup)</li></ul>
+                  </td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>MT</td>
+                  <td>/bin/mt (from mt-st package. Do not use GNU mt.</td>
+                </tr>
+                <tr>
+                  <td>TapeDensity</td>
+                  <td>String with hexadecimal tape density. Use "mt
+densities" to view the existing list. Only needed in combination with
+tape backup of course.</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>INITRD_FS</td>
+                  <td>Filesystem type used by initial ramdisk (ext2,
+msdos, romfs, cramfs). Default is ext2.</td>
+                </tr>
+                <tr>
+                  <td>ROOT_FS</td>
+                  <td>Filesystem type used by root ramdisk (ext2, ext3,
+reiserfs, xfs). Default is ext2.&nbsp; <br />
+                  <font color="#ff0000">Warning</font>: for ext3 you
+need to patch the 2.2.x kernel with patches from <a
+ href="http://www.kernel.org/pub/linux/kernel/people/sct/ext3/">http://www.kernel.org/pub/linux/kernel/people/sct/ext3/</a></td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>REMOTE_COMMAND</td>
+                  <td>Either rsh or ssh. Currently only used in
+combination with remote tape handling. Default is ssh.</td>
+                </tr>
+                <tr>
+                  <td>EXCLUDE_LIST</td>
+                  <td>List of directories which should be excluded
+during backup. Of course, it also means they cannot be restored too.
+Default is /tmp/*, /proc/*, /mnt/*&nbsp; <br />
+&nbsp;- "<b>/test</b>" will exclude all items in /test (if /test is a
+directory), also /test will NOT exist upon restore&nbsp; <br />
+- "<b>/test/*</b>" will exclude all items in the directory /test, but
+/test will be created upon restore</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>SCSI_MODULES</td>
+                  <td>List of kernel modules which must be included on
+the ram disk. Be aware that 'lsmod' is being used to build the list of
+modules, but this one is rather for those which cannot be seen at make
+time, e.g. laptop with SCSI card not in slot.</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">NETWORK_MODULES<br />
+                  </td>
+                  <td style="vertical-align: top;">List of any network
+modules needed which cannot be detected (default 3c59x)<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td
+ style="vertical-align: top; background-color: rgb(224, 224, 224);">EXCLUDE_MODULES<br />
+                  </td>
+                  <td
+ style="vertical-align: top; background-color: rgb(224, 224, 224);">List
+of modules which should not be copied to the ram disk (default empty).<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td>OTHER_MODULES</td>
+                  <td>Any other module which may be useful. May be
+empty.</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>MKDIR_LIST</td>
+                  <td>List of direcories which have to be made when ram
+disk is being filles with files. Normally it should be OK to leave as
+it
+is.</td>
+                </tr>
+                <tr>
+                  <td>ETC_FILES</td>
+                  <td>List of files which have to be copied to the
+ramdisks /etc directory</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>BINARIES</td>
+                  <td>List all executables of /bin, /usr/bin or /sbin
+which have to copied to the ramdisk. Executables which are already
+included with BusyBox are skipped.</td>
+                </tr>
+                <tr>
+                  <td>LINKS</td>
+                  <td>List of symbolic links to be made on the ramdisk.</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>BURNCDR</td>
+                  <td>After making an ISO9660 image burn immediately a
+CDR (default is no).</td>
+                </tr>
+                <tr>
+                  <td>CDRECORD</td>
+                  <td>cdrecord program to burn CDR</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>SCSIDEVICE</td>
+                  <td>SCSI address of CD-writer - use "cdrecord
+-scanbus" to fill in the desired numbers. Default is "0,4,0"<br />
+Run "make test" to know the value.<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td>WRITERSPEED</td>
+                  <td>The CD-writer speed (default 2).</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>BLANK_CDRW</td>
+                  <td>"y" to automatically blank the CD-RW</td>
+                </tr>
+                <tr>
+                  <td>CD_EJECT</td>
+                  <td>To automatically eject the CD after burning</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>MAXCDSIZE</td>
+                  <td>The capacity of the CDR (default 670000 Kb). The
+size can be 4300000 Kb when using DVD-R and dvdrecord (for CDRECORD).<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">CDRECORDOPT<br />
+                  </td>
+                  <td style="vertical-align: top;">Any options you need
+for cdrecord (default empty)<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td>CMP_PROG</td>
+                  <td>The compress program used can be gzip, bzip2,
+lzop,... (default is gzip).</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>CMP_PROG_OPT</td>
+                  <td>Options needed by compress program (c is
+mandatory for use of stdout)</td>
+                </tr>
+                <tr>
+                  <td>CHECK_BAD_BLOCKS</td>
+                  <td>Should mkfs check for bad blocks before making
+the filesystems? The "-c" option checks for bad blocks (default), empty
+string doesn't.<br />
+                  <span style="color: rgb(51, 102, 255);">Empty string
+speeds up the restore phase a lot, but no bad block check is done!</span><br />
+                  </td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>DEVFS</td>
+                  <td><a
+ href="http://www.atnf.csiro.au/%7Ergooch/linux/docs/devfs.html">Device
+Filesystem</a> (do for /dev what proc does for /proc). Default is
+0.&nbsp; <br />
+                  <font color="#ff0000">Warning</font>:
+CONFIG_DEVFS_FS=y and CONFIG_DEVFS_MOUNT=y is needed in linux' .config
+file (recompile if needed)<br />
+Run "make test" and it will tell you it is correct or not.<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td>MAN_PAGES</td>
+                  <td>list of man pages to include on rescue CD-ROM</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>MKISOFS</td>
+                  <td>If you change it use abolute path to mkisofs
+(default mkisofs)</td>
+                </tr>
+                <tr>
+                  <td>KERNEL_APPEND</td>
+                  <td>if you need to add some additional parameters at
+boot time, e.g. vga=794 or devfs=mount (sometimes needed with
+Mandrake).
+Default is empty.</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>MKCDREC_MODULES</td>
+                  <td>add additional startup modules, e.g. rh_pppoe sshd</td>
+                </tr>
+                <tr>
+                  <td>FIXED_SIZE</td>
+                  <td>Only usefull for cloning! List of partition which
+have to stay fixed in size, e.g. /dev/hda1. Note: FAT partitions do not
+have to be listed.</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>CIPHER</td>
+                  <td>Encryption cipher to use (only openssl allowed:
+overview with "openssl -enc")&nbsp; <br />
+For non-interactive mode you need a secret file ($HOME/.secret)&nbsp; <br />
+                  <b><font color="#ff0000">Warning:</font></b> chmod
+600
+this file! Be aware: once encrypted and you loose the key, you loose it
+all!&nbsp; <br />
+Default is "none"</td>
+                </tr>
+                <tr>
+                  <td>PreExec</td>
+                  <td>String with commands to be executed before
+starting the backups, e.g. shutdown database</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>PostExec</td>
+                  <td>String with commands to be executed when backups
+are finished</td>
+                </tr>
+                <tr>
+                  <td valign="top">SERIAL</td>
+                  <td valign="top">Serial console, e.g. ttyS0 (default
+empty). For IA64 fill in "ttyS0" to use the lan console.<br />
+                  </td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td style="background-color: rgb(224, 224, 224);"
+ valign="top">BAUDRATE</td>
+                  <td style="background-color: rgb(224, 224, 224);"
+ valign="top">Speed (default
+9600) of SERIAL device.<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td>FORCE_DHCP_SUPPORT</td>
+                  <td>Say 'Y' to always force DHCP from mkCDrec
+(default=N). In combination with PXE make sure this value is N.<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td
+ style="vertical-align: top; background-color: rgb(224, 224, 224);">DVD_Drive<br />
+                  </td>
+                  <td
+ style="vertical-align: top; background-color: rgb(224, 224, 224);">Use
+a DVD-writer: 0
+for no, 1 for yes (default 0). Limited support - assume growisofs is
+used. Any help is appreciated.<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">AUTODR<br />
+                  </td>
+                  <td style="vertical-align: top;">Automatic Disaster
+Recovery mode (default=n). CD-ROM restores after automatically (after
+20 seconds) the complete system. Needless to say this is an usefull
+option, but at the time very dangerous! Use at your own risk. <br />
+                  </td>
+                </tr>
+                <tr>
+                  <td
+ style="vertical-align: top; background-color: rgb(224, 224, 224);">INITRD_SIZE<br />
+                  </td>
+                  <td
+ style="vertical-align: top; background-color: rgb(224, 224, 224);">The
+size of the initial ramdisk. Use "make test" to find the correct value.<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">FORCE_SYSLINUX<br />
+                  </td>
+                  <td style="vertical-align: top;">Isolinux is used by
+default to boot from CD-ROM. If for some reason you want to force
+syslinux instead use "true" instead of "false". Default is false.<br />
+                  </td>
+                </tr>
+            </table>
+            <blockquote>&nbsp;</blockquote>
+

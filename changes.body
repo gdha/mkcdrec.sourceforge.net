@@ -1,0 +1,676 @@
+            <h2> Changes</h2>
+            <br />
+            <font color="#ff0000">Please consult the <a
+ href="http://mkcdrec.sourceforge.net/Changelog"> Changelog</a> file for an up-to-date view of changes.<br />
+            <br />
+            </font><br />
+<ul>
+            <li>20/02/2002 - 03/01/2002:</li>
+            <ul> <li> Going through the documentation to screen it once more.</li>
+              <li> Cleaned up the grub code a bit - hope it works fine (not tested).</li>
+              <li> Togther with Michael added openssl based encryption.  Spent lots of time of debugging and doing restores!</li>
+              <li> Played a lot with a new toy (Compaq iPAQ) running GNU/Linux of course. Great little thing - I love it.</li>
+              <li> Enjoyed an almost flawless release ;-)</li>
+            </ul>
+</ul>
+<ul>
+            <li> 02/01/2002:</li>
+            <ul> <li> Software RAID has been added to the list of devices which can be backup'ed and restored. start-restore.sh script will call buildraid.sh script which shall rather drastically overwrite all the disk inside a Software RAID. Be aware, this is properly an overdue and not needed at all as Software RAID has built-in recovery tools (also included with mkCDrec). So be careful with it! However, it did work for me from the bottom up! Oh yes, the Software RAID howto is now part of mkCDrec too (see the usr/doc/howto directory).</li>
+              <li> Network support has been improved a lot, and at last DHCP is included!</li>
+            </ul>
+</ul>
+<ul>
+            <li> 15/10/2001 - 12/12/2001:</li>
+            <ul> <li> Finally, v0.5.8 will be released! It is a rather "stable" release which fixes lots of bugs, and also fixes the threatful "permission denied" bummer at boot time. Thanks to Michael Petullo and Franky
+Van Liedekerke.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 11/09/2001 - 14/10/2001:</li>
+            <ul> <li> Mike started to modularize mkCDrec start-up sequence. We decided eventually not to overdue it as we want to keep this project KISS.</li>
+ <li> Good nice feedback from plenty of users (most were happy ;-) and also got some bug reports (with patches - keep them coming ;-)</li>
+              <li> The exclude directory bug has been fixed thanks to Ron!</li>
+              <li> cramfs is now a more or less supported filesystem for initial ramdisk. I still got some failures on RedHat, albeit inserted for Debian 2.4 based kernels. Need user feedback urgently!</li>
+<li> Debugged the cloning script, and fixed some bugs</li>
+              <li> Rewrote the CD-writer detection part in test.sh</li>
+              <li> Started to add useful binaries to mkCDrec, such as mc, cfdisk</li>
+            </ul>
+</ul>
+<ul>
+            <li> 05/08/2001 - 10/09/2001:</li>
+            <ul> <li> Spent awfull lots of time in rewriting the Resize_partition_layout of cloning-dsk.sh script. I think it gives much better results than before and the routine is again acceptable in size ;-)</li>
+              <li> I'm pleased that lesser bug reports are thrown at me! Unfortunately, the ones that come are tricky to find, but not impossible to resolve...</li>
+              <li> Decided to not add too much new functionality in mkCDrec, but rather want to go to a stable piece of software that actually is getting useful.  Therefore, I'm concentrating on fixing all bugs and adding some new (great) tools into mkCDrec Utilities.</li>
+              <li> Oh by the way, I'm preparing a talk on "Working with SourceForge" and would like to find the time to start on a new project called " beTUXed " which will be an application CD-ROM for e.g. mkCDrec of course (and games etc...)</li>
+            </ul>
+</ul>
+<ul>
+            <li> 30/07/2001 - 04/08/2001:</li>
+            <ul> <li> Did a successful restore on a RedHat 7.1 system. Found some bugs in rc.sysinit - good news is that BusyBox 0.53pre seems to work well. Another bug I encountered was that 3c59x.o module was not copied (was once reported by someone) but it worked fine on Suse...  like to hunt the bug first before release.</li>
+             <li> Another thing I noticed was with sfdisk's partitions.hdb file containing a "Warning" line, of course sfdisk fails. Needs some correction when I make this file.</li>
+	     <li> v0.5.4pre testing: debugging the dreadfull ":Can't open" message at the end of initrd just at the moment is should switch to the bigger ram disk.</li>
+              <li> #APPEND initrd=initrd.gz ramdisk_size=$((${RAMDISK_SIZE}*1024)) <b><font color="#ff0000"> root=${RAM0}</font></b> <br /> <font color="#000000">When I removed the code in red it solved my problems! In fact it is very weird as the problem was with ram1 and not ram0, but what the heck...</font></li>
+	 </ul>
+</ul>
+<ul>
+            <li> 24/06/2001 - 29/07/2001:</li>
+            <ul> <li> holidays ;-))</li>
+              <li> Plenty of user feedback - with plenty of fixes!</li>
+              <li> Improved cloning script together with Ron (Thanks!)&nbsp; to optimize to rezising of the partition layout. Still bogus I guess.</li>
+              <li> Wrote a new script "restore-fs.sh" to restore a single filesystem.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 22/06/2001 - 23/06/2001:</li>
+            <ul> <li> Discovered a problem with bzip2 from tar pipe. It contained option "c" which made it fail. Fixed the code (tar-it.sh).</li>
+              <li> Fixed the mount options for ReiserFS filesystems - need to do a correct lilo command.</li>
+              <li> I will be away for 2 weeks holiday. Use Sourceforge as much as possible.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 15/06/2001- 18/06/2001:</li>
+            <ul> <li> Spent the whole week-end to debug v0.5.2. Found lots of things and made even more fixes. Release will be froozen to finalize the loose strings first before the big release.</li>
+              <li> Got some nice patches, but will wait to include after carefully in-depth reading for v0.5.3.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 06/06/2001-14/06/2001:</li>
+            <ul> <li> Did quite a few experiments with backing up vfat partition and restoring them (or trying to). I came to the conclusion (after considerable time of research and trial and error) that tar is not suitable for fat/vfat partitions. The tests I did with dd were a success.</li>
+              <br />
+Therefore, changed lots of code in tar-it.sh, restore_common.sh and start-restore.sh (and clone-dsk.sh).</ul>
+	    </ul>
+</ul>
+<ul>
+            <li> 01-05/06/2001:</li>
+            <ul> <li> mkCDrec support was added for msdos/fat/vfat and ext3 file systems (backup and restore). Also for the root file system and the initial ram disk where appropriate.</li>
+              <li> Could simulate the problem where the CD is made OK, but cannot boot.  Problem can be caused by:</li>
+              <li> the initial ramdisk is too full (increase INITRDSIZE=2500 to 4096)</li>
+                <li> the size of the ISO image differs too much with size in ISOFS_DIR, try to decrease the value MAXCDSIZE.</li>
+              </ul>
+</ul>
+<ul>
+            <li> 29/05/2001:</li>
+            <ul> <li> Last few weeks I did a review of the mkCDrec Utilities. Updated most binaries and added some new ones.</li>
+              <li> Played also with EXT3 filesystems and ext2/ext3resize.</li>
+              <li> Did some experiments with One Button Disaster Recovery (OBDR) tapes - better said tried to make an OBDR tape, but until now the drive still spit them out (no luck so far). I do know the basics how such tape should look like but between theory and practice there is an universe of difference!  I will do some test with CRU to get the hang of it.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 01/05/2001:</li>
+            <ul> <li> Did a restore test of SuSe 7.1 system. It failed miserabely. After some debugging I noticed that <i>gunzip</i> was linked to BusyBox and gave a segmentation fault. Copied a gunzip executable from my laptop (SuSe 6.2) to test environment (still booted from the mkCDrec CD). Restarted the procedure and it worked fine this time.</li>
+              <br />
+Have to investigate why BB's gunzip failed - I'll make sure that in v0.5 we are not using BB gunzip version!</ul>
+</ul>
+<ul>
+            <li> 18/04/2001:</li>
+            <ul> <li> Started with the new "look" for the web pages.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 15/04/2001-16/04/2001:</li>
+            <ul> <li> Created an entry for <a href="http://sourceforge.net/projects/mkcdrec/">mkcdrec at sourceforge</a> </li>
+              <li> Added Yves Blusseau and W. Michael Petullo as co-developers for the projects. More are always welcome!</li>
+              <li> Uploaded v0.5.0pre into CVS tree at sourceforge</li>
+            </ul>
+</ul>
+<ul>
+            <li> 26/03/2001-04/04/2001:</li>
+            <ul> <li> Collecting feedback, error reports and fixes from users!</li>
+            </ul>
+</ul>
+<ul>
+            <li> 24/03/2001:</li>
+            <ul> <li> v0.4.8 tests: installed Mandrake-8.0beta2 with ReiserFS as filesystem. The 'make test' showed that the <i>bc </i>command was not available in the stock installation.  Installed it via the cdroms.</li>
+              <li> The make process had problems with copying loadable modules to its stage directory. Had to change rd-base.sh and initrd.sh to improve those functions. Mandrake gzips its loadable modules which my routines did not cover (yet).</li>
+              <li> Also, for the first time the base ram disk became 100% full - had to increase the RAMDISK_SIZE to 16 (Mbytes).</li>
+              <li> Booted fine but couldn't mount CD-ROM as modules iso9660 (isofs.o) was not available in initrd! Fixed this in initrd.sh.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 23/03/2001:</li>
+            <ul> <li> v0.4.8 tests: did a restore test on a Debian 2.2r3 system with success.  Although, there are a few shortcomings to be further investigated:</li>
+              <ul> <li> syslogd was not killed at the end of initrd bootstrap, therefore, no syslog output
+on screen tty6</li>
+                <li> for some reason the exclude rules with tar are behaving different than on SuSe or RedHat, but Debian does not die on it (that's the good news)</li>
+                <li> in base Debian2.2r2 the <i>ash</i> and <i>bzip2</i> commands are missing!</li>
+              </ul>
+            </ul>
+</ul>
+<ul>
+            <li> 22/03/2001:</li>
+            <ul> <li> v0.4.8 tests: did a restore test on a RedHat 7.0 system with success. Just had to fix linuxrc in the initrd phaze to get loadable module support.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 18/02/2001-19/03/2001:</li>
+            <ul> <li> Beta-testing period for v0.4.7. All feedback (bug reports, enhanced feautures) will be integrated into v0.4.8. Integration tests&nbsp; of v0.4.8 are scheduled for this week, if all goes well, next week v0.4.8 will be released. I'm working towards a stable, full feature version 0.5.</li>
+              <br />
+All new feature requests are blocked until v0.5.1.</ul>
+</ul>
+<ul>
+            <li> 17/02/2001:</li>
+            <ul> <li> Debugging the Resize_partition_layout function (restore_common.sh).</li>
+              <li> Will test an out of the box RedHat 7.0 system with v0.4.7 with a built-in loadable module support for ide/scsi cd-rom.  Will it work?</li>
+              <li> Added a better 'out of space' watcher at different levels (initrd, bootflop and rd-base level).</li>
+              <li> Some users ask me to write an article on the internals of mkCDrec.  Will add it to me todo list.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 10-16/02/2001:</li>
+            <ul> <li> Rewriting the device parser to support different kind of disks, e.g. IDE/SCSI disks, but also hardware/software RAID, and LVM layout. At least the framework will be there - the rest will be plugged in as modules in time due. IDE/SCSI is done. Framework for Compaqs' ida hardware raid is made, but not filled
+in yet (time is flying by....)</li>
+              <li> Testing version v0.4.7 to support RedHat 7.0 too (the changed /etc/fstab layout). Will be using the output of "mount" command. Failed on stock RH 7.0, because ide-cd is a module and could not be loaded at boot time.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 05/02/2001:</li>
+            <ul> <li> Time to release v0.4.6 to the world (and announce it at freshmeat again). Decided to withdraw version v0.4.5 (too many bugs).</li>
+            </ul>
+</ul>
+<ul>
+            <li> 04/02/2001:</li>
+            <ul> <li> Spent the whole day debugging the disk-clone.sh&nbsp; (and start-restore.sh) with a multi-volume set.  And, found plenty of errors.... at the end it worked smoothly and it was worth it.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 31/01/2001:</li>
+            <ul> <li> Fixed (hopefully what I think) the bug in cutstream. Hope to find time this evening to do another test (but have to work late at a customer site).</li>
+            </ul>
+</ul>
+<ul>
+            <li> 30/01/2001:</li>
+            <ul> <li> Making a multi-volume CD set revealed an error in cutstream/makeISO9660.sh and tar-it.sh. Do the fixing, and have to re-test it tomorrow.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 28/01/2001:</li>
+            <ul> <li> mkCDrec_v0.4.5 is finished (multi-volume backup/restore). Still have to test before I put it on the web for <i>beta</i> testing.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 15/01/2001:</li>
+            <ul> <li> Got my makeISO9660.sh script finally behaving correctly (even STDIN/STDOUT redirecting seems to work). After testing the multi-volume archives I discovered a bug in cutstream (forgot to close a fd which makeISO9660.sh removes) and tar unfortunate dumps to an invisible file, but the inode still exists.  FUN.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 13/01/2001:</li>
+            <ul> <li> Quite important to know is that I abandonned bzip2 in favour of gzip because bzip2 cannot handle pipes.</li>
+              <li> After a few days struggling with tar-cutstream-makeISO9660.sh I think I'm on track to get multi-volume CD sets going. The hard part is actually testing it on my laptop (busy...). The real hard part is the individual investigation of all CDrec images made.</li>
+              <li> Even thougher is the restore part of multi-volume (not written yet).  Poeh!</li>
+            </ul>
+</ul>
+<ul>
+            <li> 10/01/2001:</li>
+            <ul> <li> Wrote a small C program (a modified 'cat') to cut a stream, make isofs and burn it, and to continue. Not tested yet...</li>
+            </ul>
+</ul>
+<ul>
+            <li> 09/01/2001:</li>
+            <ul> <li> Spent lots of time on GNU tar and multi-volume testing. It would be perfect if tar multi-volume in combination with info-script would be able to split up the backups. Unfortunately, multi-volume cannot handle compression. I've downloaded the latest GNU tar release and did some experimenting with tar-1.12 and tar-1.13. By the way, tar-1.13 contains a bug in its multi-volume part (reported it to the developers).</li>
+ <br /> Tried to change the code a bit to enable compression with multi-volume, but it is more complex than I hoped. The problem is tar do the compression at the end of archive and not synchronously.</ul>
+</ul>
+<ul>
+            <li> 07/01/2001:</li>
+            <ul> <li> Wrote the makeISO9660.sh script to make (and burn) the ISO image. This is the first step towards multi-volume support (ask for by so many people I could not resist the challenge).  The Makefile will not build the mkisofs anymore. Internal version 0.4.3.</li>
+              <li> Changed a small bug in start-restore.sh (as pointed out by Robert C. Gelina), and uploaded version 0.4.1 to the web site again. Corrected the download page too on the web site.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 31/12/2000:</li>
+            <ul> <li> During the last days I worked on mkCDrec Utilities - collect &amp; integrate into mkCDrec. Still working on the utilities web pages.  Thereafter, it is time to release it to the world ;-)</li>
+              <li> By the way, you will notice that the 'real' Changelog is now kept in a file called 'Changelog'. This web page I only update&nbsp; with major headlines (not all details).</li>
+            </ul>
+</ul>
+<ul>
+            <li> 23/12/2000:</li>
+            <ul> <li> Downloaded the ReiserFS patches and patch the 2.2.17 kernel (2.2.18 failed to compile)</li>
+              <li> To build the ReiserFS utilities do the following:</li>
+              <br />
+cd /usr/src/linux/fs/reiserfs/utils; make dep; make; make install</ul>
+</ul>
+<ul>
+            <li> 17/12/2000:</li>
+            <ul> <li> Write some more documentation before I release version 0.4</li>
+              <li> Did a succesful cloning test of my production system to my test system.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 15/12/2000:</li>
+            <ul> <li> Good news! Kernel 2.2.10 was responsible somehow for the ultra-compression of the ramdisk (which made them useless). After upgrading to kernel 2.2.17 it worked fine.</li>
+              <br />
+The lesson: if you use <font color="#ff0000">kernel 2.2.10 do not use</font> it for making mkCDrec CD-ROMs. Therefore, upgrade to 2.2.16, 2.2.17 or 2.2.18.  Kernel 2.4 works too.</ul>
+</ul>
+<ul>
+            <li> 14/12/2000:</li>
+            <ul>
+              <li> Added a nice boot message</li>
+              <li> Decided not to release v0.4 until I know what caused the strange compression factor...hopefully it is only the old kernel.</li>
+              <li> Luc Minnaert (beta tester for v0.4) hit a strange problem with gzip of initrd.img. The compression factor was 98%, which is NOT possible (normally it is around 72%).</li>
+              <br /> Indeed the result was a crash at boot time with the mkCDrec CD-ROM. <br />
+Further investigation revealed that expanding the initrd.img resulted in a filesystem full with I/O error (a simple ls command would do it). I do not understand it - I assume that Linux kernel 2.2.10 is responsible somehow???  Therefore, asked Luc to upgrade to at least 2.2.17 and retry the exercise.
+	<li> Hit the "no space left" limit with the base ramdisk (8 Mb linit reached). I can/may increase it to 12 Mb as reserved by the inital ramdisk for the baseram.  Added RAMDISK_SIZE to rd-base.sh and to Config.sh (for v0.4 it will be 12 by default instead of 8 Mb).</li>
+              <li> Added more logging facilities during building the ramdisk into $MKCDREC_DIR/mkcdrec.log</li> </ul>
+</ul>
+<ul>
+            <li> 13/12/2000:</li>
+            <ul> <li> Tested the remote tape backup - Ok.  Should test the restore too, but I guess it should work now. Need testers!</li>
+              <li> Wrote doc/config.html</li>
+              <li> Added correct (remote) tape restore in start-restore.sh and clone-dsk.sh scripts.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 12/12/2000:</li>
+            <ul> <li> Changes in Config.sh:</li>
+              <ul> <li> moved $PATH in PATH settings to the end (was first in line) for picking up rsh, ftp in /usr/bin instead of /usr/kerberos/bin (for redHat).</li>
+                <li> added link to ssh from ssh1/2</li>
+                <li> added REMOTE_COMMAND=rsh or ssh (needless to say I prefer ssh)</li>
+              </ul>
+              <li> Writing/reading to/from a remote tape excludes the use of bzip2! Bzip2 needs a file and cannot handle standard input (standard output is covered). Noticed also that the GNU tar is very weak with HOST:FILE syntax.</li>
+              <br />
+Therefore, with tapes will be using gzip and dd (and for remote handling rsh/ssh)</ul>
+</ul>
+<ul>
+            <li> 11/12/2000:</li>
+            <ul> <li> Use syslinux-1.50 instead of v1.49 (mkCdrec v0.3.5)</li>
+              <li> My clone-dsk.sh script finished OK, but lilo returned the following message:</li>
+              <br />
+&nbsp;
+              <table cols="1" width="80%" bgcolor="#000000" nosave="">
+                <tbody>
+                  <tr>
+                    <td><font color="#ffffff">Warning : /dev/hdd is not
+on the first disk</font> <br />
+                    <font color="#ffffff">Warning: BIOS drive 0x82 may
+not be accessible</font></td>
+                  </tr>
+                </tbody>
+              </table>
+              <li> I wonder, should I prompt to lilo the clone disk or
+not?</li>
+              <li> Target is to release v0.4 by the end of this week with priority "medium" for added cloning feature and improved (remote) tape handling, 2.88 Mb bootfloppy and Linux kernel 2.4 support.</li>
+              <li> Debugged clone-dsk.sh (I hope correctly ;-) Busy with test.</li>
+              <li> Tape support is still buggy, remote tape support tests going on (have to be careful as different OSes assume different things...) Testing internal version v0.3.4</li>
+            </ul>
+</ul>
+<ul>
+            <li> 10/12/2000:</li>
+            <ul> <li> Good news is: redhat 6.2 has a BASH v2.03 available which is /bin/bash2.</li>
+              <br /> Suse 6.2 used default v2 and has a /bin/bash1 (v1.14) too. A mixed world... <br /> Will use by default bash2 on mkCDrec... 
+		<li> My test system (redhat 6.2) uses an old Bash v1.14.7 which cannot handle arrays! How to check ?  "declare -a" returns -a unknow option. Poeh! I use arrays for my disk selection part!  My development system is SuSe 6.2 based which has bash v2.03.0(1), therefore, I assume that all <font color="#ff0000">bash version higher than v2.x are OK</font>.</li>
+              <br />
+Downloading bash-2.04.tar.gz - will compile it and copy bash to my recover setup (lucky to have networking ;-) and redo the whole test. <li> The newly compiled bash v2.04 is 1.5 Mb in size (unstripped that is). After stripping the remaining size is 482 Kb.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 09/12/2000:</li>
+            <ul> <li> The bullet is through the church - clone-dsk.sh script is finished.  Or, at least, the buggy version. It was quite interesting to work on...  Internal version v0.3.3</li>
+              <li> Found something interesting - netpipes. With netpipes one can link to anything, ftp, http, or whatever. Could be handy one day, but needs further investigation before it can be implemented or used in combination with mkCDrec.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 06/12/2000:</li>
+            <ul> <li> Continued with clone-dsk.sh script (done with source/target disk selection). Started to think on the most difficult part (repartition target disk according source disk layout, t.i. dynamic resizing).</li>
+              <li> Removed a small bug in /etc/rc.d/pcmcia (fgrep became grep).</li>
+            </ul>
+</ul>
+<ul>
+            <li> 04/12/2000:</li>
+            <ul> <li> Linux kernel 2.4.x officially supported now! For big kernels I can do 2.88 Mb emulation on El Torito CD-ROMs. Unfortunately, a boot floppy cannot be made then, but what the heck.</li>
+              <br />
+This version is v0.3.2 (internal only). <li> Started with the clone-dsk.sh script. Took a while for the disk scanning part, but got it finally right (/tmp/available.disks contain all potential installation disks - neat if I say myself). Will give the user a list of target disks to install to, but that is for tomorrow...</li>
+            </ul>
+</ul>
+<ul>
+            <li> 03/12/2000:</li>
+            <ul> <li> On my test system the linux-2.4 kernel is 864 Kb big and the initrd.img 592 KB, therefore, it exceeds the size of the bootfloppy. Have to work around it. Will study how to split initrd and linux, or if it is possible to increase the bootfloppy to 1.7 MB (I thought El Torito can only handle 1.4 MB, and 2.88 Mb boot floppy emulation).</li>
+              <li> Modified rd-base.sh script so it will save also the "used" disk space per partition. This info we will use/need to clone partitions on another disk (maybe the total size is smaller than the original disk).</li>
+            </ul>
+</ul>
+<ul>
+            <li> 02/12/2000:</li>
+            <ul> <li> Would like to use the 2th disk as a "cloning" test, e.g. not restore to the same disk (could be useful as pointed out by Jean Huens). We cannot assume that the cloning disk is of the same size as original disk, but the minimum requirement is that all partitions should be able to be created and fit on cloning disk. How will I do that? Extract info from fstab file and df output? Don't think it is necessary to ask at build time (e.g.  making the backups). Only start-restore.sh (or another script) should be able to do the task. This is a challenge = go for it!</li>
+              <li> test system is running a 2.4 kernel now, at least something positive (mkraid did not work under 2.2.17 with raid-patch - I suspect the patch).  Under 2.4 mkraid does work, but cannot raidhotadd due to the size of partition being a few bytes too big (not equal sig...)</li>
+              <br />
+Software mirroring is still not that easy to implement, therefore, not many users I suspect? <li> My second disk gives my a headache for mirroring purposes (the size is never 100% the same of the partitions, how hard I try).</li>
+              <li> Downloaded e2fsprogs from http://e2fsprogs.sourceforge.net/</li> <br />
+Added support of e2progs into mkCDrec. <li> Downloaded GNU parted from http://www.gnu.org/software/parted/parted.html</li> <br />
+Note: e2fsprogs are a pre-requisite for the libuuid. <br />
+Read the documentation, but not sure of the added value for mkCDrec.  Are there readers familiar with parted?</ul>
+</ul>
+<ul>
+            <li> 01/12/2000:</li>
+            <ul>
+              <li> Version 0.3.1 was born! Cleaned up the code, found here and there some minor bugs (cosmetic), and as a test used bzip2 instead of gzip to compress the archives.</li> <br />
+&nbsp;
+              <table border="1" cols="3" width="90%" bgcolor="#cccccc">
+                <tbody>
+                  <tr nosave="">
+                    <td nosave=""><b>gzip</b></td>
+                    <td><b>bzip2</b></td>
+                    <td><b>difference</b></td>
+                  </tr>
+                  <tr>
+                    <td>hda1: 2.587 Kb</td>
+                    <td>2.599 Kb</td>
+                    <td>0.99</td>
+                  </tr>
+                  <tr>
+                    <td>hda5: 134.762 Kb</td>
+                    <td>111.796 Kb</td>
+                    <td>1.21</td>
+                  </tr>
+                  <tr>
+                    <td>hda6: 20.707 Kb</td>
+                    <td>20.499 Kb</td>
+                    <td>1.01</td>
+                  </tr>
+                  <tr>
+                    <td>hda7: 1.822 Kb</td>
+                    <td>1.453 Kb</td>
+                    <td>1.25</td>
+                  </tr>
+                  <tr>
+                    <td>hda8: 16.935 Kb</td>
+                    <td>15.967 Kb</td>
+                    <td>1.06</td>
+                  </tr>
+                  <tr>
+                    <td><i>Total: 176.813 Kb</i></td>
+                    <td><i>152.314 Kb</i></td>
+                    <td><i>1.16</i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </ul>
+            <ul>
+              <li> If we compare the real size of the file systems with the bzip2 compressed tar-balls:</li>
+              <br />
+&nbsp;
+              <table border="1" cols="3" width="90%" bgcolor="#ccffff">
+                <tbody>
+                  <tr>
+                    <td>File system real size</td>
+                    <td>bzip2 compresses tar-balls</td>
+                    <td>Difference</td>
+                  </tr>
+                  <tr>
+                    <td>hda1: 3.894 Kb</td>
+                    <td>2.599 Kb</td>
+                    <td>1.4</td>
+                  </tr>
+                  <tr>
+                    <td>hda5: 475.660 Kb</td>
+                    <td>111.796 Kb</td>
+                    <td>4.25</td>
+                  </tr>
+                  <tr>
+                    <td>hda6: 32.716 Kb</td>
+                    <td>20.499 Kb</td>
+                    <td>1.59</td>
+                  </tr>
+                  <tr>
+                    <td>hda7: 6.874 Kb</td>
+                    <td>1.453 Kb</td>
+                    <td>4.73</td>
+                  </tr>
+                  <tr>
+                    <td>hda8: 45.116 Kb</td>
+                    <td>15.967 Kb</td>
+                    <td>2.82</td>
+                  </tr>
+                  <tr>
+                    <td><i>Total: 564.260 Kb</i></td>
+                    <td><i>152.314 Kb</i></td>
+                    <td><i>3.70</i></td>
+                  </tr>
+                </tbody>
+              </table>
+              <li> Incorporated the changes I got from Jean Heuns (KULeuven) for the Debian distribution</li>
+              <li> Tried to set-up RAID 1 om my test system (boot+root+Lillo), but it failed on the /boot partitions because the 2 disks (of the same size) are different on head/sectors/cylinders and /boot was a few bytes different (raidhotadd failed on that). I being clever tried to switch with lilo the boot disks, but miserably failed /-]</li>
+            </ul>
+</ul>
+<ul>
+            <li> 25/11/2000:</li>
+            <ul> <li> Got some nice feedback and ideas for next releases of mkCDrec. I will think about them and update the <a href="todo.html">todo list</a> when appropriate.</li>
+              <li> D-day: the presentation was fun. The public seemed to be interested in the topic (the RealAudio stream will be available within a few days).  The presentation itself can be downloaded from the <a href="http://www.ota.be/linux/workshops/20001125/"> workshop web pages</a> .</li>
+            </ul>
+</ul>
+<ul>
+            <li> 23/11/2000:</li>
+            <ul> <li> Time to concentrate on the presentation for next Saturday, November 25th.</li>
+              <br />
+Title: <b><font color="#cc0000">Disaster Recovery: Be Prepared</font></b>
+              <br />
+For: <a href="http://www.ota.be/linux/workshops/20001125/">Linux-SIG 24 Workshop</a> of the <a href="http://www.ota.be/">Open Technology Assembly</a> in Brussels. <br />
+The presentation will be available on above mentioned site (in pdf format and in real slideshow). <li> Robert Sprockeels called me in the morning in a slightly panic mood (my server is being attacted)! The freshmeat effect was starting...over 500 downloads in 1 day!</li>
+            </ul>
+</ul>
+<ul>
+            <li> 22/11/2000:</li>
+            <ul> <li> Did the initial <a href="freshmeat_231100.jpg">freshmeat announcement</a> ...</li>
+              <li> Uploaded the mkCDrec_v0.3.tar.gz to http://mkcdrec.ota.be/mkCDrec_v0.3.tar.gz</li>
+              <li> More important found a little bug in start-restore.sh with NFS mounted file systems. A few things which are important (to remember for a FAQ):</li>
+              <br />
+# mkdir /home/SD&nbsp;&nbsp;&nbsp; (must be done by yourself) <br />
+# mount u2:/d/SD&nbsp; /home/SD&nbsp; (has to be done by yourself if start-restore.sh cannot find the mountpoint in /etc/recovery/mtab.<i>hostname</i>, in my case it couldn't find it as /home/SD/test was a sub-directory [pain in the *sh I am]). <br />
+# cd /etc/recovery <br />
+# ./start-restore.sh&nbsp;&nbsp;&nbsp; (it is busy right now....reformatting the disks [again]) <li> /dev/ram is now always a link to ram0 in initrd and in rd-base (one problem less). Not perfect yet, but I can live with it.  The drawback is that initrd stays mounted as /root.old (so what).</li>
+              <br />
+Made changes to linuxrc and etc/rc.d/rc.sysinit <li> Finally pinpointed the re-mounting troubles on RedHat! /dev/ram is an alias for ram1.  Therefore, initrd has problems umounting /. For the rest it worked, but this part puzzled me for a long time.</li>
+              <li> Busy doing a mkCDrec in combination with a NFS mounted disk. On SUN do e.g.</li>
+              <br />
+# share -F nfs -o rw=test,root=test&nbsp; /d/SD <br />
+On test system mounted it under /home/SD/ and created a test directory under beneath. <li> Found a syntax error in /etc/rc.d/rc.sysinit file with 'mount -n', the mount command from busybox does not support the '-n' option (do not write to /etc/mtab).</li>
+            </ul>
+</ul>
+<ul>
+            <li> 21/11/2000:</li>
+            <ul> <li> It is 22h00: a start-restore.sh has been started... 35 minutes everything is back restored. Rebooted the system.  No problems this time. Tomorrow a test over NFS.</li>
+              <li> http://mkcdrec.ota.be/ is up and running (thanks Robert). Therefore, going through the latest web pages before they are uploaded.</li>
+              <li> Changed the tar-it.sh script for the exclude list writing as SuSe and Redhat are doing this a bit different. I hope that other distribution are behaving as SuSe or Redhat. If not, let me know.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 20/11/2000:</li>
+            <ul> <li> Created the missing mount points manually, and rebooted the system. <font color="#ff0000"> YES</font>. It can boot.</li>
+              <li> Rebooting the system revealed that some mount points were missing which is rather strange, e.g. /var, /boot, /usr. Well, all file systems which had a separate mount point (partition).</li>
+              <br /> OK, meaning yet another script to make (/etc/recovery/mkdirs.sh)
+	<li> Did the start-restore.sh test. It worked fine 'till it reached the LILO part, where it failed, because RedHat needs / and /boot partitions to be mounted.  Had to do some hacking in the coding 'till it worked.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 19/11/2000:</li>
+            <ul> <li> Finished the start-restore.sh script.  Will burn a new CDR of the test system. Tomorrow will try a real start-restore.sh.</li>
+              <li> Thought that a selective restore would be a good idea. Therefore, changed the rd-base.sh so that it makes separate scripts based on disk instead of all-in-one script.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 18/11/2000:</li>
+            <ul> <li> Executables which were missing (or badly linked): vi to elvis (on Suse in /usr/bin and with Redhat in /bin),</li>
+              <li> Started writing on the start_restore.sh script.  Doing step by step and see what's missing on my test system.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 17/11/2000:</li>
+            <ul> <li> Decided to freeze this version to v0.3 and send a copy to Robert to put on the special pages of mkCDrec.</li>
+              <li> Started to work on some web pages (introduction and installation).  Furthermore, made some slides for the presentation of next week Saturday.</li>
+              <li> Made a new CDR, and could boot from it. Saw some cosmetic errors in /etc/rc.sysinit.</li>
+              <li> Make clean + complete rebuild seemed to fix it. It was probably too late yesterday.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 16/11/2000:</li>
+            <ul> <li> Rebuild the kernel with JOLIET support, but the CD image is still not able to see - or 2 dots in a filename I'm a bit puzzled why? The CDROM made yesterday is a perfect Joliet one (Windows shows the long names, also my laptop does it). Comparing the two linux .config files does not ring a bell immediately...</li>
+              <li> Noticed 2 problems after rebooting with the floppy:</li>
+              <li> The Linux kernel on the CD-ROM was not JOLIET compatible (indeed kernel was compiled without CONFIG_JOLIET - as a test)</li>
+                <li> On RedHat 6.2 'ls' needs libtermcap.so.2 and 'bzip2' needs libbz2.so.0</li>
+              <li> Analyzed the CD-ROM, and in more particular initrd.gz. How? Mount the CD-ROM as a iso9660 file system, copy initrd.gz to /tmp. gunzip it and then mount it (with -o loop option).</li>
+              <br /> Checked the linuxrc. Will make sure to get a shell prompt at failure to be able to do some debugging. But the result back on a bootable floppy. 
+		<li> Did a successful backup test to tape (with an Adaptec SlimSCSI 1460B PCMCIA card) to a DDS1 (90m) tape.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 15/11/2000:</li>
+            <ul> <li> Found some serious errors in bootflop.sh and the Makefile. Had to scratch my head too many time today ;-)</li>
+              <br />
+Finally, the CDR is burning (including the backups).&nbsp; The boot test from CD failed! Why? <br /> Noticed it saw the CD-ROM (hdb), but failed to mount it? Noticed also the error message "kmod: failed to exec /sbin/modprobe -s -k block-major-11, errno=2" Post-mortem is for tomorrow. <li> Doing a real backup test to isofs (changed ISOFS_DIR in Config.sh to a location with plenty of room) and ran 'make'.  It took about 5 minutes for 800 Mb to make the isofs. Will burn the CDrec.iso on a CDR (on another system) - cdrecord is not yet part of the make procedure</li>
+              <li> modified tar-it.sh to calculate the approximately used disk space by the backups and warn the user when it exceeds the total available space on the destination path. Added mformat and devs check to the Makefile.</li>
+              <li> made as test a boot floppy with 1,72 Mb density (fdformat, mkfs.msdos, syslinux), it loaded the initrd.gz file and loaded linux too, but then it blocked with the message "invalid compresses format (err=2)&lt;6&gt;attempt to access beyond end of device 03:02: rw=0, want=2, limit=1</li>
+              <br />
+dev 03:02 blksize=1024 blocknr=1 sector=2 size=1024 count=1 <br />
+EXT2-fs: unable to read superblock" followed&nbsp; lots of other lines to conclude with VFS: Unable to mount root fs on 03:02. <br />
+Ok, let's drop it (for the moment) and continue with the core (recovery) of mkcdrec. I assume it boots fine, but when trying to mount "/" chokes on the physical size of the floppy being 1,72 Mb instead of the expected 1.44 Mb. <br />
+Checked the meaning of 03:02 in devices.txt and it points to /dev/hd?2.</ul>
+</ul>
+<ul>
+            <li> 14/11/2000:</li>
+            <ul> <li> more tests on my test system revealed that the following commands are not present by default:</li>
+              <br />
+/dev/initrd, /dev/fd0u1722, nasm, mformat <li> found a nasty bug in tar-it.sh with the EXCLUDE_LIST. Fixed it. There is still one check missing, and that is the check if the ISOFS_DIR location is big enough to contain all backups.</li>
+              <li> Changed rd-base.sh: tar_dialog is now using ansictrl.sh instead of 'dialog' and case structured</li> <br />
+Also changed the dialog stuff in bootfloppy.sh 
+		<li> Testing the complete mkcdrec procedure on a freshly installed GNU/Linux system (redhat-6.2.  server installation). Found some cosmetic problems in my procedures.</li>
+              <br />
+Some of the problems: no source tree linux available, no proper kernel (with initrd and ram support), no mkisofs, no dialog. <li> mkisofs -J -o /dev/fd0u1722 ./rd-base.img.bz2</li>
+              <br />
+changed linuxrc on the bootflop.img so it will mount a ISO9660 floppy <br />
+The boot/root test failed because forgot to add /dev/fd0u1722 to the initrd file system. <br />
+Error message was "change root: old root has d_count=9" probably due to mounting a 1722 Kb floppy on /dev/fd0 which is 1440 Kb? Have to retest it. 
+	<li> started writing the HTML pages for publication on http://www.ota.be (urgent)!</li>
+              <li> did a backup test to a scsi tape</li>
+              <li> did some code clean up in several scripts</li>
+            </ul>
+</ul>
+<ul>
+            <li> 13/11/2000:</li>
+            <ul> <li> Did a time make for making a backup of /dev/hda2 (3933650 Kb) over NFS to /foo/hda2._.tgz (1550228 Kb). Compress ratio is about 60%.</li>
+              <br />
+real&nbsp;&nbsp;&nbsp; 116m38.191s <br />
+user&nbsp;&nbsp;&nbsp; 50m40.510s <br />
+sys&nbsp;&nbsp;&nbsp;&nbsp; 16m21.080s</ul>
+            <li> 12/11/2000:</li>
+            <ul> <li> started writing the doc/changes.html file (initially copied all history from the scripts and deleted the lines afterwards in the scripts too - is a bit cleaner).</li>
+              <li> Did a test with one boot and one root floppy:</li>
+              <ul> <li>
+LD_LIBRARY_PATH=/usr/i486-linux-libc5/lib/; fdformat /dev/fd0u1722&nbsp; to format a 1.4 " floppy with 1722 Kb capacity</li>
+                <br />
+mkfs.ext2 /dev/fd0u1722 <br />
+mount /dev/fd0u1722 /mnt <br />
+df =&gt;&nbsp; 1564 Kb free (current rd-base.img.bz2 is 1646 Kb big).
+Sorry,
+nice try. <li> Try with 'msdos' as file system: mkfs.msdos
+/dev/fd0u1722</li>
+                <br />
+mount -t msdos /dev/fd0u1722&nbsp; /mnt <br />
+df =&gt;&nbsp; 1704 Kb free (OK, I can give it a try - it does not hurt
+to
+try eh?) <br />
+cp rd-base.img.bz2 /mnt <li> changed the syslinux.cfg file on the boot
+floppy&nbsp;
+manually as following:</li>
+                <br />
+DEFAULT linux initrd=initrd.gz ramdisk_size=12288 load_ramdisk=1
+prompt_ramdisk=1 <br />
+Also had to change the 'linuxrc' file so it would recognize the floppy.
+                <li> It failed - there is something I forgot (or did not understand yet). At the moment this is of secondary importance, will come back to this point later when the recovery part is finished (well, or at least proofed to work).</li>
+              </ul>
+            </ul>
+            <li> 11/11/2000:</li>
+            <ul> <li> did a test over NFS which went on for hours, but OK it worked ;-) It becomes time to start writing on the "start_restore" script.</li>
+              <li> did some cleaning up in tar-it.sh. Tracing a nasty bug which broke the tar-it.sh part (trap check_rc DEBUG in common_env was responsible for it).</li>
+              <li> tested the boot floppy in conjunction with the CD-ROM made (although without any backup).</li>
+              <ul> <li> it booted fine this time! (2th CD-ROM is no waste - it is just a rescue CD-ROM)</li>
+                <li> Noticed some errors on the screen during boot-up:</li>
+                <ul> <li> modprobe: can't open dependencies file /lib/modules/2.2.17/modules.dep (No such file or directory)</li>
+                  <li> setserial: command not found</li>
+                  <li> eth1: unknown interface: No such device</li>
+                  <br />
+The pcmcia cardctl did not yet enabled/configured all modules at the time that rc.network was run (need to built in a sleep) 
+	<li> nls_cp437 error is still there (english language stuff). After checking the kernel sources noticed that nls_cp437.c was never compiled. Therefore, we may (hopefully) ignore this error .</li>
+                </ul>
+              </ul>
+            </ul>
+</ul>
+<ul>
+            <li> 10/11/2000:</li>
+            <ul>
+              <li> made for the 1st time a tar backup over NFS (3.8 GB to 1.3 GB&nbsp; gzipped) in about 2 hours (10Mbps LAN).</li>
+              <li> cleaned up tar-dialog.sh script. Decided to break the tar-dialog.sh in 2 pieces (the dialog itself and the actual tar). This way some crucial restore information can be written into our rd-base.img.  Therefore, Tar_dialog is a function in this script, and&nbsp; tar-it.sh will be executed later.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 09/11/2000:</li>
+            <ul> <li> made a boot floppy (with dd)&nbsp; from the bootfloppy.img file and tested it. It worked fine, and remounted from CD-ROM as it supposed to do.</li>
+              <li> started with the backup part...</li>
+              <li> Did a test&nbsp; (rd-base.sh only) on another system which failed because I forgot&nbsp; to copy the Config.sh file. This script linked libc.so.6 to&nbsp; /initrd/lib/libc-2.1.3.so and the system went bananas!!!</li>
+                <li> Result: a rescue floppy and repair the damage.</li>
+                <li> Lesson: double check the initial variables, and need to make a boot floppy too as my test system was not able to boot from CD-ROM (at least ask the user at build time).</li>
+              </ul>
+</ul>
+<ul>
+            <li> 08/11/2000:</li>
+            <ul> <li> cleaned up Save_diskinfo module - added syslinux-1.49</li>
+            </ul>
+</ul>
+<ul>
+            <li> 07/11/2000:</li>
+            <ul> <li> netstat -r changed into netstat -rn (for speeding up)</li>
+              <li> made Save_diskinfo module</li>
+            </ul>
+</ul>
+<ul>
+            <li> 06/11/2000:</li>
+            <ul> <li> added tinylogin + changed inittab + added libnss_dns</li>
+            </ul>
+</ul>
+<ul>
+            <li> 05/11/2000:</li>
+            <ul> <li> v0.1 complete (bootable CD-ROM made) failed at inittab forgot that busybox used a different syntax for it!&nbsp; Error message on tty6 (syslog tty) which is a bit weird, but is not deadly:</li>
+              <br />
+kmod: failed to exec sbin/modprobe -s -k nls_cp437</ul>
+</ul>
+<ul>
+            <li> 03/11/2000:</li>
+            <ul>
+              <li> run into /dev/ram0 limit of 4 Mb (need to redesign).  Decided to&nbsp; use 'repairlix' as start base. sig... end of v0.0!&nbsp; Took repairlix-20000924.tar.gz as basis.</li>
+              <br />
+See http://sourceforge.net/projects/repairlix/ <li> mkcdrec.sh is replaced by scripts from repairlix and start adding/changing code from this point on</li>
+            </ul>
+</ul>
+<ul>
+            <li> 01/11/2000:</li>
+            <ul> <li> continued with initial draft coding</li>
+            </ul>
+</ul>
+<ul>
+            <li> 30/10/2000:</li>
+            <ul> <li> continued with initial draft coding</li>
+            </ul>
+</ul>
+<ul>
+            <li> 28/10/2000:</li>
+            <ul> <li> initial writing of skeleton of the mkcdrec.sh script</li>
+            </ul>
+</ul>
+<ul>
+            <li> 27/10/2000:</li>
+            <ul> <li> downloaded busybox from ftp://ftp.lineo.com/pub/busybox/ and looked at the documentation for more in-depth details. Looks promising...</li>
+              <li> downloaded the Bootdisk-Howto from http://www.croftj.net/~fawcett/Bootdisk-HOWTO/ and put some time in it reading it carefully...</li>
+            </ul>
+</ul>
+<ul>
+            <li> 26/10/2000:</li>
+            <ul> <li> trying hard to understand the initrd stuff, read the ramdisk.txt file</li>
+              <li> made some initial attempts to build a ram disk</li>
+              <li> played with Yard, read the documentation and printed out a 'ls -lR' of its root file system to study what are the bare minimum commands needed to boot a system.</li>
+            </ul>
+</ul>
+<ul>
+            <li> 24/10/2000:</li>
+            <ul> <li> downloaded the Superrescue ISO image and burned it on a CDR. Test showed it worked, but it is only a rescue CD</li>
+            </ul>
+</ul>
+<ul>
+            <li> 20/10/2000:</li>
+            <ul>downloaded repairlix-20000924.tar.gz from sourgeforge.net and burned a CDR of it. It is incredible small in size (designed to fit on business cards).  The build scripts are rather straightforward.</ul>
+</ul>

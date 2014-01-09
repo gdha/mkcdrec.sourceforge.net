@@ -1,0 +1,141 @@
+<h2>The /etc/recovery directory</h2>
+
+<p class="i">Below you will find a list of what directory /etc/recovery could contain. It actually depend on your amount of disks, therefore, it could contain much more than what is listed here, but it gives you an idea...</p>
+
+<table border="0" width="100%" bgcolor="#FFFF99">
+
+<tr bgcolor="#FFFF99">
+<td>Backup_made_at_15.12.2000</td>
+<td>Date of the backup, otherwise, it starts with CDrec_...</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>RESTORE_PATH</td>
+<td>Contains the location of the backups</td>
+</tr>
+
+<tr bgcolor="#FFFF99">
+<td>To_Restore</td>
+<td>Contains the file systems to restore</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>VERSION</td>
+<td>Version of mkCDrec</td>
+</tr>
+
+<tr bgcolor="#FFFF99">
+<td>ansictrl.sh</td>
+<td>Script with color magic (borrowed from CRU)</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>clone-dsk.sh</td>
+<td>The clone disk script</td>
+</tr>
+
+<tr bgcolor="#FFFF99">
+<td>df.duvel</td>
+<td>Output of 'df' command on host 'duvel' (used by clone-dsk.sh script)</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>fstab.duvel</td>
+<td>Output of /etc/fstab of system 'duvel' (for your reference in case you want manual interaction)</td>
+</tr>
+
+<tr bgcolor="#FFFF99">
+<td>geometry.sda</td>
+<td>The geometry of disk /dev/sda (sfdisk -g output)</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>kbd.map.gz</td>
+<td>The keyboard map of the original system</td>
+</tr>
+
+<tr bgcolor="#FFFF99">
+<td>mkdirs.sh</td>
+<td>Script to restore all root directories (run from start-restore.sh and clone-dsk.sh)</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>mkfs.sda</td>
+<td>Script to make the file systems</td>
+</tr>
+
+<tr bgcolor="#FFFF99">
+<td>mkswap.sh</td>
+<td>Script to make the swap partition</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>mtab.duvel</td>
+<td>The mtab file of the original system (for reference)</td>
+</tr>
+
+<tr bgcolor="#FFFF99">
+<td>partitions.sda</td>
+<td>The partition layout of disk /dev/sda (output from sfdisk -d command)</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>sfdisk.sda</td>
+<td>Script to create the partition layout of disk /dev/sda (only used by start-restore.sh)</td>
+</tr>
+
+<tr bgcolor="#FFFF99">
+<td>size.sda</td>
+<td>The size of disk /dev/sda (output of sfdisk -s). Used by clone-dsk.sh script</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>size.swap</td>
+<td>Size of the swap space (used by clone-dsk.sh script)</td>
+</tr>
+
+<tr bgcolor="#FFFF99">
+<td>start-restore.sh</td>
+<td>The start-restore script itself.</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>used.sda</td>
+<td>The actual used size on /dev/sda</td>
+</tr>
+
+<tr>
+<td>CompressedWith</td>
+<td>Contains the executable used to compress archives</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>EncryptedWith</td>
+<td>Blank means no encryption, or which cipher used</td>
+</tr>
+
+<tr>
+<td>ask.for.cd.sh</td>
+<td>script used to ask for other volume while restoring</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>kbd.map.gz</td>
+<td>your keyboard definition</td>
+</tr>
+
+<tr>
+<td>mbr.hda</td>
+<td>dd if=/dev/hda of=mbr.hda bs=512 count=1</td>
+</tr>
+
+<tr bgcolor="#FFCCFF">
+<td>restore_common.sh</td>
+<td>library of functions used by start-restore.sh and clone-dsk.sh</td>
+</tr>
+
+<tr>
+<td>BOOTLOADER</td>
+<td>Contains LILO or GRUB.</td>
+</tr>
+</table>

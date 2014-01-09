@@ -1,0 +1,53 @@
+<h1>Fedora Core 4 and mkCDrec</h1>
+
+<p class="i">If you are using mkCDrec_v0.8.7 RPM on a Fedora Core 4 based system then you will notice when you boot from a mkcdrec CD-ROM the system does not give you a user prompt!</p>
+<p>The reason is the script /etc/rc.d/rc/udev.boot which cleans up /dev but fails to (re)create the /dev file systems. The /dev/console is missing which results in a hanging session!</p>
+<p>The problem has been fixed in the meantime with the mkCDrec_v0.8.8 release or higher we're using BusyBox 1.01 which compiles fine on FC4, or download the rpm of FC4 then you do not need to compile anything. Although, the ash package you still have to download from FC3.</p>
+
+<h2>Needed pre-requisites for FC4 or higher</h2>
+
+<p class="i">If you download the tar-ball version of mkCDrec then you need to be able to compile BusyBox. Therefore you need gcc (version 4) and the proper glibc libraries.</p>
+<p>You will also need the package "ncurses-devel" for BusyBox menuconfig!</p>
+<p>One package that we did not find on the CD-ROMs (nor via up2date) was the ash shell. We downloaded the RPM version ash-0.3.8-20.i386.rpm from FC3 which seems to work fine.</p>
+
+<h2>Compiling BusyBox issues with mkCDrec_v0.8.7</h2>
+<p class="i">There are 2 critical errors when you try to compile BusyBox (version 1.00) with FC4: </p>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" />networking/inetd.c</p>
+<p>On line 563 replace the following line:</p>
+<pre class="shellcommand">#define SWAP(type, a, b) {type c=(type)a; (type)a=(type)b; (type)b=(type)c;}</pre>
+<p>by</p>
+<pre class="shellcommand">#define SWAP(type, a, b) {type c=(type)a; a=(type)b; b=(type)c;}</pre>
+<p><img alt="[arrow]" src="images/small_arrow.gif" height="14" width="14" border="0" align="left" />archival/gzip.c</p>
+<p>On line 1623 replace the following line:</p>
+<pre class="shellcommand">static int build_bl_tree(void);</pre>
+<p>by</p>
+<pre class="shellcommand">static const int build_bl_tree(void);</pre>
+
+
+<h2>Make test breaks on Test 4 with mkCDrec_v0.8.7</h2>
+<p class="i">When running "make test" for the first you might get an error like the following one:</p>
+<p><img src="images/make_test_fc4.jpg" border="0" alt="make test" align="middle" /><br />
+</p>
+<p>You might think ext2 or loop devices are not supported, but the real problem lies with SElinux running in "enforcing" mode! To get around this edit the /etc/selinux/config file and change the line:</p>
+<pre class="shellcommand">SELINUX=enforcing</pre>
+<p>into</p>
+<pre class="shellcommand">SELINUX=permissive</pre>
+<p>To quickly change the enforcing mode of SELINUX into permissive mode type the following (no reboot required):</p>
+<pre class="shellcommand">echo "0" >/selinux/enforce</pre>
+
+<h2>Minor changes needed in Config.sh and rd-base.sh</h2>
+<p class="i">This point is only valid for <b>release v0.8.7</b>!
+Download the latest Config.sh and rd-base.sh from CVS to be sure ld-linux.so.2 and libnss_files.so.2 are copied to the local /lib directory</p>
+
+<h2>Tweak the $MKCDREC/etc/rc.d/rc.sysinit</h2>
+<p class="i">This point is only valid for <b>release v0.8.7!</b></p>
+<p class="i">Edit the rc.sysinit file and find the occurences (2 times) of</p>
+<pre class="shellcommand">
+# Fedore Core 3 and friends use udev
+[ -x /sbin/start_udev ] &amp;&amp; /etc/rc.d/rc.udev.boot</pre>
+<p>and make it</p>
+<pre class="shellcommand">
+# Fedore Core 3 and friends use udev
+[ -x /sbin/start_udev ] &amp;&amp; /sbin/start_udev</pre>
+<p>The MAKEDEV command can be used to create more devices on the spot. To my finding udevstart is a bit broken and still not found why.</p>
+<p>MAKEDEV needs a full blown /etc/group file. Therefore, before creating a CD-ROM copy the local /etc/group file onto $MKCDREC/etc/group</p>

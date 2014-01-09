@@ -1,0 +1,176 @@
+	<div align="center"><img alt="Clam AntiVirus Utilitiy" src="images/clamav.png" /></div>
+
+
+<h3>Cookbook on how Clam AntiVirus was added to mkCDrec Utilities</h3>
+
+<p>First of all download the latest release of clamav from <a
+href="http://clamav.elektrapro.com/">http://clamav.elektrapro.com/</a>. Unpack it as following:</p>
+<pre class="shellcommand">
+# tar zxvf clamav-0.60.tar.gz
+</pre>
+<p>As of this writing version 0.60 was the latest stable release. Of course, download the newest version.
+</p>
+<p>As first step declare the group and user clamav to our system (test system was running RedHat 9.0). Please note, that below commands may vary from system to system.</p>
+<pre class="shellcommand">
+# groupadd clamav
+# useradd -g clamav -s /bin/false -c "Clam Antivirus" clamav
+</pre>
+<p>Make sure you download the latest version of mkcdrec and mkcdrec_utilities from mkCDrec's download page and install as described:</p>
+<pre class="shellcommand">
+# tar xzvf mkCDrec_v0.7.4.tar.gz
+# cd mkcdrec
+# tar zxvf ../mkCDrec_v0.7.1_utils.tar.gz
+</pre>
+<p>Go into mkCDrec directory and add to the "etc/passwd" file the following:</p>
+<pre class="shellcommand">
+clamav:x:501:501:Clam Antivirus:/home/clamav:/bin/false
+</pre>
+<p>and to the "etc/group" file:</p>
+<pre class="shellcommand">
+clamav:x:501:
+</pre>
+<p>and to the "/etc/shadow" file:</p>
+<pre class="shellcommand">
+clamav:!!:12350:0:99999:7:::
+</pre>
+<p>Enter the directory of clamav and execute the following set of commands:</p>
+<pre class="shellcommand">
+$ ./configure --prefix=/usr --sysconfdir=/etc
+$ make
+$ su -c "make install"
+</pre>
+<p>Edit the clamav configuration file "/etc/clamav.conf". Below you see only the uncommented lines:</p>
+<pre class="shellcommand">
+LocalSocket /tmp/clamd
+MaxDirectoryRecursion 15
+FollowFileSymlinks
+User clamav
+ScanArchive
+ArchiveMaxFileSize 10M 
+ArchiveMaxRecursion 5 
+ArchiveMaxFiles 1000
+</pre>
+<p>Now you may copy this configuration file to mkcdrec:</p>
+<pre class="shellcommand">
+# cp /etc/clamav.conf mkcdrec/etc/
+</pre>
+<p>Enter the mkcdrec/utilities directory and execute the following:</p>
+<pre class="shellcommand">
+# mkdir -p clamav/bin
+# mkdir -p clamav/lib
+# mkdir -p clamav/db
+</pre>
+<p>To copy the clamav executables into there new spot do the following:</p>
+<pre class="shellcommand">
+# cd mkcdrec/utilities/clamav
+# ls
+bin  db  lib
+# objcopy -S /usr/bin/clamscan bin/clamscan
+# objcopy -S /usr/bin/sigtool bin/sigtool
+# objcopy -S /usr/bin/freshclam bin/freshclam
+</pre>
+<p>Check which libraries "clamscan" needs with ldd:</p>
+<pre class="shellcommand">
+# ldd /usr/bin/clamscan
+        libclamav.so.1 => /usr/lib/libclamav.so.1 (0x4002b000)
+        libz.so.1 => /usr/lib/libz.so.1 (0x40043000)
+        libpthread.so.0 => /lib/tls/libpthread.so.0 (0x40051000)
+        libc.so.6 => /lib/tls/libc.so.6 (0x42000000)
+        /lib/ld-linux.so.2 => /lib/ld-linux.so.2 (0x40000000)
+</pre>
+<p>
+We have to make sure all those shared libraries will be included when we compile the rescue image. After you ran "make rescue" inspect the mkcdrec.log file to see whether all those libraries were detected and included. If not, then do the following as for libclamav.so.1:</p>
+<pre class="shellcommand">
+# cp /usr/lib/libclamav.a lib/
+# cp /usr/lib/libclamav.la lib/
+# cp /usr/lib/libclamav.so.1.0.3 lib/
+# cd lib
+# ln -s libclamav.so.1.0.3 libclamav.so.1
+# ln -s libclamav.so.1.0.3 libclamav.so
+</pre>
+<p>
+We have to add the following line to mkcdrec/etc/ld.so.conf:</p>
+<pre class="shellcommand">
+/mnt/cdrom/utilities/clamav/lib
+</pre>
+<p>It is always nice to have some essential man pages concerning clamav on the rescue CD-ROM. Therefore, do the following:</p>
+<pre class="shellcommand">
+# cd mkcdrec/usr/man
+# man clamscan | ul -t dumb | gzip -c >clamscan.gz
+# man freshclam | ul -t dumb | gzip -c >freshclam.gz
+# man sigtool | ul -t dumb | gzip -c >sigtool.gz
+# man clamav.conf | ul -t dumb | gzip -c >clamav.conf.gz
+</pre>
+<p>We still have to copy the virus database and signatures to the utilities. Clamav expect them to be in /usr/man/share/clamav. Therefore, we foresee a link:</p>
+<pre class="shellcommand">
+# cd mkcdrec/usr/share
+# ln -s /mnt/cdrom/utilities/clamav/db clamav
+</pre>
+<p>Before copying them we better download the latest databases. If needed define a http proxy, e.g.</p>
+<pre class="shellcommand">
+export http_proxy="http://proxy.my_isp.com:8080"
+</pre>
+<p>and finally use the freshclam binary to download these:</p>
+<pre class="shellcommand">
+# freshclam
+Current working dir is /usr/share/clamav
+Checking for a new database - started at Sun Oct 26 14:45:09 2003
+Connected to clamav.elektrapro.com.
+Reading md5 sum (viruses.md5): OK
+viruses.db is up to date.
+Reading md5 sum (viruses2.md5): OK
+Downloading viruses.db2 ....... done
+Database updated (containing in total 9882 signatures).
+Database updated from clamav.elektrapro.com.
+</pre>
+<p>We copy the clamav virus databases to:</p>
+<pre class="shellcommand">
+# cp /usr/share/clamav/* utilities/clamav/db/
+# chown -R clamav:clamav utilities/clamav/db
+</pre>
+<p>As a last step before actually making the image is to set up some symbolic links in the mkcdrec/Config.sh file. Search for "LINKS=" and add to the already long list the following:</p>
+<pre class="shellcommand">
+/usr/bin=clamscan=/cdrom/utilities/clamav/bin/clamscan
+/usr/bin=freshclam=/cdrom/utilities/clamav/bin/freshclam
+/usr/bin=sigtool=/cdrom/utilities/clamav/bin/sigtool
+/lib=tls=.
+/lib=libclamav.so.1=/cdrom/utilities/clamav/lib/libclamav.so.1
+</pre>
+<p>Insert (preferably) a CD-RW into the CD-writer and run:</p>
+<pre class="shellcommand">
+# cd mkcdrec
+# make test
+make test output of mkCDrec v0.7.5
+Test 1:  Are we root?                                           Passed
+Test 2:  missing executables needed by mkCDrec                  Passed
+Test 3:  Filesystem for Initial ramdisk allowed?                Passed
+Test 4:  loopback device works?                                 Passed
+Test 5:  ram device available                                   Passed
+Test 6:  romfs supported  by the kernel?                        N/A
+Test 7:  cramfs supported  by the kernel?                       N/A
+Test 8:  strip (from binutils) available?                       Passed
+Test 9:  BOOT_FLOPPY_DENSITY=ED ok?                             Passed
+Test 10: cdrecord -scanbus                                      Passed
+Test 11: Header files present?                                  Passed
+Test 12: DEVFS supported by kernel?                             N/A
+Test 13: filesystem tools present?
+        ext2:                                                   Passed
+        ext3:                                                   Passed
+Test 14: initrd must be compiled in kernel!                     Passed
+Test 15: Amount of memory available                             261 Mb
+Test 16: scripts/Config.sh a link?                              Passed
+Test 17: serial console                                         N/A
+Test 18: supported architecture?                                Passed
+
+# make rescue
+</pre>
+<p>and wait until the CD-RW is written.</p>
+<p>Do not forget to inspect the mkcdrec.log file for missing libraries! Otherwise, we need to add these as we did for clamav. To test the CD, simply reboot and wait until mkCDrec's menu appears and select option 2 (rescue mode). Login and use clamav as following:</p>
+<pre class="shellcommand">
+# mount /dev/hda1 /mnt/localfs
+# clamscan -r /mnt/localfs
+</pre>
+
+<h2>Banners</h2>
+<a name="banners"></a>
+<p>Do not hesitate to visit the web sites listed below:</p>

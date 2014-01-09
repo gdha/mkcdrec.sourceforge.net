@@ -1,0 +1,46 @@
+div.rightinset, div.rightinsetsmall
+{
+  float: right;
+  max-width: 60%;
+  margin-left: 12px;
+  margin-right: -10px;
+}
+
+div.rightinsetsmall
+{
+  width: 20%;
+  font-size: small;
+}
+
+div.imagewithcaption
+{
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+
+div.imagewithcaption img
+{
+  display: block;
+  border: 1px solid black;
+  margin-bottom: 2px;
+}
+
+div.centerinset img
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+blockquote.rightstreamer
+{
+  float: right;
+  width: 30%;
+  margin: 0px -16px 0px 16px;
+  border-top: 4px solid #0080ff;
+  border-bottom: 4px solid #0080ff;
+  font-style: normal;
+  font-size: larger;
+  font-weight: bolder;
+}
+

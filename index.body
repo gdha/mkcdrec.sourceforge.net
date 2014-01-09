@@ -1,0 +1,60 @@
+<h1>Make CD-ROM Recovery</h1>
+
+<p class="i">mkCDrec makes a bootable (El Torito) disaster recovery image (CDrec.iso), including backups of the linux system to the same CD-ROM (or CD-RW) if space permits, or to a multi-volume CD-ROM set. Otherwise, the backups can be stored on another local disk, NFS disk or (remote) tape.</p> 
+<p>After a disaster (disk crash or system intrusion) the system can be booted from the CD-ROM and one can restore the complete system as it was (at the time mkCDrec was run) with the command</p>
+		<pre class="shellcommand">/etc/recovery/start-restore.sh</pre>
+<p> Besides recovering the exact system to the same hardware (except for a new disk perhaps) there is the possibility to make a clone of just one disk. The command</p>
+		<pre class="shellcommand">/etc/recovery/clone-dsk.sh</pre>
+<p>allows one to restore a disk to another disk (the destination disk does not have to be of the same size as it calculates the partition layout itself).</p>
+<p>A thrid script,</p>
+		<pre class="shellcommand">/etc/recovery/restore-fs.sh</pre>
+<p> will restore only one filesystem to a partition of your choice, and the user can choose with which filesystem the partition has to be formatted.</p>
+
+<p class="i">
+Linux 2.2.x, 2.4.x and 2.6.x kernels are supported, and  if size of the kernel is not too big a boot floppy can be made, otherwise a 2.88 Mb boot floppy will be emulated on CD-ROM. 
+</p>
+<p class="i">MkCDrec supports  ext2 , ext3, minix, xfs , jfs, reiserfs file systems, LVM and software RAID (multiple devices). Each file system is backed up as a compressed tar archive (including the tar log).  The compress program used is the user's choice (compress, gzip, bzip2, lzop,...)</p>
+<p>
+But there is more: msdos, fat, vfat and ntfs mounted partitions are recognized and are saved as compressed dumps (on CD, tape, etc.)
+The user has the possibility to encrypt all backups with openssl if desired (see the Config.sh configuration file for more information).
+</p>
+<p class="i">
+To restore your system completely  just boot from the first CD-ROM made by mkCDrec and type</p>
+<pre class="shellcommand">/etc/recovery/start-restore.sh</pre>
+<p>to restore everything from CD. Automatic Disaster Recovery and One Button Disaster Recovery are supported by mkCDrec too.</p>
+<p>
+With the clone-dsk.sh script one can restore selective a disk or partitions to another free disk.</p>
+<p class="i">
+mkCDrec supports IDE (inclusive ATA), S-ATA and SCSI  disks, hardware RAID based disks (e.g. Compaq SMART2 Disk Array), LVM and software RAID. With an El-Torito CD-ROM you can boot from an IDE or SCSI based CD-ROM drive on IA32/64, powermac, Sparc and x86_64 GNU/Linux based computer systems.</p>
+<p>
+The mkCDrec Utilities , which can make of a mkCDrec CD an added value rescue CD-ROM , are optional. See the <a
+	href="utilities.html">utilities</a> page to learn more about those tools. However, the <a
+	href="utilities.html">mkCDrec Utilities</a> have no impact on any disaster recovery or cloning functionality.  MkCDrec detects the presence of the utilities automatically and will link the proper tools.</p>
+<h2>Goals &amp; Philosophy</h2>
+<ul>
+	<li><b>mkCDrec Project Philosophy:</b><br />
+	<p>Combine a bootable rescue CD-ROM with disaster recovery scripts and optional <a 
+		href="utilities.html">utilities</a>.
+	How do we get there? With a simple command called:</p>
+	<pre class="shellcommand">make</pre></li>
+	<li><b>mkCDrec is an Open Source software development project.</b><br />
+
+By releasing mkCDrec under the <a
+	href="http://www.fsf.org/copyleft/gpl.html">GPL</a>, 
+<a
+ href="http://www.it3.be/">
+ IT3 Consultants</a> is supporting the development of <a 
+ href="http://www.opensource.org">Open Source</a> software.</li>
+<li><b>mkCDrec main goal is to recover from a broken system as quickly as possible.</b><br />
+Read the "introduction" to have a more in-depth knowledge on goals and prerequisites. For the impatient among us, check out the "Installation and getting started" document too.</li>
+</ul>
+<h2>Contributions and Feedback</h2>
+<p class="i">
+We want to hear from from people using and developing for mkCDrec. We want to see your modifications and understand any problems you encounter. Please see our <a
+	href="http://sourceforge.net/projects/mkcdrec/">SourceForge site</a> for information about contacting us, including the development mailing list.</p>
+<p>Developers are encouraged to use our <a
+	href="http://mkcdrec.cvs.sourceforge.net/mkcdrec/mkcdrec/">CVS tree</a> at SourceForge.</p>
+<p>We also have a page at <a
+	href="http://freshmeat.net/projects/mkcdrec/">freshmeat.net</a>.</p>
+
+

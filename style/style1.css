@@ -1,0 +1,170 @@
+@import url(style1-sidebar.css) screen;
+@import url(style1-sidebar-print.css) print;
+@import url(style1-inset.css);
+@import url(style1-button.css);
+@import url(style1-preformat.css);
+
+body,html
+{
+  font-family:  sans-serif;
+  margin: 0px;
+  padding: 0px;
+  background: white;
+}
+
+#googleAds {
+  float:          right;
+  border-bottom:  1px solid #999;
+}
+
+@media screen
+{
+  div.main
+  {
+    border-left: 1mm solid white;
+    padding: 2mm 7% 1cm 3mm;
+    margin: 0px 0px 0px 1%;
+    background: white;
+    color: black;
+  }
+}
+
+@media print
+{
+  div.main
+  {
+    border-left: 1mm solid white;
+    background: white;
+    color: black;
+    padding: 2mm;
+  }
+}
+
+a         {text-decoration: none;}
+a:link    {color: #0080ff;}
+a:active  {color: #ff0000;}
+a:visited {color: #004088;}
+a:hover   {text-decoration: underline;background: #ffa;}
+
+h1
+{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+h2,h3,h4
+{
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
+
+p, li, dd
+{
+  line-height: 1.2em;
+  text-align: justify;
+}
+
+p
+{
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* P stijl --
+ * dit stylesheet probeert te gissen of <p> elementen inspringen
+ * of een begincapitaal moeten hebben.  Dit kan geforceerd worden met
+ * class="c" voor capitaal en class="i" voor inspringen.
+ */
+
+p.i, p + p, li + p
+{
+  text-indent: 2em;
+}
+
+p.c:first-letter,
+h1 + p:first-letter,
+h2 + p:first-letter,
+h3 + p:first-letter,
+h4 + p:first-letter
+{
+  font-size: larger;
+  font-weight: bolder;
+}
+
+address
+{
+  clear: both;
+  border-top: 1px dotted #888;
+  padding-top: 4px;
+  margin-top: 4em;
+  font-size: smaller;
+  font-style: normal;
+  color: #888;
+}
+
+blockquote
+{
+  font-style: italic;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+dt
+{
+  font-weight: bolder;
+}
+
+pre
+{
+  font-family: "Courier", monospace;
+  font-size: 10pt;
+}
+
+div.authorinfo
+{
+  font-size: smaller;
+  font-weight: bolder;
+  margin: 2em 0px 2em 0px;
+  padding-top: 1em;
+  border-top: 1px dotted #888;
+}
+
+div.authorinfo div
+{
+  margin: 0.5em 2em 0.5em 4em;
+}
+
+blockquote.rightstreamer,
+blockquote.leftstreamer
+{
+  color: #0080ff;
+  padding: 4px;
+  text-align: center;
+}
+
+div.notice
+{
+  margin: 0.5em 0px 0.5em 0px;
+  padding: 5px 5px 5px 2em;
+  border: 1px dotted #aaa;
+  background: #eee;
+  text-indent: -1.5em;
+}
+  
+div.textframe
+{
+  margin: 1em 0px 1em 6em;
+  padding: 10px;
+  border: 2px solid #0080ff;
+  background: #B9DCFF
+}
+
+div.textframe h1,
+div.textframe h2,
+div.textframe h3,
+div.textframe h4,
+div.textframe h5,
+div.textframe h6
+{
+  margin-top: 0px;
+}

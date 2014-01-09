@@ -1,0 +1,1064 @@
+<h2> Frequently Asked Questions (FAQ) List</h2>
+<hr />
+<h3>Index</h3>
+<ul>
+   <li><a href="#General_Questions">General Questions</a></li>
+   <li><a href="#Errors_during">Errors during "make" process</a></li>
+   <li><a href="#Boot_Problems_with_mkCDrec_">Boot Problems with mkCDrec</a></li>
+   <li><a href="#Once_booted_from_the_mkCDrec_CD-ROM">Once booted from the mkCDrec CD-ROM</a></li>
+</ul>
+<br />
+<hr />
+<h3><a name="General_Questions"></a>General Questions<br />
+</h3>
+<ul>
+   <li> <a href="#1.722Mb_floppy">How do I format a 1.722 Mb floppy</a> </li>
+   <li> <a href="#CDwriter">Can I use a CD-writer under Windows for CDrec.iso</a></li>
+   <li> <a href="#How_to_print_the_web_pages">How to print the web pages?</a></li>
+   <li><a href="#archive">Does mkCDrec uses tar or dump to archive file systems</a></li>
+   <li><a href="#log">Does mkCDrec makes a log file?</a></li>
+   <li><a href="#Can_mkCDrec_work_from_cron">Can mkCDrec work from cron?</a></li>
+   <li> <a href="#cdrom">cdrom: This disc doesn't have any tracks I recognize</a></li>
+   <li><a href="#Q:_Using_DVD-writer_instead_of_CD-writer">Using DVD-writer instead of CD-writer (introduction)</a></li>
+   <li><a href="#Q:_What_is_One-Button_Disaster_Recovery">What is One-Button Disaster Recovery (OBDR)?</a></li>
+   <li><a href="#tarball">Where is the nightly CVS tarball</a></li>
+   <li><a href="#Q:_rpm_install_err">rpm -i mkcdrec-xyz.rpm error - perl is needed</a></li>
+</ul>
+<h3><a name="Errors_during"></a>Errors during "make" process</h3>
+<ul>
+   <li><a href="faqs.html#devram0">During "make" I see the error /dev/ram0: No such device</a></li>
+   <li><a href="faqs.html#loopback">Could not find any loop device</a></li>
+   <li><a href="faqs.html#no_space">During make I see the message "no space left"</a></li>
+   <li> <a href="faqs.html#bootflop.img">What does "bootflop.img" not found mean</a></li>
+   <li> <a href="faqs.html#bootflop.img">Could not mount bootflop.img</a></li>
+   <li> <a href="faqs.html#tape_IO_error">During tape backup I get an I/O error</a></li>
+   <li> <a href="faqs.html#segfault">During tar-it.sh I get a segmentation fault - what happens?</a></li>
+   <li><a href="faqs.html#Bummer">"Permission denied" errors right after pivot_root call</a></li>
+   <li><a href="faqs.html#mkcdrec.log:_integrity_testing">mkcdrec.log: integrity testing: unexpected end of file</a></li>
+   <li><a href="faqs.html#Q:_bootfloppy_image_is_too_big_to_make">bootfloppy image is too big to make backup image to the floppy/</a></li>
+   <li><a href="faqs.html#Q:_cutstream_compilation_error_with">cutstream compilation error with v0.7.4</a></li>
+   <li><a href="#initrd.gz:_No_space_left_on_device">initrd.gz: No space left on device</a></li>
+   <li><a href="#MAKEDEV">Mandrake: make test complains about MAKEDEV</a></li>
+   <li><a href="#Q:_On_FedoraCore_4:_make_test_complains">On FedoraCore 4: make test complains about missing ash</a></li>
+   <li><a href="#Q:_busybox_compile_err">Busybox compilation errors</a>
+   <li><a href="#Q:_checking_arch">Make test stops after checking architecture</a>
+</ul>
+<h3><a name="Boot_Problems_with_mkCDrec_"></a>Boot Problems with mkCDrec</h3>
+<ul>
+   <li><a href="faqs.html#freeze">Booting off the CDrec CD-ROM freezes at "linux.."</a></li>
+   <li><a href="faqs.html#Kernel_Panic:_No_init_found">Kernel Panic: No init found</a></li>
+   <li><a href="faqs.html#FD_2.88MB">Booting from CD results in "FD 2.88MB System Type-(19)"</a></li>
+   <li><a href="faqs.html#correct_root=_boot_option">Please append a correct "root=" boot option</a></li>
+   <li><a href="faqs.html#CD_was_made_OK_but_doesnotboot">CD was made OK, but it doesn't boot</a></li>
+   <li><a href="faqs.html#Q:_cramfs:_wrong_magic_while_booting">cramfs: wrong magic while booting from CD</a></li>
+   <li><a href="faqs.html#Q:_bootflop.img_exceeds_2.88_MB">bootflop.img exceeds 2.88 MB</a></li>
+   <li><a href="FC4.html">Fedora Core 4: systems seems to boot, but then hangs and no prompt comes back</a></li>
+   <li><a href="faqs.html#x86_64_mount_not_found">On x86_64 platform a kernel panic happens with message mount not found</a></li>
+   <li><a href="faqs.html#XEN-kernel">Invalid or corrupt kernel (Xen)</a></li>
+   <li><a href="faqs.html#RH3">kernel panic: VFS: unable to mount root fs on 02:00 on RehHat 3</a></li>
+</ul>
+<h3><a name="Once_booted_from_the_mkCDrec_CD-ROM"></a>Once booted from the mkCDrec CD-ROM</h3>
+<ul>
+   <li><a href="http://busybox.net/FAQ.html#job_control">In console the Control-C does not work</a></li>
+   <li><a href="faqs.html#syslog">Where is the syslog file?</a></li>
+   <li><a href="faqs.html#VFS">Cloning was successful, but at reboot I got a VFS panic</a></li>
+   <li><a href="faqs.html#fdisk_force">Start-restore.sh stops with a weird fdisk message</a></li>
+   <li> <a href="faqs.html#How_to_scroll_back_text_on_console">How to scroll back text on console</a></li>
+   <li> <a href="faqs.html#Backup_restore_works_ok_but_after_that_LILO_hangs">Backup/restore works ok, but after that LILO hangs at "L"</a></li>
+   <li> <a href="faqs.html#reboot_command_does_not_work">reboot command does not work</a></li>
+   <li> <a href="faqs.html#start-restore.sh_fails_on%20_isk_of_same_size_as_original">start-restore.sh fails on disk of same size as original</a></li>
+   <li> <a href="faqs.html#Q:_OBDR_restore_fails">Restore via an OBDR tape drive fails</a></li>
+</ul>
+
+<!-- Thee QA starts here -->
+<hr />
+<h3> Q:&nbsp;<a name="1.722Mb_floppy"></a> How do I format a 1.722 Mb floppy</h3>
+<b>A:</b> <br />
+Insert a 1.44 Mb floppy into drive A: and type the following:&nbsp; <br />
+LD_LIBRARY_PATH=/usr/i486-linux-libc5/lib/; fdformat /dev/fd0u1722&nbsp;
+<h3> Q:&nbsp;<a name="devram0"></a> During "make" I see the error /dev/ram0: No such device</h3>
+<b>A:</b> <br />
+The current linux kernel does not support DEV RAM and INITRD. Please
+check the file /usr/src/linux/.config for the following lines:&nbsp; <br />
+&nbsp; CONFIG_BLK_DEV_IDECD=y (or m) <br />
+&nbsp; CONFIG_FAT_FS=y (or m) <br />
+&nbsp; CONFIG_MSDOS_FS=y (or m) <br />
+&nbsp; CONFIG_BLK_DEV_LOOP=y (or m)&nbsp; <br />
+&nbsp; CONFIG_ISO9660_FS=y (or m) <br />
+&nbsp; CONFIG_JOLIET=y&nbsp; <br />
+&nbsp; CONFIG_BLK_DEV_RAM=y&nbsp; <br />
+&nbsp; CONFIG_BLK_DEV_RAM_SIZE=4096 or 8192&nbsp; <br />
+&nbsp; CONFIG_BLK_DEV_INITRD=y&nbsp; <br />
+Therefore, re-run a make config on the linux sources and re-install
+vmlinuz + reboot the system. Then retry the mkcdrec make. See also the
+'prerequisites' in the <a href="introduction.html#prerequisites">introduction</a>
+document.&nbsp; <br />
+Also have a look into the 'mkcdrec.log' file before sending me an
+e-mail. Sometimes the answer is in there ;-)&nbsp; <br />
+&nbsp;
+            <h3> Q:&nbsp;<a name="loopback"></a> Could not find any loop device</h3>
+            <b>A:</b> <br />
+This indicates that your current kernel does not support a loopback
+device (/dev/loop). Probably you will see an error message saying "The <a
+ href="loopback.gif">loopback mount of rd-base.img failed.</a> " To
+resolve see the <a href="#/dev/ram0:%20No%20such%20device">first
+question</a> .&nbsp;
+            <h3> Q:&nbsp;<a name="CDwriter"></a> Can I use a CD-writer
+under Windows for CDrec.iso</h3>
+            <b>A:</b> <br />
+For Easy CD: rename to <i>cdrec.iso</i> <br />
+For WinOnCD: rename to <i>cdrec.raw</i>
+            <p><i>With Easy CD Creator:</i> </p>
+            <p>Open Easy CD Creator&nbsp; <br />
+Go to "File"&nbsp; <br />
+then to "Create CD from disc image"&nbsp; <br />
+make sure to change the bottom drop down menu ("Files of type:") to
+say&nbsp; <br />
+"ISO image files"&nbsp; </p>
+            <p>It will do the rest after you browse to the *.iso
+file&nbsp; </p>
+            <p><i>With WinOnCD:</i> </p>
+            <p>you can select a&nbsp; <br />
+"track-image" project when you click the New button.&nbsp; So long as you are&nbsp; <br />
+in track mode, not file-system mode (how that looks depends on whether&nbsp; <br />
+you have 3.0 or 3.5) then dragging a track image file onto the CD window&nbsp; <br />
+should accept it as a raw track.&nbsp; WinOnCD uses .RAW as its own&nbsp; <br />
+extension.&nbsp; </p>
+            <p><i>With CD-Record (under Unix/Linux):</i> </p>
+            <p>CD-Writing HowTo:&nbsp; <br />
+            <a
+ href="http://www.ibiblio.org/pub/Linux/docs/HOWTO/CD-Writing-HOWTO">http://www.ibiblio.org/pub/Linux/docs/HOWTO/CD-Writing-HOWTO</a>
+            </p>
+            <p>For example:&nbsp; <br />
+cdrecord -v speed=4 dev=4,0 CDrec.iso&nbsp; <br />
+You get the number on the SCSI bus number with "cdrecord
+--scanbus"&nbsp; <br />
+&nbsp; </p>
+            <h3> Q:&nbsp;<a name="How_to_print_the_web_pages"></a> How
+to print the web pages?</h3>
+            <b>A:</b> <br />
+If you print the page in portrait mode, text on the right side of the
+page will be cut off. To print the entire width of the web page, choose
+landscape mode from your printer menu. To do this, you will either need
+to change the 'Page setup?' or adjust the 'Properties' for your printer
+with in the 'Print?.' dialog box. If you encounter trouble, consult the
+documentation or help within your browser.&nbsp;
+            <h3> Q:&nbsp;<a name="archive"></a> Does mkCDrec uses tar or dump to archive file systems</h3>
+            <b>A:</b> <br />
+mkCDrec uses GNU tar to create/extract file systems on CD-ROM or
+remote. Each tar-ball is compresses with bzip2 (or gzip) for further
+decrease the used file space. Note that Busybox also includes a tar, but
+we did not compile that one, as GNU tar has more options we want to use at restore time.&nbsp; <br />
+&nbsp;
+            <h3> Q:&nbsp;<a name="no_space"></a> During make I see the message "no space left"</h3>
+            <b>A:</b> <br />
+            <b><i>Error occurs during the run of rd-base.sh script :</i></b>
+            <br />
+This implicates that there is no space left in the /dev/ram. By default
+the size of the ram disk is 24 Mb. At boot time the ramdisk reserves 24
+Mb for restoring the ram disk in memory. If rd-base.sh script detects a
+problem it will give a warning as continuing does not make much sense at this point.&nbsp; <br />
+Error is also seen when ramdisk runs out of inodes (check with df -i).<br />
+A variable for the RAMDISK_SIZE&nbsp; is defined in <a
+ href="config.html">Config.sh</a>
+            <p><b><i>Error occurs during the run of initrd.sh :</i></b>
+            <br />
+By default the size of the initial ram disk is 2500 Kb, which is
+sufficient in most cases. However, since kernel 2.4.x was introduced
+(and a bigger libc) it could happen that this is not enough anymore. In
+Config.sh file there is a parameter INITRDSIZE=2500. The 2500 may be
+increased to 4096 which is the minimal size of an initrd as set by the
+kernel (see /usr/src/linux/.config file:&nbsp;
+CONFIG_BLK_DEV_RAM_SIZE=4096).&nbsp;<br />
+            <span style="color: rgb(0, 0, 153);">Or, with Mandrake 9.2
+the initial ramdisk may run full because insmod and modprobe became
+static binaries instead of using shared libraries. Therefore, their
+size increased drastically which causes the "no space left on device"
+fatal error. MkCDrec v0.7.7 fixes this, or edit the initrd.sh script
+and remove "modprobe" from the list of binaries.<br />
+            <span style="color: rgb(0, 0, 0);">The latest Linux
+distributions which are based on the 2.6.x kernels tend to have a far
+bigger size then before. For this reason the initial ramdisk size of
+4096 Kb is becoming too small. Some distributions have the config file
+present in the /proc filesystem, called /proc/config.gz. MkCDrec will
+check this file, if present, and report the size. If mkcdrec cannot
+detect the current size of the initial ramdisk the default value of
+4096 will be used.<br />
+Furthermore, as a result of bigger kernels the bootflop.img is becoming
+too small too. The only solution is the install the "<span
+ style="font-weight: bold;">mkcdrec utilities</span>" which uses
+isolinux instead of syslinux to boot from CD-ROM.<br />
+            </span></span> </p>
+            <p><b><i>Error occurs during the run of bootflop.sh :</i></b>
+            <br />
+If you run out of disk space on the bootfloppy image then if probably means that the&nbsp; <br />
+BOOT_FLOPPY_DENSITY=HD&nbsp; <br />
+was set in the Config.sh file (means 1.44 Mb size). You can increase
+this to 2.88 Mb by replacing HD by ED. The drawback is with ED it is not
+possible anymore to make a physical boot floppy.&nbsp; <br />
+If you still run out of disk space with the ED setting then something
+is seriously wrong! Check mkcdrec.log for details if any. <br />
+Please note that when mkCDrec Utilities are installed within mkcdrec
+directory then automatically isolinux is used instead of syslinux. The
+big advantage of isolinux is it doesn't emulate a bootfloppy, and
+therefore, has no size restriction of a floppy be it 1.44 or 2.88 Mb.
+The drawback is of course that no physical floppy can be made in this
+way.<br />
+            <span style="color: rgb(0, 0, 153);">Or, with Mandrake 9.2
+the bigger initrd.gz file may be the cause that 2.88 Mb bootfloppy size
+is exceeded, and it fails with the message "bootfloppy is FULL". The
+solution is to reduce the size of initrd (see above).</span><br />
+            </p>
+            <h3> Q:&nbsp;<a name="syslog"></a> Where is the syslog file?</h3>
+            <b>A:</b> <br />
+From v0.5.0 on the syslog is stored in de /var/log/messages file.&nbsp;<br />
+&nbsp;
+            <h3> Q:&nbsp;<a name="log"></a> Does mkCDrec make a log file?</h3>
+            <b>A:</b> <br />
+Yes. Check the file $MKCDREC_DIR/mkcdrec.log file for <a
+ href="mkcdrec_log.html">information captured during the make file</a>
+.
+You will find information make by the scripts rd-base.sh (which makes
+the basic ram disk) and initrd.sh script (which makes the initial ram
+disk).&nbsp; <br />
+Other log files are the output listing of the tar commands. These can
+be found on the $ISOFS_DIR directory and also on the final ISO
+image.&nbsp; <br />
+&nbsp;
+            <h3> Q:&nbsp;<a name="freeze"></a> Booting off the CDrec
+CD-ROM freezes at "linux.."</h3>
+            <b>A:</b> <br />
+Finding a single explanation for this behavior is not straightforward,
+nor easy. I can recommend the following steps which could lead to the
+cause of this problem. In fact I call these steps reverse engineering
+on how to make a boot image...&nbsp;
+            <br />1. Check the mkcdrec.log file for error
+messages. <a href="mkcdrec_log.html">An example is included in doc/</a>
+              <br />
+2. Try to mount the CDrec.iso image as follow:&nbsp; <br />
+&nbsp; <br />
+              <table bgcolor="#000000" width="60%">
+                <caption><br />
+                </caption>
+                  <tr>
+                    <td><font color="#ffffff"># mount&nbsp;
+-o loop&nbsp; ./CDrec.iso&nbsp; /mnt/cdrom</font> <br />
+                    <font color="#ffffff"># cd&nbsp; /mnt/cdrom</font></td>
+                  </tr>
+              </table>
+3. Mount the bootflop.img on /mnt/floppy&nbsp; <br />
+&nbsp; <br />
+              <table bgcolor="#000000" width="100%">
+                <caption><br />
+                </caption>
+                  <tr>
+                    <td><font color="#ffffff"># mount -t msdos -o loop
+./bootflop.img /mnt/floppy</font> <br />
+                    <font color="#ffffff"># cd /mnt/floppy</font> <br />
+                    <font color="#ffffff"># ls -l</font> <br />
+                    <font color="#ffffff">total 1224</font> <br />
+                    <font color="#ffffff">-rwxr-xr-x&nbsp;&nbsp; 1
+root&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+719078 Dec 22 14:00 initrd.gz</font> <br />
+                    <font color="#ffffff">-r-xr-xr-x&nbsp;&nbsp; 1
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5980 Dec 22 14:00
+ldlinux.sys</font> <br />
+                    <font color="#ffffff">-rwxr-xr-x&nbsp;&nbsp; 1
+root&nbsp;&nbsp;&nbsp;&nbsp; root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+524314 Dec 22 14:00 linux</font> <br />
+                    <font color="#ffffff">-rwxr-xr-x&nbsp;&nbsp; 1
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 488 Dec 22
+14:00 mkcdrec.msg</font> <br />
+                    <font color="#ffffff">-rwxr-xr-x&nbsp;&nbsp; 1
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 96 Dec
+22 14:00 syslinux.cfg</font></td>
+                  </tr>
+              </table>
+4. Next step is to mount the initrd onto yet another mount-point
+;-)&nbsp; <br />
+&nbsp; <br />
+              <table bgcolor="#000000" width="100%">
+                <caption><br />
+                </caption>
+                  <tr>
+                    <td><font color="#ffffff"># gunzip -c initrd.gz
+&gt;/tmp/initrd</font> <br />
+                    <font color="#ffffff"># mount -o loop /tmp/initrd
+/mnt/floppy1</font> <br />
+                    <font color="#ffffff"># cd /mnt/floppy1</font> <br />
+                    <font color="#ffffff"># ls -l</font> <br />
+                    <font color="#ffffff">total 12</font> <br />
+                    <font color="#ffffff">drwxr-xr-x&nbsp;&nbsp; 2
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024 Dec 22 14:00
+bin</font> <br />
+                    <font color="#ffffff">drwxr-xr-x&nbsp;&nbsp; 2
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024 Dec 22 14:00
+dev</font> <br />
+                    <font color="#ffffff">drwxr-xr-x&nbsp;&nbsp; 2
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024 Dec 22 14:00
+etc</font> <br />
+                    <font color="#ffffff">drwxr-xr-x&nbsp;&nbsp; 2
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024 Dec 22 14:00
+lib</font> <br />
+                    <font color="#ffffff">-rwx------&nbsp;&nbsp; 1
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1516 Dec 22 14:00
+linuxrc</font> <br />
+                    <font color="#ffffff">drwxr-xr-x&nbsp;&nbsp; 2
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024 Dec 22 14:00
+mnt</font> <br />
+                    <font color="#ffffff">drwxr-xr-x&nbsp;&nbsp; 2
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024 Dec 22 14:00
+proc</font> <br />
+                    <font color="#ffffff">drwxr-xr-x&nbsp;&nbsp; 2
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024 Dec 22 14:00
+sbin</font> <br />
+                    <font color="#ffffff">drwxr-xr-x&nbsp;&nbsp; 3
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024 Dec 22 14:00
+usr</font> <br />
+                    <font color="#ffffff">drwxr-xr-x&nbsp;&nbsp; 3
+root&nbsp;&nbsp;&nbsp;&nbsp;
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1024 Dec 22 14:00
+var</font> <br />
+                    <font color="#ffffff"># cat linuxrc</font></td>
+                  </tr>
+              </table>
+If the last command (or the ls command) fails with the message "I/O
+error" you had luck and found the cause of the problem. The problems is
+your linux current kernel and gzip wrongly compresses the "nulls" on
+the ramdisk which corrupts the image at uncompressing.&nbsp; <br />
+One known linux kernel which has this problem is:&nbsp;
+              - linux-2.2.10<br />
+5. If the initial ramdisk seems to be OK then the problem has to be
+with the linux kernel. Are you sure the linux kernel contains all the <a
+ href="introduction.html#prerequisites">prerequisites </a>mentioned in
+the introduction?&nbsp;
+                <ul>
+                  <li> Problems have been reported with gzip version below 1.2.4a - therefore, when in doubt grap the latest gzip distribution:</li>
+                  <a
+ href="ftp://labrea.stanford.edu/pub/gnu/gzip">ftp://labrea.stanford.edu/pub/gnu/gzip</a></li>
+                  <li>
+CONFIG_BLK_DEV_RAM_SIZE=4096 or 8192 is often misunderstood in the prerequisites! This is not the final ram size when&nbsp; mkCDrec has been booted and is up and running (currently in 24 Mb). It is the amount of ram the <i>initial bootstrap</i> uses and 4 Mb is in most circumstances sufficient.</li>
+                </ul>
+            <h3> Q:&nbsp;<a name="VFS"></a> Cloning was successful, but
+at reboot I got a VFS panic</h3>
+            <b>A:</b> <br />
+Two possible errors are a bad reference in the /etc/lilo.conf file to a
+file system which does not exist on the cloned system, or something is
+wrong with the /etc/fstab file.&nbsp; <br />
+Also, check /etc/HOSTNAME, /etc/hosts and the IP addresses on the
+cloned system!&nbsp; <br />
+&nbsp;
+            <h3> Q:&nbsp;<a name="bootflop.img"></a> What does
+"bootflop.img" not found mean</h3>
+            <b>A:</b> <br />
+An error occured during the "bootflop.sh" script which makes the boot
+floppy image to make the CD boot under <a
+ href="http://support.microsoft.com/support/kb/articles/Q167/6/85.ASP">El
+Torito</a> emulation.&nbsp; <br />
+Most probably you did not included msdos support in your kernel. Yep,
+to make CDrec bootable one need "msdos" file system (you can hardly
+call
+it a file system) in your kernel.&nbsp; <br />
+&nbsp;
+            <h3> Q:&nbsp;<a name="Could_not_mount_bootflop.img"></a>
+Could not mount bootflop.img</h3>
+            <b>A:</b> <br />
+If you an error message (see also <a href="bootfloppy_loop.jpg">included
+picture</a> of the message):&nbsp; <br />
+&nbsp; <br />
+            <table bgcolor="#000000" width="90%">
+              <caption><br />
+              </caption>
+                <tr>
+                  <td><font color="#ffffff">mount: could not find any
+device /dev/loop#</font> <br />
+                  <font color="#ffffff">&nbsp;&nbsp;&nbsp; ERROR:</font>
+                  <br />
+                  <font color="#ffffff">Could not mount bootflop.img.
+Make sure that the "msdos" filesystem is in your kernel (or exist as
+module).</font></td>
+                </tr>
+            </table>
+            <p>Type immediately the following command:&nbsp; <br />
+# <b>lsmod</b> <br />
+Most likely the loop module will not be listed! That's the problem. To
+correct this type:&nbsp; <br />
+# <b>modprobe loop</b> <br />
+This problem (not directly of mkcdrec by the way) will be corrected in
+v.0.5.1 and higher. If you do a make again it should work better
+now.&nbsp; </p>
+            <h3> Q:&nbsp;<a name="tape_IO_error"></a> During tape
+backup
+I get an I/O error</h3>
+            <b>A:</b> <br />
+If you see the following error message on your screen:&nbsp; <br />
+            <table bgcolor="#000000" width="50%">
+              <caption><br />
+              </caption>
+                <tr>
+                  <td><font color="#ffffff">I/O error</font> <br />
+                  <font color="#ffffff">1882487+3 records in</font> <br />
+                  <font color="#ffffff">1882488+1 records out</font> an
+I/O error</td>
+                </tr>
+            </table>
+then check the tape with the following command (e.g. on a HP-UX
+box):&nbsp; <br />
+&nbsp; <br />
+            <table bgcolor="#000000" width="50%">
+              <caption><br />
+              </caption>
+                <tr>
+                  <td><font color="#ffffff"># mt -t
+/dev/rmt/0m stat</font> <br />
+                  <font color="#ffffff">Drive:&nbsp; HP C1537A</font> <br />
+                  <font color="#ffffff">Format: DDS-1 format</font> <br />
+                  <font color="#ffffff">Status: [a1111300] EOF EOT
+online compression immediate-report-mode</font></td>
+                </tr>
+            </table>
+This clearly states that the tape reached the end of the tape, and
+therefore, tar had to stop with an I/O error. To be honest, the person
+got a warning before the tar started that it might not fit on the
+tape.&nbsp; <br />
+Finding an easy way, before storing data on tape, how much data really
+fits on a tape is not yet implemented. It is on the ToDo list.&nbsp; <br />
+&nbsp;
+            <h3> Q:&nbsp;<a name="segfault"></a> During tar-it.sh I get
+a segmentation fault - what happens?</h3>
+            <b>A:</b> <br />
+If you see something like the following:&nbsp; <br />
+            <table bgcolor="#000000" width="80%">
+              <caption><br />
+              </caption>
+                <tr>
+                  <td><tt><font color="#ffffff">/home/gratiend/src/recovery/mkcdrec/scripts/tar-it.sh:
+line 248:&nbsp; 5487 </font><b><font color="#ffff00">Segmentation fault</font></b><font
+ color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${DEBUG} tar
+--create --verbose --same-owner --blocking-factor=512
+--preserve-permissions --exclude-from=${TMP_DIR}/${_Fs}.exclude_list
+--${CMP_PROG} --file - .</font></tt> <br />
+                  <tt><font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5488
+Done&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+| ${CUTSTREAM}&nbsp;</font></tt></td>
+                </tr>
+            </table>
+Then it is not an error with mkCDrec, but there is something wrong with
+your system. Bad RAM, or disk problems. The mkCDrec Utilities has an
+excellent memory tester - check it out.&nbsp; <br />
+See also <a href="http://www.BitWizard.nl/sig11/">http://www.BitWizard.nl/sig11/&nbsp;</a>
+for an in-depth explanation of the sig11 syndrome!&nbsp; <br />
+&nbsp;
+            <h3> Q:&nbsp;<a name="fdisk_force"></a> Start-restore.sh
+stops with a weird fdisk message</h3>
+            <b>A:</b> <br />
+During start-restore.sh the script stops with the following message
+:&nbsp; <br />
+&nbsp; <br />
+            <table bgcolor="#000000" width="70%">
+              <caption><br />
+              </caption>
+                <tr>
+                  <td><font color="#ffffff">sfdisk: I don't
+like these partitions - nothing changed</font> <br />
+                  <font color="#ffffff">(If you really want this, use
+the --force options.)</font></td>
+                </tr>
+            </table>
+            <p>You can solve it by editing the file <b><i>/etc/recovery/sfdisk.hda&nbsp;</i></b>
+(replace <i>hda </i>with the correct disk name). Remember, vi is
+available to edit the file (or elvis), or whatever you have chosen to
+be
+the preferred editor.&nbsp; <br />
+Before:&nbsp; <br />
+&nbsp; <br />
+            <table bgcolor="#000000" width="70%">
+              <caption><br />
+              </caption>
+                <tr>
+                  <td><font color="#ffffff">sfdisk&nbsp;
+/dev/hda&nbsp; &lt; /etc/recovery/partitions.hda</font></td>
+                </tr>
+            </table>
+            </p>
+            <p>After:&nbsp; <br />
+&nbsp; <br />
+            <table bgcolor="#000000" width="80%">
+              <caption><br />
+              </caption>
+                <tr>
+                  <td><font color="#ffffff">sfdisk&nbsp; <b>--force</b>&nbsp;
+/dev/hda&nbsp; &lt; /etc/recovery/partitions.hda</font></td>
+                </tr>
+            </table>
+Restart the start-restore.sh&nbsp; script and it won't complain this
+time ;-)&nbsp; <br />
+&nbsp; </p>
+            <h3> Q:&nbsp;<a name="CD_was_made_OK_but_doesnotboot"></a>
+CD was made OK, but it doesn't boot</h3>
+            <b>A:</b> <br />
+There are some points to check first:&nbsp;
+            <ul>
+              <li> do a "make test" (should be successful)</li>
+              <li> check mkcdrec.log file for trivial errors</li>
+              <li> Check Config.sh: if BOOT_FLOPPY_DENSITY=<i>HD </i>try<i>ED</i>
+instead</li>
+              <li> redo "make", if it boots now then the bootflop.img
+was full but was not caught by the make procedure. It can happen that
+more space was needed than 1.44 Mb (HD), by using ED you have 2.88 Mb.</li>
+              <li> Check also if all loadable modules you need to mount
+the CD-ROM are copied to the initrd.img file. The mkcdrec.log file list
+the modules it finds.</li>
+              <li> <font color="#ff0000">Warning:</font> Linux kernel
+2.4.[0-3] are known for a buggy loopback device. Please upgrade to
+2.4.4 or higher immediately!</li>
+              <li> Check if the space left on the initrd.img image was
+only a few bytes! If so, then increase the INITRDSIZE=2500 to 4096 and
+try again.</li>
+              <li> Make sure you're using the bash shell (check with
+"echo $SHELL")</li>
+              <li> Check the size of the iso image and compare with 'du
+-sk $ISOFS_DIR'. If the size of the iso image is 650 Mb and the other
+is much more than decrease the value of MAXCDSIZE=650000 to a lower
+value in the Config.sh file. Try again.</li>
+              <li>Install the mkcdrec utilities to force isolinux
+(instead of syslinux)</li>
+              <li>If booting of DVD's, then check if your PC's BIOS is
+capable of booting images bigger then 2 Gb<br />
+              </li>
+              <li> Check also question: <a href="#Bummer">"Permission
+denied" errors right after pivot_root call</a>&nbsp;</li>
+              <li> It still doesn't boot, then jump to the <a
+ href="support.html#E-mail%20Support">support pages</a> of mkCDrec</li>
+            </ul>
+            <h3> <a name="How_to_scroll_back_text_on_console"></a>Q:
+How to scroll back text on console</h3>
+            <b>A:</b> <br />
+Use the "Shift&nbsp; PageUp" key to scroll back on text displayed on
+the console.&nbsp;
+            <h3> Q:&nbsp;<a name="Can_mkCDrec_work_from_cron"></a> Can
+mkCDrec work from cron?</h3>
+            <b>A:</b> <br />
+YES! But only from release v0.5.5 and higher. What is available?
+            <ul>
+              <li> <b>make help</b>&nbsp; :&nbsp;shows below list.</li>
+              <li><b>make rescue</b>&nbsp; :&nbsp; make a rescue CD-ROM
+only</li>
+              <li> <b>make CD-ROM</b> :&nbsp; make rescue CD-ROM with
+backups on CD too</li>
+              <li> <b>make device</b> :&nbsp; make rescue CD-ROM with
+backups on tape (TAPE_DEV in Config.sh must be a valid device otherwise
+no-go)</li>
+              <li> <b>make path DESTINATION_PATH=/foo</b>&nbsp;
+:&nbsp;
+make rescue CD-ROM with backups on destination path /foo</li>
+              <li><span style="font-weight: bold;">make OBDR</span>:
+creates a bootable OBDR tape; set BURNCDR=n in Config.sh file to
+disable the creation of a CD-R as it is not needed with OBDR tapes.</li>
+              <li><span style="font-weight: bold;">make install</span>:
+creates a simple /usr/sbin/mkcdrec script which points to mkCDrec's top
+directory and executes its make command including options passed to the
+mkcdrec command.<br />
+              </li>
+              <li> check also <b>contributions/mkcdrec.sh</b> script
+which can be used directly for cron purposes (please adapt the path to
+mkcdrec in specified script).</li>
+            </ul>
+            <h3> Q:&nbsp;<a
+ name="Backup_restore_works_ok_but_after_that_LILO_hangs"></a>
+Backup/restore works ok, but after that LILO hangs at "L"</h3>
+            <b>A:</b> <br />
+The "L" is the first letter of the "LILO" prompt. If after the "L" you
+see some error code (a figure) you can search the bootdisk-HOWTO (<a
+ href="http://www.linuxdoc.org/HOWTO/Bootdisk-HOWTO/index.html">
+http://www.linuxdoc.org/HOWTO/Bootdisk-HOWTO/index.html</a> , appendix
+B)&nbsp; <br />
+If "L" is all you get, you probably used the keyword "linear" in your
+lilo.conf file. If then the disk is &gt;1024 cylinders (probably is,
+use
+fdisk to know for sure), this might be a solution to your
+problem:&nbsp;
+            <p>"linear" is a very dangerous option.&nbsp; It suppresses
+many diagnostic messages which could be produced at boot-install time,
+and defers the messages to actual boot-time.&nbsp; This is when you are
+getting your failure.&nbsp; </p>
+            <p>Try "lba32" instead of "linear".&nbsp; This will address
+beyond cylinder 1023 using 32-bit disk addresses.&nbsp; ("linear" uses
+24-bits). Your BIOS must have the EDD packet call interface for this to
+work, but most post-1998 systems have such BIOS support.&nbsp; <br />
+&nbsp; </p>
+            <h3> Q:&nbsp;<a name="correct_root=_boot_option"></a>
+Please
+append a correct "root=" boot option</h3>
+            <b>A1:</b> <br />
+This error can occur when you type at a boot: prompt the
+following:&nbsp;
+            <p>boot:&nbsp; <b>linux&nbsp; root=/dev/hda1</b> </p>
+            <p><tt>linux...</tt> <br />
+            <i><tt>&lt;snip.snip&gt;</tt></i> <br />
+            <tt>request_module[block-major-3]: Root fs not mounted</tt>
+            <br />
+            <tt>VFS: Cannot open root device "hda1" or 03:01</tt> <br />
+            <tt>Please append a correct "root=" boot option</tt> <br />
+            <tt>Kernel panic: VFS: Unable to mount root fs on 03:01</tt>
+            </p>
+            <p>Then probably, the device driver for "ide" disk was NOT
+compiled into the kernel itself, but as a module.&nbsp; <br />
+You will notice booting from mkCDrec CD-ROM that the linux kernel and
+initrd.gz are loaded into memory. Initrd does probably contain the ide
+loadable modules in /lib/modules/&nbsp; <br />
+If you ask for another "root" such as /dev/hda1, then initrd will not
+be loaded from the CD-ROM into memory, and the linux kernel will try to
+mount /dev/hda1 but cannot because of the missing ide device
+driver.&nbsp; <br />
+            <b><u>Solution</u>: </b>recompile the linux kernel and
+select "y" for ide support (and not "m").&nbsp; <br />
+CONFIG_IDE=y&nbsp; <br />
+CONFIG_BLK_DEV_IDE=y&nbsp; <br />
+&nbsp; <br />
+&nbsp; <br />
+            <b>A2:</b><br />
+Mandrake 8 and 9 often return a kernel panic when booting from mkCDrec:<br />
+            </p>
+            <blockquote><tt>kmod: failed to exec /sbin/modprobe -s -k
+block-major-8, error=2<br />
+VFS: Cannot open root device "" or 08:05<br />
+Please append correct "root=" boot option.<br />
+Kernel panic: VFS: Unable to mount root fs on 08:05</tt><br />
+            </blockquote>
+            <p><u><b>Solution</b></u>: Check the append= line in
+/etc/lilo.conf and add what is between the quotes to the variable
+KERNEL_APPEND in Config.sh file.<br />
+            <span style="color: rgb(0, 0, 153);">For Mandrake check if
+"devfs=mount" is not listed in the output command 'cat /proc/cmdline'.
+Yes? Add this the KERNEL_APPEND variable in Config.sh. MkCDrec v0.7.7
+will check this during the "make test"</span><br />
+            </p>
+            <h3> <a name="Bummer"></a>Q: "Permission denied" errors
+right after pivot_root call</h3>
+            <b>A:</b> <br />
+While booting from the CD-ROM you see the following errors :&nbsp;
+            <p>I believe the CD-ROM device is /dev/hdc&nbsp; <br />
+Using pivot_root&nbsp; <br />
+mount -n -o ro /dev/ram1 /new_root&nbsp; <br />
+Devfs support does not seem to exist.&nbsp; <br />
+My pid is 7.&nbsp; <br />
+using bug circumvention for busybox.&nbsp; <br />
+init started: Busybox v0.53pre( ... DATE ... ) multy-call binary&nbsp; <br />
+Bummer, could not run '/etc/rc.d/rc.sysinit' : permission denied&nbsp; <br />
+Bummer, could not run '/sbin/getty' : permission denied&nbsp; <br />
+Bummer, could not run '/bin/sh' : permission denied&nbsp; <br />
+Bummer, could not run '/sbin/getty' : permission denied&nbsp; <br />
+Bummer, could not run '/bin/sh' : permission denied&nbsp; <br />
+Bummer, could not run '/sbin/getty' : permission denied&nbsp; <br />
+Bummer, could not run '/bin/sh' : permission denied&nbsp; <br />
+Bummer, could not run '/sbin/getty' : permission denied&nbsp; <br />
+Bummer, could not run '/bin/sh' : permission denied&nbsp; <br />
+Bummer, could not run '/sbin/getty' : permission denied&nbsp; <br />
+Bummer, could not run '/bin/sh' : permission denied&nbsp; <br />
+(endless loop)&nbsp; <br />
+&nbsp; <br />
+            <table bgcolor="#ffffcc" width="90%">
+              <caption><br />
+              </caption>
+                <tr>
+                  <td>This has in fact nothing to do wth the
+pivot_root call, but is a small bug&nbsp; <br />
+in the way mkcdrec created the libraries for the rd-base image.&nbsp; <br />
+Until now, these were created using objcopy (see rd-base.sh script),
+but objcopy does not retain the permissions of the libraries, which
+need
+to be executable (at least in 2.4 kernels, 2.2 kernels don't seem to be
+this strict).&nbsp; <br />
+Now that the problem is found, it's easy to get around it, so expect
+the&nbsp; <br />
+rd-base.sh script to be changed a bit (eg.: objcopy replaced by
+cp;strip&nbsp; <br />
+solves this problem completely).&nbsp; <br />
+                  <i><font size="-1">From:&nbsp; Franky Van Liedekerke
+&lt;liedekef@pandora.be&gt;</font></i></td>
+                </tr>
+            </table>
+Note: this has been corrected in v0.5.8 - please update!&nbsp; </p>
+            <h3> <a name="Kernel_Panic:_No_init_found"></a>Q: Kernel
+Panic: No init found.</h3>
+            <b>A:</b> <br />
+            <tt><font size="-1">Warning: Unable to open an initial
+console.</font></tt> <br />
+            <tt><font size="-1">Kernel Panic: No init found. Try
+passing init= option to kernel.</font></tt> <br />
+The question is are you using devfs? Mandrake 8.1 uses by default
+devfs. Therefore, change the following line in Config.sh file:&nbsp; <br />
+            <font color="#3333ff">KERNEL_APPEND="devfs=mount"</font> <br />
+&nbsp;
+            <h3> <a name="reboot_command_does_not_work"></a>Q: reboot
+command does not work</h3>
+            <b>A:</b> <br />
+Sometimes the "shutdown", "reboot" commands do not work under mkCDrec.
+These commands are from the BusyBox bag-of-tools, and there is no clear
+reason why on some computers with a certain kernel version it does not
+work.&nbsp; <br />
+Anyway, I wrote a small script "<b>alt-ctrl-del</b>" which is a kind of
+wrapper to perform a real reboot, and it is self-explaining.&nbsp; <br />
+&nbsp;
+            <h3> <a
+ name="start-restore.sh_fails_on _isk_of_same_size_as_original"></a>Q:
+start-restore.sh fails on disk of same size as original</h3>
+            <b>A:</b> <br />
+            <font face="Times New Roman,Times">&gt; I have re-done
+everything and still come up with an error trying to</font> <br />
+            <font face="Times New Roman,Times">&gt; restore a Debian 3
+using the start-restore.sh.</font> <br />
+            <font face="Times New Roman,Times">&gt;</font> <br />
+            <font face="Times New Roman,Times">&gt; This time I do not
+see any boundary problems with an fdisk -l on the</font> <br />
+            <font face="Times New Roman,Times">&gt; machine I backed up.</font>
+            <br />
+            <font face="Times New Roman,Times">&gt;</font> <br />
+            <font face="Times New Roman,Times">&gt; Disk /dev/hda: 32
+heads, 63 sectors, 4187 cylinders</font> <br />
+            <font face="Times New Roman,Times">&gt; Units = cylinders
+of 2016 * 512 bytes</font> <br />
+            <font face="Times New Roman,Times">&gt;</font> <br />
+            <font face="Times New Roman,Times">&gt; Disk /dev/hda: 255
+heads, 63 sectors, 2434 cylinders</font> <br />
+            <font face="Times New Roman,Times">&gt; Old situation:</font>
+            <br />
+            <font face="Times New Roman,Times">&gt; Units = cylinders
+of 8225280 bytes, blocks of 1024 bytes, counting from 0</font>
+            <p>The problem is that on the original OS it thinks
+/dev/hda: 32 heads, 63 <br />
+sectors, 4187 cylinders and under mkcdrec it thinks Disk /dev/hda: 255
+heads,&nbsp; <br />
+63 sectors, 2434 cylinders.&nbsp; <br />
+My advise is to read the Large Disk HOWTO for further details on this
+issue.&nbsp; <br />
+It is explained well. The URL is:&nbsp; <br />
+            <a
+ href="http://www.linuxdoc.org/HOWTO/Large-Disk-HOWTO.html#ss14.2">http://www.linuxdoc.org/HOWTO/Large-Disk-HOWTO.html#ss14.2</a>
+            <br />
+&nbsp; </p>
+            <h3> Q:&nbsp;<a name="FD_2.88MB"></a>Booting from CD
+results
+in "FD 2.88MB System Type-(19)"</h3>
+            <b>A:</b> <br />
+The Boot failed error message was caused by syslinux due to a buggy
+BIOS. <br />
+In the Makefile of mkCDrec there is an entry "SAFE_SYSLINUX=false"
+which is the default.&nbsp; Sometimes it helps when you change the
+entry
+to "true" in the Makefile. <br />
+Do not change the entry&nbsp; in the Makefile for fun as booting will
+become very slow. <br />
+&nbsp;
+            <h3> <b><font size="+1">Q:&nbsp;<a name="cdrom"></a>cdrom:
+This disc doesn't have any tracks I recognize</font></b></h3>
+            <b>A:</b> <br />
+On RedHat 7.3 with default cdrtools (cdrecord-1.10-11:7) installed the
+system may freeze with the above message recorded in the
+/var/log/messages file. Rebooting the system is the only resolution for
+that problem. <br />
+My humble advise is to download and install immediately the latest
+linux kernel (2.4.19 or higher) and a recent <a
+ href="http://freshmeat.net/redir/cdrecord/1139/url_tgz/cdrtools-1.11a29.tar.gz">
+cdrtools-1.11 </a>version which seems to resolve the problem.<br />
+            <br />
+            <h3><a name="Q:_cramfs:_wrong_magic_while_booting"></a>Q: <a
+ name="cramfs:_wrong_magic_while_booting_from"></a>cramfs: wrong magic
+while booting from CD<br />
+            </h3>
+            <pre wrap="">RAMDISK Compressed image found at block 0<br />freeing initrd memory 1236k freed<br />cramfs: wrong magic<br />kernel panic: VFS: Unable to mount root fs on 01.00<br /><br /></pre>
+            <span style="font-weight: bold;"> A:</span><br />
+On Debian systems just change INITRD_FS=cramfs (instead of ext2) in the
+Config.sh file.<br />
+            <br />
+            <h3>Q: <a name="mkcdrec.log:_integrity_testing"></a>mkcdrec.log:
+integrity testing: unexpected end of file</h3>
+            <span style="font-family: monospace;">Doing integrity
+testing on backups.</span><br />
+            <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br
+ style="font-family: monospace;">
+            <span style="font-family: monospace;">cciss_c0d0p2._.log.gz:&nbsp;&nbsp;
+OK</span><br />
+            <span style="font-family: monospace;">cciss_c0d0p2._.tar.gz:&nbsp;&nbsp;
+OK</span><br />
+            <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br
+ style="font-family: monospace;">
+            <span style="font-family: monospace;">gzip:
+cciss_c0d0p3._daten.log.gz: unexpected end of file</span><br />
+            <span style="font-family: monospace;">&nbsp;
+rd-base.img.bz2: ok</span><br />
+            <br />
+            <span style="font-weight: bold;">A:</span><br />
+The unexpected end of file message is from a log file which is still
+open (from a multi-volume CD session). Nothing to worry about as on the
+next CD it will be complete.<br />
+            <br />
+            <h3><a name="Q:_bootfloppy_image_is_too_big_to_make"></a>Q:
+bootfloppy image is too big to make backup image to the floppy/ </h3>
+Sometimes you see the following message in the mkcdrec.log file:<br />
+            <pre wrap="">Unfortunately current bootfloppy image is too big to make a backup image to the floppy/ directory on CD-ROM<br /></pre>
+            <span style="font-weight: bold;">A:</span><br />
+Do not worry about it! Mkcdrec checks if the current bootfloppy image
+(usually 2.8 Mb) can be shrinked to 1.4 or 1.7 Mb image. If that is
+possible then it will create this backup image to the floppy/ directory
+on the first CDrec ISO image. The backup image can be "dd" to a
+physical
+floppy later. <br />
+It happens people loose their floppies or they get unuable. Or, the PC
+BIOS is not able to boot from CD.<br />
+In short, this message does not mean you have a problem with mkcdrec!<br />
+            <h3><a name="Q:_cutstream_compilation_error_with"></a>Q:
+cutstream compilation error with v0.7.4</h3>
+With mkcdrec v0.7.4&nbsp; people have reported the following problem
+while compiling cutstream (only on older distributions):<br />
+            <pre wrap="">Fatal: cutstream: compilation failed - check MAXCDSIZE in Config.sh<br />The log shows;<br />make[2]: Entering directory `/var/opt/mkcdrec/cutstream'<br />gcc -o cutstream cutstream.c<br />cutstream.c:62: parse error before `char'<br />make[2]: *** [all] Error 1<br />make[2]: Leaving directory `/var/opt/mkcdrec/cutstream'</pre>
+            <span style="font-weight: bold;">A:</span><br />
+To resolve the issue edit the cutstream/Makefile and replace "gcc" with
+"g++" or download latest version from the CVS tree. In mkcdrec v0.7.5
+this is fixed though.<br />
+            <h3><a name="Q:_bootflop.img_exceeds_2.88_MB"></a>Q: <a
+ name="bootflop.img_exceeds_2.88_MB"></a>bootflop.img exceeds 2.88 MB</h3>
+It could happen that the bootflop.img becomes too big and the result is
+that booting from CD fails:<br />
+            <pre wrap="">-rw-r--r--    1 root     root      2949120 Oct  6 20:21 bootflop.img<br /><br />In this case, CD Booting comes error with message,<br /><br />  boot from CD:<br />   1. FD 2.88MB System Type-(0F)<br />   Boot failed</pre>
+            <span style="font-weight: bold;">A:</span><br />
+Please install the latest mkcdrec_utilities! By doing this you will
+start using <span style="font-style: italic;">isolinux</span> instead
+of <span style="font-style: italic;">syslinux</span> and isolinux is
+not limited
+by size of 2.88Mb.<br />
+
+	<h3><a name="x86_64_mount_not_found"></a>Q: On x86_64 platform a kernel panic happens with message mount not found</h3>
+<b>A: </b>This means the system library /lib64/ld-linux-x86-64.so.2 is missing in the bigger ram disk. To fix this download the latest rd-base.script from mkcdrec CVS directories, or use at least v0.9.6 or higher.
+            <br />
+	<h3><a name="XEN-kernel"></a>Q: Invalid or corrupt kernel (Xen)</h3>
+<p><b>A: </b>If the default GNU/Linux kernel is XEN capable then mkCDrec will not boot from CD-ROM. To solve this problem select another non-XEN capable GNU/Linux kernel, e.g. failsafe kernel.<br />
+Edit Config.sh and change the LINUX_VERSION="2.6.18-xxxx" variable into a proper existing kernel version.
+</p><br />
+	<h3><a name="RH3"></a>Q: kernel panic: VFS: unable to mount root fs on 02:00 on RehHat 3</h3>
+<p><b>A: </b>Edit the Config.sh file and change the following 2 entries:
+<pre>KERNEL_APPEND="root=/dev/ram0 rw init=/init ramdisk_blocksize=1024 selinux=0"
+INITRD_FS=ext2
+</pre>
+</p><br />
+            <h3><a name="Q:_Using_DVD-writer_instead_of_CD-writer"></a>Q:
+Using DVD-writer instead of CD-writer (introduction)</h3>
+People reported that they are able to create a CDrec.iso image directly
+to DVD without using growisofs.<br />
+Edit Config.sh and set the following:<br />
+DVD_Drive=0<br />
+CDRECORD=dvdrecord<br />
+MAXCDSIZE=4700000<br />
+            <br />
+Using DVD_Drive=1 results into using the growisofs executable which
+writes directly to a DVD-R(W) without creating an ISO9660 image
+(/tmp/CDrec.iso)!!!<br />
+            <br />
+            <h3><a name="Q:_What_is_One-Button_Disaster_Recovery"></a>Q:
+What is One-Button Disaster Recovery (OBDR)?</h3>
+A <a
+ href="http://itpapers.zdnet.com/abstract.aspx?scid=176&amp;tag=tu.hw.ont.dir2&amp;docid=83893">technical
+paper on OBDR of ZDnet</a> explains it quiet well. Also on the <a
+ href="http://www.hp.com/products1/storage/products/tapebackup/obdr.html">HP
+site</a> more information can be found. <br />
+To restore using OBDR the tape device must be powered on with the <span
+ style="font-style: italic;">eject button</span> held down. This will
+cause the tape device lights to alternate repeatedly. Set the computers
+BIOS to boot to <span style="font-style: italic;">SCSI</span>.
+(Typically holding the delete key down while booting will invoke the
+computer's BIOS.) Enter the SCSI BIOS (the key sequence is SCSI
+specific, but is typically entered during the boot process also.) Scan
+the SCSI bus to determine which bus id represents the tape device.
+Setup the SCSI adapter to boot to the tape device id. Setup the device
+to start (or spin) at boot time. Setup BIOS support for Bootable
+CD-ROM. Exit the SCSI BIOS and while booting select boot form SCSI
+CD-ROM (again the key sequence is SCSI specific).<br />
+If above condition are met the tape drive will download from tape (if
+made by mkCDrec "make OBDR") the linux and initrd.img and thereafter
+download the bigger rd-base.img file. As an OBDR tape emulates a
+bootable CD-ROM there is no difference between a real CD-R made by
+mkCDrec (e.g. make CD-ROM).<br />
+            <h3><a name="initrd.gz:_No_space_left_on_device"></a>Q:
+initrd.gz: No space left on device</h3>
+In the mkcdrec.log file you find sometimes the following:<br />
+            <code><font
+ style="font-family: courier new,courier,monospace;" size="-1">Copy the
+initial ram disk image to the boot floppy image.</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1">`initrd.img.gz' -&gt; `/home/nnroot/mkcdrec/stage/initrd.gz'</font><br />
+            <font
+ style="color: rgb(51, 51, 255); font-family: courier new,courier,monospace;"
+ size="-1">cp: writing `/home/nnroot/mkcdrec/stage/initrd.gz': No space
+left on device</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1"><br />
+Warning: initrd.img.gz is not copied to bootfloppy image</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1">Warning: bootfloppy is FULL!</font><br />
+            <font
+ style="color: rgb(255, 0, 0); font-family: courier new,courier,monospace;"
+ size="-1">Will use "isolinux" instead.</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1"><br />
+Make syslinux.cfg file</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1">Make CD-ROM bootable with isolinux</font><br />
+            <font size="-1">cp: cannot
+stat `/home/nnroot/mkcdrec/stage/initrd.gz': No such file or directory</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1">Setting up bootable characteristics of the floppy</font><font
+ style="font-family: courier new,courier,monospace;" size="-1">(syslinux)</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1">syslinux /home/nnroot/mkcdrec/tmp/bootflop.img</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1">Copy the 1.44 or 2.88 Mb bootflop.img to ISOFS_DIR</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1">`/home/nnroot/mkcdrec/tmp/bootflop.img' -&gt;</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1">`/backup/backup/bootflop.img'</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1">Boot floppy is ready.</font><br />
+            <font style="font-family: courier new,courier,monospace;"
+ size="-1">Unfortunately current bootfloppy image is too big to</font><br />
+            <font size="-1">make an extra 1.722 Mb image into floppy/
+directory on the CD-ROM</font></code><br />
+            <span style="font-weight: bold;">A:</span><br />
+The answer comes in three-fold. First the blue line, then the red one
+and as last the green one.<br />
+            <span style="color: rgb(51, 51, 255);">The no space left
+means the bootfloppy disk image was too small to contain the compresses
+initial ramdisk and GNU/Linux kernel. Typically you will see these
+errors with kernel above 2.6.x</span><br />
+            <span style="color: rgb(51, 51, 255);">It really means
+mkCDrec is not able to successfully create a bootfloppy emulation to
+boot from, and the only solution is to use isolinux (boot directly from
+CD instead via bootfloppy emulation).<br />
+            <span style="color: rgb(255, 0, 0);">The will use
+"isolinux" instead message is the conclusion of the first error
+message, but mkCDrec will only use isolinux if mkCDrec_utilities are
+installed.</span><br />
+            </span><span style="color: rgb(51, 204, 0);">The "no such
+file or directory" is the result of mkCDrec deleted the corrupted
+initrd.gz file, and therefore, the error message is not a real error,
+only a conclusion that syslinux is unusable from now on. Remember,
+syslinux is used to make the bootfloppy image bootable (which is too
+small now to contain the initrd and linux kernel).</span><br
+ style="color: rgb(51, 204, 0);">
+            <span style="color: rgb(51, 204, 0);">So, forget syslinux
+and bootfloppy emulation altogether. We must use isolinux!</span><br />
+            <span style="text-decoration: underline;">Conclusion</span>:
+install mkCDrec_utilities and do a "make clean" and then re-run "make
+CD-ROM/rescue"<br />
+            <span style="color: rgb(0, 0, 102); font-weight: bold;">Be
+aware that since v0.8.7 and higher there is no need to install
+mkCDrec_utilities anymore as "isolinux" has become the default way of
+booting.</span><br />
+            <br />
+            <h3><a name="MAKEDEV"></a>Q: Mandrake: make test complains
+about MAKEDEV</h3>
+During the "make test" phase you will notice in test 2 the message:<br />
+Please_install_the_MAKEDEV_package: you must have it!<br />
+On Mandrake you may gently ignore this message and continue. It
+reflects on Fedore Core 4 only.<br />
+            <br />
+            <h3><a name="tarball"></a>Q: Where is the nightly CVS
+tarball?</h3>
+Is available from SourceForge via URL: <a
+ href="http://cvs.sourceforge.net/cvstarballs/mkcdrec-cvsroot.tar.bz2">http://cvs.sourceforge.net/cvstarballs/mkcdrec-cvsroot.tar.bz2</a><br />
+However, be aware that the tarball does not contain BusyBox sources,
+therefore, also download the latest mkcdrec sources via the <a
+ href="download.html">Download</a> page.<br />
+
+<h3><a name="Q:_rpm_install_err"></a>Q: rpm -i mkcdrec-xyz.rpm error - perl is needed</h3>
+<p>Sometimes the following error is returned when installing the binary RPM version of mkcdrec:</p>
+<pre>
+# rpm -i mkcdrec-v0.9.2-fc4.i386.rpm
+error: Failed dependencies:
+        perl(are) is needed by mkcdrec-v0.9.2-1.i386
+
+</pre>
+<p>To work around this problem use the following option during the installation of mkcdrec:</p>
+<pre>
+# rpm -i --nodeps mkcdrec-v0.9.2-fc4.i386.rpm
+WARNING: it seems that webmin isn't installed on that system.If you
+install it later, don't forget to add mkcdrec to the list of modules in
+/etc/webmin/webmin.acl to make mkcdrec's webmin module available.
+</pre>
+
+            <h3><a name="Q:_On_FedoraCore_4:_make_test_complains"></a>Q:
+            <a name="On_FedoraCore_4:_make_test_complains"></a>On
+FedoraCore 4: make test complains about missing ash</h3>
+Unfortunately FedoraCore 4 doesn't ship the ash executable anymore.
+Install ash from the previous release FedoraCore 3 or download the rpm
+of FedoraCore 3 or the ash sources from here:<br />
+            <ul>
+              <li><a href="ash-0.3.8-20.i386.rpm">ash-0.3.8-20.i386.rpm</a></li>
+              <li><a href="ash-0.3.8-20.src.rpm">ash-0.3.8-20.src.rpm</a></li>
+	      <li><a href="http://packages.debian.org/ash">ash on Debian</a></li>
+            </ul>
+            <p> </p>
+ 
+<h3><a name="Q:_busybox_compile_err"></a>Q: Busybox compilation errors</h3>
+<p>Especially with mkCdrec <i>v0.9.2</i> the following compilation error may occur:</p>
+<pre>
+logger (CONFIG_LOGGER) [Y/n/?] y
+GEN include/bbconfigopts.h
+GEN .depend
+CC applets/applets.o
+In file included from /usr/src/packages/BUILD/mkcdrec/busybox/include/busybox.h:29,
+from /usr/src/packages/BUILD/mkcdrec/busybox/applets/applets.c:33:
+/usr/src/packages/BUILD/mkcdrec/busybox/include/libbb.h:29:29:
+selinux/selinux.h: No such file or directory
+</pre>
+<p>To fix the above error edit the <tt>.config.bb</tt> file (found in top directory of mkCDrec) 
+and change the following line:</p>
+<pre>
+CONFIG_SELINUX=y
+</pre>
+<p>into</p>
+<pre># CONFIG_SELINUX is not set</pre>
+
+<h3><a name="Q:_checking_arch"></a>Q: Make test stops after checking architecture</h3>
+<p>Running make test stops immediately with the following error:
+<pre>
+root@slfp-1:~/mkcdrec# make test
+scripts/dispatch.sh test
+Checking architecture...
+make: *** [test] Error 2
+root@slfp-1:~/mkcdrec#
+</pre>
+<p>This can be caused be installing the rpm or deb package and for some reason, e.g. missing dependency such as
+ash or mtools, the Config.sh file was not written, but saved as Config.sh.dpkg-new. Then above error will occur.</p>
+<p>To fix this, simply copy or move the Config.sh.dpkg-new file to Config.sh</p>
+
+<h3><a name="Q:_OBDR_restore_fails"></a>Q: Restore via an OBDR tape drive fails</h3>
+<p>While booting from an OBDR tape drive it works fine until the point where we get the following error: </p>
+<pre>
+/dev/nst0: No such device or address
+OBDR: reading ram disk image into /dev/ram1 or /dev/rd/1
+dd: opening `/dev/nst0': No such device or address
+</pre>
+<span style="font-weight: bold;">A:</span><br />
+<p>Modify /etc/modprobe.d/modprobe.conf.dist. Locate the following file
+toward the very bottom of the file and comment it out.
+<pre>
+# Certain tape management software needs SCSI generic loaded on st load in
+# order to poke and twiddle various SCSI tape options automatically.
+install st /sbin/modprobe --ignore-install st && /sbin/modprobe sg
+</pre>
+Then run "mkcdrec clean" and rerun "mkcdrec OBDR" again.
+</p>

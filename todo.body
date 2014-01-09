@@ -1,0 +1,75 @@
+            <h2> ToDo List</h2>
+If you wish to add an item to this To Do list please <a
+ href="http://sourceforge.net/tracker/?group_id=25327&amp;atid=383785">submit
+a request at SourceForge</a>.&nbsp; <br />
+&nbsp; <br />
+            <table bgcolor="#e0e0e0" border="1" width="90%">
+              <caption><br />
+              </caption><tbody>
+                <tr bgcolor="#000080">
+                  <td><b><font color="#ffffff"><font size="+1">Description</font></font></b></td>
+                  <td><b><font color="#ffffff"><font size="+1">Accepted</font></font></b></td>
+                  <td><b><font color="#ffffff"><font size="+1">Foreseen
+by</font></font></b></td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>support for LVM tools + restoring LVM</td>
+                  <td>yes (20 Nov. 2000)</td>
+                  <td>done</td>
+                </tr>
+                <tr>
+                  <td>support for NTFS partitions</td>
+                  <td>yes&nbsp; (17 Aug. 2001)</td>
+                  <td>done</td>
+                </tr>
+                <tr bgcolor="#e0e0e0">
+                  <td>improve tape management</td>
+                  <td>yes (22 Dec. 2000)</td>
+                  <td>ongoing</td>
+                </tr>
+                <tr>
+                  <td>Add perl</td>
+                  <td>yes (17 Aug. 2001)</td>
+                  <td>done</td>
+                </tr>
+                <tr>
+                  <td valign="top">Add DVD-RW support</td>
+                  <td valign="top">yes (17 Oct. 2002)</td>
+                  <td valign="top">done</td>
+                </tr>
+                <tr>
+                  <td>LVM+RAID1 support</td>
+                  <td>yes (13 Dec. 2002)</td>
+                  <td>partial done<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Clone a software
+RAID disk to a single IDE/SCSI disk<br />
+                  </td>
+                  <td style="vertical-align: top;">yes (4 Mar. 2004)<br />
+                  </td>
+                  <td style="vertical-align: top;">done<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Automatic restore
+via CD-ROM (no human interaction)<br />
+                  </td>
+                  <td style="vertical-align: top;">yes (28 Mar. 2004)<br />
+                  </td>
+                  <td style="vertical-align: top;">done<br />
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Move isolinux into
+mkCDrec core<br />
+                  </td>
+                  <td style="vertical-align: top;">yes (22 Mar. 2005)<br />
+                  </td>
+                  <td style="vertical-align: top;">done<br />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+

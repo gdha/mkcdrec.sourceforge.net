@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="Author" content="Gratien D'haese" />
+<link rel="license" href="http://www.fsf.org/licensing/licenses/gpl.html" />
+<meta name="Keywords" content="Make CD-ROM Recovery, mkcdrec, linux recovery, tape, DVD, CD-ROM, cdrom backup, recovery, disaster recovery, PXE, NFS, GNU, linux cd, distribution, boot cd, OBDR, PC, AMD64, Itanium, Sparc, Intel" />
+<link rel="icon" type="image/ico" href="images/CDROM4.ico" />
+<meta name="Description" content="mkCDrec is a linux based disaster recovery tool using CD, DVD, tape, NFS or network" />
+<link rel="stylesheet" href="style/style1.css" type="text/css" />
+<title>
+Make CD-ROM Recovery (mkCDrec)
+</title>
+</head>
+<body>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		
+	<!-- Horizontal bar with banners and google search -->
+<tr>
+	<td nowrap="nowrap" valign="top" align="left"><a href="http://mkcdrec.sourceforge.net"><img 
+		src="images/mkcdrec_logo.jpg" alt="mkCDrec"
+		style="border: 0px solid ; width: 172px; height: 64px" align="middle" hspace="2" /></a>
+	</td>
+	<td nowrap="nowrap" valign="top" align="left"><a href="http://sourceforge.net/projects/mkcdrec"><img 
+		src="images/mkcdrec_banner.jpg" 
+		alt="Make CD-ROM Recovery" align="middle" border="0" /></a>
+	</td>
+<td nowrap="nowrap" valign="top" align="left">
+<!-- SiteSearch Google -->
+<form method="get" action="http://www.google.be/custom" target="google_window">
+<table border="0" bgcolor="#ffffff">
+<tr><td nowrap="nowrap" valign="top" align="left" height="32">
+
+</td>
+<td nowrap="nowrap">
+<input type="hidden" name="domains" value="mkcdrec.sourceforge.net"></input>
+<input type="text" name="q" size="28" maxlength="255" value=""></input>
+</td></tr>
+<tr>
+<td>&nbsp;</td>
+<td nowrap="nowrap">
+<table>
+<tr>
+<td>
+<input type="radio" name="sitesearch" value=""></input>
+<font size="-1" color="#000000">Web</font>
+</td>
+<td>
+<input type="radio" name="sitesearch" value="mkcdrec.sourceforge.net" checked="checked"></input>
+<font size="-1" color="#000000">mkcdrec.sourceforge.net</font>
+</td>
+</tr>
+</table>
+<input type="submit" name="sa" value="Google Search"></input>
+<input type="hidden" name="client" value="pub-5700486644166221"></input>
+<input type="hidden" name="forid" value="1"></input>
+<input type="hidden" name="ie" value="ISO-8859-1"></input>
+<input type="hidden" name="oe" value="ISO-8859-1"></input>
+<input type="hidden" name="safe" value="active"></input>
+<input type="hidden" name="cof" value="GALT:#008000;GL:1;DIV:#336699;VLC:663399;AH:center;BGC:FFFFFF;LBGC:336699;ALC:0000FF;LC:0000FF;T:000000;GFNT:0000FF;GIMP:0000FF;FORID:1;"></input>
+<input type="hidden" name="hl" value="en"></input>
+</td></tr></table>
+</form>
+<!-- SiteSearch Google -->
+
+
+</td>
+</tr>
+</table><!-- end of first table -->
+<!-- Here comes the horizontal menu bar -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><td>
+<div id="navbar">
+<!-- The navigation bar -->
+<ul>
+<li><a href="http://mkcdrec.sourceforge.net" title="mkCDrec Home">Home</a></li>
+<li><a href="news.html" title="News">News</a></li>
+<li><a href="download.html" title="Downloads">Downloads</a></li>
+<li><a href="documentation.html" title="Documentation">Documentation</a></li>
+<li><a href="faqs.html" title="FAQ">FAQ</a></li>
+<li><a href="support.html" title="Support">Support</a></li>
+<li><a href="credits.html" title="Credits">Credits</a></li>
+<li><a href="http://mkcdrec.indyramp.net" title="Mirror site">Mirror-Site</a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table><!-- end of second table -->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr><!--table row that contains the main text-->
+	<td valign="top">&nbsp;&nbsp;
+	</td>
+	<td valign="top">
+		<div class="main">
+<!-- Begin of MAIN body part -->
